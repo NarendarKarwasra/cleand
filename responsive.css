@@ -51,52 +51,6 @@
 
 
 
-
-
-
-    .footer-top {
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .footer-top-left {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-top-left p {
-        margin: 15px auto 0;
-        width: 100%;
-    }
-
-    .footer-top-right {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .social-box {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-download-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-
-
-
-
-    /* .footer-top-right {
-        text-align: center;
-    } */
-
-
 }
 
 
@@ -115,6 +69,39 @@
     .plan-card.featured:hover {
         transform: translateY(-10px);
     }
+
+
+    .download-content {
+        bottom: 18%;
+        left: 45%;
+    }
+
+    .download-content img {
+        width: 100px;
+    }
+
+
+
+    .near-container {
+        background: #ffffff;
+    }
+    .near-left {
+        width: 48%;
+    }
+    .near-right {
+        width: 48%;
+    }
+
+
+
+
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+
 }
 
 
@@ -126,6 +113,68 @@
 
 
 @media (max-width: 768px) {
+
+
+    .fixed-on-screen {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        transform: none;
+        gap: 12px;
+    }
+
+    .email-container {
+        display: none;
+    }
+
+    .button-container {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .icon {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .whatsapp-container .icon {
+        font-size: 20px;
+    }
+
+    .button-container .label {
+        display: none;
+    }
+
+    .icon {
+        margin-right: 0;
+    }
+
+    .button-container:hover {
+        width: 40px;
+        padding-right: 0;
+    }
+
+    .whatsapp-container:hover {
+        width: 40px;
+        background: #3eff85;
+        box-shadow: -2px 2px 8px -1px #797979;
+        transform: scale(1.1);
+    }
+
+    .call-container:hover {
+        width: 40px;
+        background: #52a6ff;
+        box-shadow: -2px 2px 8px -1px #797979;
+        transform: scale(1.1);
+    }
+
+
+
+
     .mobile-nav-toggle {
         display: flex;
     }
@@ -311,6 +360,14 @@
         padding: 0 40px;
     }
 
+    .testimonial-description {
+        width: 100%;
+    }
+
+    .slider-viewport {
+        margin-left: 0px;
+    }
+
     .nav-btn {
         width: 35px;
         height: 35px;
@@ -330,38 +387,48 @@
 
 
 
-
-    footer {
-        padding: 40px 0 20px;
+    .download-section {
+        padding: 40px 0px 80px;
     }
 
-    .social-box {
-        justify-content: center;
-    }
-
-    .footer-top-right {
+    .download-content {
+        bottom: 10%;
+        left: 50%;
         flex-direction: column;
+        gap: 0;
+    }
+
+    .download-content img {
+        width: 120px;
+    }
+
+
+
+
+
+
+
+
+    .near-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+     .near-left {
+        width: 100%;
         text-align: center;
-        gap: 40px;
+    }
+    .near-right {
+        width: 100%;
     }
 
-    .footer-col h4 {
-        margin-bottom: 15px;
-    }
 
-    .footer-col ul {
-        padding: 0;
-    }
 
-    .footer-logo img {
-        width: 180px;
-    }
 
-    .footer-bottom {
-        margin-top: 20px;
-        font-size: 0.8rem;
-    }
 
+
+    .stats-wrapper .section-subtitle {
+        width: 100%;
+    }
 
 
 
@@ -437,6 +504,27 @@
 
 
 
+
+
+
+
+    .download-content {
+        bottom: 6%;
+        left: 46%;
+    }
+
+
+}
+
+
+
+
+
+
+@media (max-width: 500px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -448,6 +536,17 @@
 
     .step-container {
         grid-template-columns: 1fr;
+    }
+
+
+
+    .download-content {
+        bottom: 6%;
+        left: 46%;
+    }
+
+    .download-content img {
+        width: 100px;
     }
 
 

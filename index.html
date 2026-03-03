@@ -45,10 +45,33 @@
         </div>
     </header>
 
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
 
     <section class="hero-carousel">
         <div class="carousel-track">
-            <div class="hero-slide" style="background-image: url('/images/hero-1.webp');">
+            <div class="hero-slide" style="background-image: url('/images/hero-2.webp');">
                 <div class="section-container">
                     <div class="hero-content">
                         <h1>WE ARE THE <br>BEST LAUNDRY SERVICES</h1>
@@ -66,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="background-image: url('/images/hero-1.webp');">
+            <div class="hero-slide" style="background-image: url('/images/hero-2.webp');">
                 <div class="section-container">
                     <div class="hero-content">
                         <h1>WE ARE THE <br>BEST LAUNDRY SERVICES</h1>
@@ -84,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="background-image: url('/images/hero-1.webp');">
+            <div class="hero-slide" style="background-image: url('/images/hero-2.webp');">
                 <div class="section-container">
                     <div class="hero-content">
                         <h1>WE ARE THE <br>BEST LAUNDRY SERVICES</h1>
@@ -102,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="background-image: url('/images/hero-1.webp');">
+            <div class="hero-slide" style="background-image: url('/images/hero-2.webp');">
                 <div class="section-container">
                     <div class="hero-content">
                         <h1>WE ARE THE <br>BEST LAUNDRY SERVICES</h1>
@@ -189,7 +212,7 @@
     <section style="background: #faf6ef;">
         <div class="section-container">
             <div class="premium-container">
-                <div class="header-content">
+                <div class="header-content slide-up">
                     <h2>Premium Fabric Care by <span class="brand">Cleand</span></h2>
                     <h3>Your Wardrobe's Best Friend</h3>
                     <p>
@@ -198,7 +221,7 @@
                     </p>
                 </div>
 
-                <div class="premium-grid">
+                <div class="premium-grid slide-up">
                     <div class="premium-card">
                         <div class="image-wrapper">
                             <img src="images/premium-1.webp" alt="Laundry">
@@ -246,9 +269,9 @@
                 </div>
             </div>
 
-            <div class="btn-container">
+            <div class="btn-container slide-up">
                 <button class="pickup-btn btn">Schedule Your Pickup Now
-                    <img src="/images/pickup-icon.webp" alt="">
+                    <img src="/images/pickup-icon-white.webp" alt="">
                 </button>
                 <button class="whatsapp-btn btn">Chat on Whatsapp
                     <img src="/images/whatsapp-icon.webp" alt="">
@@ -262,7 +285,7 @@
     <section class="expert-services">
         <div class="section-container">
             <div class="services-container">
-                <div class="header-content">
+                <div class="header-content slide-up">
                     <h2>From Manual Scrubbing to Masterful Machinery</h2>
                     <p>Move past the era of manual scrubbing and unreliable traditional methods. At
                         <strong>Cleand</strong>, we've replaced manual labor with state-of-the-art, high-tech smart
@@ -271,7 +294,7 @@
                     </p>
                 </div>
 
-                <div class="expert-flex">
+                <div class="expert-flex slide-up">
                     <div class="side-col left-side">
                         <div class="expert-item">
                             <div class="text-block">
@@ -344,9 +367,9 @@
                 </div>
             </div>
 
-            <div class="btn-container">
+            <div class="btn-container slide-up">
                 <button class="pickup-btn btn">Schedule Your Pickup Now
-                    <img src="/images/pickup-icon.webp" alt="">
+                    <img src="/images/pickup-icon-white.webp" alt="">
                 </button>
                 <button class="whatsapp-btn btn">Chat on Whatsapp
                     <img src="/images/whatsapp-icon.webp" alt="">
@@ -358,11 +381,12 @@
 
 
     <section style="background: #faf6ef;">
-        <div class="section-container">
+        <div class="section-container slide-up">
             <div class="step-full-container">
                 <h1>How We Works : In 4 Easy Steps</h1>
-
-                <div class="step-container">
+                <p class="step-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sunt. Nihil,
+                    a! Debitis ipsa accusamus praesentium, beatae a earum ipsum.</p>
+                <div class="step-container slide-up">
                     <div class="step-card">
                         <div class="card-icon">
                             <img src="images/step-1.png" alt="Basket icon">
@@ -407,13 +431,51 @@
     </section>
 
 
-    <section class="choose-section">
-        <div class="section-container">
+    <section class="near-section">
+        <div class="section-container slide-up">
+            <div class="near-container">
+                <div class="near-left">
+                    <div class="near-left-top">
+                        <h4>Pristine Results. Unbeatable Value.</h4>
+                        <h1>Elite Garment Care & Advanced Cleaning Solutions</h1>
+                        <p>Our facilities use specialized techniques for leather, wool, and intricate lace, ensuring
+                            that even your most precious items return to you in showroom condition. Experience the
+                            perfect blend of traditional care and modern technology.</p>
+                    </div>
+                    <div class="near-left-bottom">
+                        Hygiene &nbsp; • &nbsp; Convenience &nbsp; • &nbsp; Precision &nbsp; • &nbsp; Longevity
+                    </div>
+                </div>
+                <div class="near-right">
+                    <div class="near-right-card">
+                        <div class="near-right-img">
+                            <img src="images/near-icon-1.png" alt="">
+                        </div>
+                        <h2>Fabric Laundering</h2>
+                        <p>Crisp, fresh, and perfectly pressed. Our high-capacity systems handle your weekly loads with
+                            eco-friendly efficiency.</p>
+                    </div>
+                    <div class="near-right-card">
+                        <div class="near-right-img">
+                            <img src="images/near-icon-2.png" alt="">
+                        </div>
+                        <h2>Master Dry Cleaning</h2>
+                        <p>Beyond a simple wash. We use gentle and evening wear without damaging the structural
+                            integrity of the garment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="choose-section" style="background: #faf6ef;">
+        <div class="section-container slide-up">
             <h2>Why Choose <span>Cleand</span></h2>
             <p>Cleand offers expert care, convenient pickup and delivery, and eco-friendly cleaning solutions using
                 advanced techniques.</p>
 
-            <div class="Choose-container">
+            <div class="Choose-container slide-up">
                 <div class="choose-card">
                     <div class="choose-icon">
                         <i class="fa-solid fa-award"></i>
@@ -446,9 +508,9 @@
                 </div>
             </div>
 
-            <div class="btn-container">
+            <div class="btn-container slide-up">
                 <button class="pickup-btn btn">Schedule Your Pickup Now
-                    <img src="/images/pickup-icon.webp" alt="">
+                    <img src="/images/pickup-icon-white.webp" alt="">
                 </button>
                 <button class="whatsapp-btn btn">Chat on Whatsapp
                     <img src="/images/whatsapp-icon.webp" alt="">
@@ -459,16 +521,143 @@
     </section>
 
 
+    <div class="stats-wrapper">
+        <div class="section-container slide-up">
+            <h2 class="section-title">India's Most <span class="highlight">Profitable</span> Laundry Chain</h2>
+            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus mollitia ipsam
+                consectetur saepe cum recusandae molestiae porro cumque, voluptates ex!</p>
+
+            <div class="stats-grid slide-up">
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="60">0</span><span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Cities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="150">0</span><span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Stores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="5.1">0</span><span class="suffix">L</span>
+                    </div>
+                    <div class="stat-label">Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="45.8">0</span><span class="suffix">L</span>
+                    </div>
+                    <div class="stat-label">Garments</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="pricing-plans" style="background: #faf6ef;">
+        <div class="section-container slide-up">
+            <div class="pricing-header">
+                <h2>Monthly Subscription Plans</h2>
+                <p>Enjoy exclusive benefits and massive savings with our tailored subscription models.</p>
+            </div>
+
+            <div class="plans-grid slide-up">
+                <div class="plan-card">
+                    <div class="plan-badge">Standard</div>
+                    <h3>Monthly Subscription</h3>
+                    <div class="price">Starts @ <span>₹1999/-*</span></div>
+                    <div class="save-tag">SAVE atleast 15%</div>
+                    <p class="best-for">Best for Professionals</p>
+                    <ul class="plan-features">
+                        <li>Free Pickup & Delivery</li>
+                        <li>Priority Processing (24h)</li>
+                        <li>Eco-Friendly Detergents</li>
+                        <li>Monthly Usage Reports</li>
+                    </ul>
+                    <a href="#" class="plan-btn">Subscribe Now</a>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="popular-ribbon">Best Value</div>
+                    <div class="plan-badge">Premium</div>
+                    <h3>Yearly Membership</h3>
+                    <div class="price">Starts @ <span>₹4999/-*</span></div>
+                    <div class="save-tag">SAVE 20-25%</div>
+                    <p class="best-for">Best for Busy Individuals</p>
+                    <ul class="plan-features">
+                        <li>Unlimited Free Delivery</li>
+                        <li>Same-Day Express Service</li>
+                        <li>Dry Clean & Laundry Combo</li>
+                        <li>Complimentary Sneaker Spa</li>
+                    </ul>
+                    <a href="#" class="plan-btn featured-btn">Subscribe Now</a>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-badge">Enterprise</div>
+                    <h3>Corporate Contracting</h3>
+                    <div class="price">Starts @ <span>₹14999/-*</span></div>
+                    <div class="save-tag">SAVE 30-35%</div>
+                    <p class="best-for">Hotels & Fashion Designers</p>
+                    <ul class="plan-features">
+                        <li>Bulk Volume Discounts</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Custom Packing Solutions</li>
+                        <li>Flexible Billing Cycles</li>
+                    </ul>
+                    <a href="#" class="plan-btn">Subscribe Now</a>
+                </div>
+            </div>
+
+            <div class="btn-container slide-up">
+                <button class="pickup-btn btn">Schedule Your Pickup Now
+                    <img src="/images/pickup-icon-white.webp" alt="">
+                </button>
+                <button class="whatsapp-btn btn">Chat on Whatsapp
+                    <img src="/images/whatsapp-icon.webp" alt="">
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section-container">
+        <div class="profitable-content slide-up">
+            <h1>Discover India’s Prime Laundry Franchise: <span style="color: #de8d1f;">A High-Profit</span></h1>
+            <p>As the landscape of <span style="color: #de8d1f;">laundry services in India</span> experiences
+                significant growth, choosing a business model that prioritizes strong financial returns is essential for
+                long-term success. Our proven franchise approach ensures robust profit margins by streamlining
+                operational efficiency, optimizing supply chains, and leveraging economies of scale. By combining
+                advanced technologies with highly effective processes, we help franchise owners lower overhead costs
+                while maximizing service output, making this one of the most profitable opportunities in the sector.
+                Join our network and capitalize on this high-yield business model that focuses on sustainable revenue
+                generation.</p>
+            <p>Investing in a franchise is about more than just starting a business—it’s about capitalizing on a formula
+                that guarantees a competitive edge. <span style="color: #de8d1f;">Our laundry franchise</span> offers a
+                turnkey solution designed to generate quick returns and ensure long-term profitability in a thriving
+                market. We provide comprehensive training, site selection assistance, and extensive marketing support,
+                all structured to drive high customer volume and consistent repeat business. With an emphasis on lean
+                management and cost control, our franchisees are equipped to outperform competitors and establish a
+                dominant market presence, making this one of the most rewarding investment avenues in India today.</p>
+        </div>
+    </section>
+
 
     <section class="testimonials">
-        <div class="section-container">
+        <div class="section-container slide-up">
             <div class="testimonial-container">
                 <h2 class="section-title">What Our Customers Say</h2>
+                <p class="testimonial-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+                    asperiores magni necessitatibus iusto eum odio quos possimus nesciunt fuga velit.</p>
 
                 <button class="nav-btn prev" id="prevBtn">&#10094;</button>
                 <button class="nav-btn next" id="nextBtn">&#10095;</button>
 
-                <div class="slider-viewport">
+                <div class="slider-viewport slide-up">
                     <div class="testimonial-track" id="track">
                         <div class="testimonial-card">
                             <div class="stars">★★★★★</div>
@@ -520,11 +709,11 @@
 
 
     <section class="faq-section">
-        <div class="section-container">
+        <div class="section-container slide-up">
             <h2 class="section-title">Looking for info? Read our faq here</h2>
             <p class="section-subtitle">Everything you need to know about our high-tech fabric care.</p>
 
-            <div class="faq-grid">
+            <div class="faq-grid slide-up">
                 <div class="faq-column">
                     <div class="faq-item">
                         <button class="faq-question">How long does a standard wash take? <span
@@ -595,117 +784,26 @@
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question">What if my garment is damaged? <span class="icon">+</span></button>
-                        <div class="faq-answer">
-                            <p>While our smart machines ensure maximum safety, we provide insurance for every garment.
-                                In the rare case of damage, we offer compensation up to 10x the service cost of that
-                                item.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">Is there a minimum order for pickup? <span
-                                class="icon">+</span></button>
-                        <div class="faq-answer">
-                            <p>Yes, we have a small minimum order value of ₹500 for free home pickup and delivery.
-                                Orders below this amount will incur a nominal convenience fee of ₹50.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">What if my garment is damaged? <span class="icon">+</span></button>
-                        <div class="faq-answer">
-                            <p>While our smart machines ensure maximum safety, we provide insurance for every garment.
-                                In the rare case of damage, we offer compensation up to 10x the service cost of that
-                                item.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question">Is there a minimum order for pickup? <span
-                                class="icon">+</span></button>
-                        <div class="faq-answer">
-                            <p>Yes, we have a small minimum order value of ₹500 for free home pickup and delivery.
-                                Orders below this amount will incur a nominal convenience fee of ₹50.</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="pricing-plans">
-        <div class="section-container">
-            <div class="pricing-header">
-                <h2>Monthly Subscription Plans</h2>
-                <p>Enjoy exclusive benefits and massive savings with our tailored subscription models.</p>
-            </div>
-
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-badge">Standard</div>
-                    <h3>Monthly Subscription</h3>
-                    <div class="price">Starts @ <span>₹1999/-*</span></div>
-                    <div class="save-tag">SAVE atleast 15%</div>
-                    <p class="best-for">Best for Professionals</p>
-                    <ul class="plan-features">
-                        <li>Free Pickup & Delivery</li>
-                        <li>Priority Processing (24h)</li>
-                        <li>Eco-Friendly Detergents</li>
-                        <li>Monthly Usage Reports</li>
-                    </ul>
-                    <a href="#" class="plan-btn">Subscribe Now</a>
-                </div>
-
-                <div class="plan-card featured">
-                    <div class="popular-ribbon">Best Value</div>
-                    <div class="plan-badge">Premium</div>
-                    <h3>Yearly Membership</h3>
-                    <div class="price">Starts @ <span>₹4999/-*</span></div>
-                    <div class="save-tag">SAVE 20-25%</div>
-                    <p class="best-for">Best for Busy Individuals</p>
-                    <ul class="plan-features">
-                        <li>Unlimited Free Delivery</li>
-                        <li>Same-Day Express Service</li>
-                        <li>Dry Clean & Laundry Combo</li>
-                        <li>Complimentary Sneaker Spa</li>
-                    </ul>
-                    <a href="#" class="plan-btn featured-btn">Subscribe Now</a>
-                </div>
-
-                <div class="plan-card">
-                    <div class="plan-badge">Enterprise</div>
-                    <h3>Corporate Contracting</h3>
-                    <div class="price">Starts @ <span>₹14999/-*</span></div>
-                    <div class="save-tag">SAVE 30-35%</div>
-                    <p class="best-for">Hotels & Fashion Designers</p>
-                    <ul class="plan-features">
-                        <li>Bulk Volume Discounts</li>
-                        <li>Dedicated Account Manager</li>
-                        <li>Custom Packing Solutions</li>
-                        <li>Flexible Billing Cycles</li>
-                    </ul>
-                    <a href="#" class="plan-btn">Subscribe Now</a>
+    <section style="background: #EAEAEA;">
+        <div class="section-container slide-up">
+            <div class="download-section">
+                <img src="images/download-section.webp" alt="">
+                <div class="download-content">
+                    <a href="#"><img src="images/appstore.png" alt=""></a>
+                    <a href="#"><img src="images/googleplay.png" alt=""></a>
                 </div>
             </div>
-
-            <div class="btn-container">
-                <button class="pickup-btn btn">Schedule Your Pickup Now
-                    <img src="/images/pickup-icon.webp" alt="">
-                </button>
-                <button class="whatsapp-btn btn">Chat on Whatsapp
-                    <img src="/images/whatsapp-icon.webp" alt="">
-                </button>
-            </div>
-
         </div>
     </section>
 
 
-    <footer>
+    <!-- <footer>
         <div class="section-container slide-up">
             <div class="footer-top">
                 <div class="footer-top-left">
@@ -778,51 +876,121 @@
                     </div>
                 </div>
 
-
-                <!-- <div class="footer-top-right">
-                    <div class="f-t-r-box">
-                        <h3>Quick Links</h3>
-                        <a href="">About Us</a>
-                        <a href="">Membership</a>
-                        <a href="">Franchise</a>
-                        <a href="">Blogs</a>
-                        <a href="">Career</a>
-                        <a href="">Contact</a>
-                        <a href="">Sitemap</a>
-                        <a href="">Privacy Policy</a>
-                        <a href="">Terms & Conditions</a>
-                    </div>
-                    <div class="f-t-r-box">
-                        <h3>Our Services</h3>
-                        <a href="">Laundry</a>
-                        <a href="">Dry Cleaning</a>
-                        <a href="">Shoe Laundry</a>
-                        <a href="">Curtain Cleaning</a>
-                        <a href="">Sofa Cleaning</a>
-                        <a href="">Carpet & Rug Cleaning</a>
-                    </div>
-                    <div class="f-t-r-box">
-                        <h3>Where We Are</h3>
-                        <a href="">Gurugram</a>
-                        <a href="">Jaipur</a>
-                        <a href="">New Delhi</a>
-                        <a href="">Mumbai</a>
-                        <a href="">Career</a>
-                        <a href="">Gurugram</a>
-                        <a href="">Jaipur</a>
-                        <a href="">New Delhi</a>
-                        <a href="">Mumbai</a>
-                        <a href="">Career</a>
-                        <a href="">Gurugram</a>
-                        <a href="">Jaipur</a>
-                        <a href="">New Delhi</a>
-                        <a href="">Mumbai</a>
-                        <a href="">Career</a>
-                    </div>
-                </div> -->
-
             </div>
             <div class="footer-bottom">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Near Me</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Franchise</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/logo-footer.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="#"><img src="images/appstore.png" alt=""></a>
+                    <a href="#"><img src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
                 <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
             </div>
         </div>
@@ -867,6 +1035,55 @@
         }
         // Auto-slide every 5 seconds
         setInterval(slideNext, 5000);
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
     </script>
 
     <!-- for testimonial -->
@@ -945,6 +1162,47 @@
                 faqItem.classList.toggle('active');
             });
         });
+    </script>
+
+    <!-- counter -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        const speed = 100; // Lower is slower
+
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const count = parseFloat(counter.innerText);
+
+                        // Determine increment based on whether it's a decimal
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            // Check if it's a decimal (like 12.1L) or whole number
+                            if (target % 1 !== 0) {
+                                counter.innerText = (count + inc).toFixed(1);
+                            } else {
+                                counter.innerText = Math.ceil(count + inc);
+                            }
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter); // Stop observing once animated
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(startCounters, {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        });
+
+        counters.forEach(counter => observer.observe(counter));
     </script>
 
 
