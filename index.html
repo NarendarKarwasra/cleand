@@ -57,10 +57,10 @@
 
                 <nav class="navmenu">
                     <ul>
-                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Stores</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Pricing</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
                         <li><a href="#">Blogs</a></li>
                     </ul>
                 </nav>
@@ -941,16 +941,18 @@
                 <div id="otpSection" class="hidden fade-in">
                     <p class="otp-label">Enter Verification Code</p>
                     <div class="otp-container">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        <div class="otp-boxes">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        </div>
+                        <div class="timer-area">
+                            <span id="timerText">Resend in <b id="seconds">30</b>s</span>
+                            <button type="button" id="resendBtn" class="hidden">RESEND OTP</button>
+                        </div>
                     </div>
 
-                    <div class="timer-area">
-                        <span id="timerText">Resend in <b id="seconds">30</b>s</span>
-                        <button type="button" id="resendBtn" class="hidden">RESEND OTP</button>
-                    </div>
                 </div>
 
                 <div id="addressSection" class="hidden fade-in">
@@ -1196,7 +1198,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const fullName = document.getElementById('fullName');
             const cityNameInitial = document.getElementById('cityName');
-            const mobileSection = document.getElementById('mobileSection');
             const mobileInput = document.getElementById('mobileNumber');
             const otpSection = document.getElementById('otpSection');
             const otpBoxes = document.querySelectorAll('.otp-box');
@@ -1206,61 +1207,64 @@
             const fullAddress = document.getElementById('fullAddress');
             const submitBtn = document.getElementById('submitBtn');
 
-            let currentStep = 1; // 1: Name, 2: Mobile, 3: OTP, 4: Address
+            // Ensure main sections are visible by default, except OTP
+            document.getElementById('mobileSection').classList.remove('hidden');
+            addressSection.classList.remove('hidden');
+            otpSection.classList.add('hidden');
+
             let timerStarted = false;
+            let otpVerified = false;
 
-            function checkProgress() {
-                // STEP 1 to 2: Show Mobile
-                if (currentStep < 2 && fullName.value.trim().length > 2 && cityNameInitial.value.trim().length >= 3) {
-                    mobileSection.classList.remove('hidden');
-                    currentStep = 2;
-                }
+            function checkFormValidity() {
+                // Validation rules
+                const isNameValid = fullName.value.trim().length > 2;
+                const isCityValid = cityNameInitial.value.trim().length >= 3;
+                const isMobileValid = mobileInput.value.length === 10;
+                const isAddressValid = stateInput.value !== "" &&
+                    cityFinal.value !== "" &&
+                    fullAddress.value.trim().length > 5;
 
-                // STEP 2 to 3: Show OTP
-                if (currentStep === 2 && mobileInput.value.length === 10) {
+                // Toggle OTP Section visibility based on mobile number length
+                if (isMobileValid && !otpVerified) {
                     otpSection.classList.remove('hidden');
                     if (!timerStarted) startTimer();
-                    currentStep = 3;
+                } else {
+                    // Keep hidden if number is incomplete OR if already verified
+                    otpSection.classList.add('hidden');
                 }
 
-                // STEP 3 to 4: Switch to Address (ONLY RUNS ONCE)
-                if (currentStep === 3) {
-                    const otpValue = Array.from(otpBoxes).map(b => b.value).join('');
-                    if (otpValue.length === 4) {
-                        currentStep = 4; // Move to final step immediately
-                        setTimeout(() => {
-                            otpSection.classList.add('hidden');
-                            addressSection.classList.remove('hidden');
-                        }, 400);
-                    }
-                }
-
-                // STEP 4: Final Validation (The Submit Button logic)
-                if (currentStep === 4) {
-                    const isAddressFilled = stateInput.value !== "" &&
-                        cityFinal.value !== "" &&
-                        fullAddress.value.trim().length > 5;
-
-                    submitBtn.disabled = !isAddressFilled;
-                }
+                // Enable Submit only if everything is filled AND OTP was "completed"
+                submitBtn.disabled = !(isNameValid && isCityValid && isMobileValid && isAddressValid && otpVerified);
             }
 
-            // Input & Change Listeners
+            // Input Listeners
             [fullName, cityNameInitial, mobileInput, stateInput, cityFinal, fullAddress].forEach(el => {
                 el.addEventListener('input', (e) => {
-                    if (e.target.id === 'mobileNumber') e.target.value = e.target.value.replace(/[^0-9]/g, '');
-                    checkProgress();
+                    if (e.target.id === 'mobileNumber') {
+                        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                        // Reset verification if they change the phone number
+                        if (e.target.value.length < 10) otpVerified = false;
+                    }
+                    checkFormValidity();
                 });
-                el.addEventListener('change', checkProgress);
             });
 
-            // OTP Box Tabbing & Numeric check
+            // OTP Logic
             otpBoxes.forEach((box, index) => {
                 box.addEventListener('input', (e) => {
                     e.target.value = e.target.value.replace(/[^0-9]/g, '');
                     if (e.target.value.length === 1 && index < 3) otpBoxes[index + 1].focus();
-                    checkProgress();
+
+                    const otpValue = Array.from(otpBoxes).map(b => b.value).join('');
+                    if (otpValue.length === 4) {
+                        otpVerified = true;
+                        setTimeout(() => {
+                            otpSection.classList.add('hidden'); // Hide after filling
+                            checkFormValidity();
+                        }, 500);
+                    }
                 });
+
                 box.addEventListener('keydown', (e) => {
                     if (e.key === 'Backspace' && !e.target.value && index > 0) otpBoxes[index - 1].focus();
                 });
@@ -1282,7 +1286,7 @@
                 }, 1000);
             }
 
-            // Open/Close Modal
+            // Modal Control
             document.querySelectorAll('.pickup-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1292,7 +1296,6 @@
 
             document.querySelector('.close-modal').onclick = () => {
                 document.getElementById('laundryModal').style.display = 'none';
-                // Optional: Reset currentStep = 1 if you want form to reset on close
             };
 
             document.getElementById('pickupForm').onsubmit = (e) => {

@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
@@ -19,186 +21,7 @@
 
 
     <style>
-        /* franchise page */
 
-        .franchise-hero-section {
-            padding-top: 80px;
-        }
-
-        .franchise-hero {
-            background: url('images/franchise-hero.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 60px 0;
-            /* height: 500px; */
-        }
-
-        .fran-hero-conatiner {
-            width: 50%;
-            color: #fff;
-        }
-
-        .fran-hero-conatiner h1 {
-            font-weight: 900;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-
-        .fran-hero-conatiner h1 span {
-            font-size: 50px;
-        }
-
-        .fran-hero-conatiner p {
-            font-size: 18px;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
-
-
-        .fran-hero-box {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .fran-hero-box-card {
-            background: #fff;
-            color: #9c5b00;
-            border-radius: 14px;
-            width: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
-
-        .fran-hero-box-card h2 {
-            font-size: 30px;
-            font-weight: 800;
-        }
-
-        .fran-hero-box-card h2 span {
-            font-weight: 600;
-            font-size: 20px;
-            margin-left: 4px;
-        }
-
-        .fran-hero-box-card p {
-            margin-bottom: 2px;
-        }
-
-        .fran-hero-btn {
-            margin-top: 40px;
-            background: #fff;
-            border-radius: 10px;
-            padding: 14px 30px;
-            font-weight: 600;
-            color: #7f4a00;
-        }
-
-        .form-container {
-            max-width: 700px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            font-family: 'Poppins', sans-serif;
-        }
-
-
-        .subtitle {
-            color: #888;
-            margin-bottom: 30px;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .input-box {
-            flex: 1;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .input-box i {
-            position: absolute;
-            left: 15px;
-            color: #de8d1f;
-            font-size: 16px;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 14px 15px 14px 45px;
-            border: 2px solid #f0f0f0;
-            border-radius: 10px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #de8d1f;
-            background: #fff;
-            outline: none;
-            box-shadow: 0 0 10px rgba(222, 141, 31, 0.1);
-        }
-
-        textarea {
-            padding-top: 15px;
-        }
-
-        #submitBtn {
-            width: 100%;
-            padding: 16px;
-            background: #de8d1f;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #submitBtn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        #submitBtn:hover:not(:disabled) {
-            background: #c27a1a;
-            transform: translateY(-2px);
-        }
-
-        .error-text {
-            color: #e74c3c;
-            font-size: 13px;
-            margin-bottom: 15px;
-            display: block;
-            font-weight: 500;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .form-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
     </style>
 </head>
 
@@ -242,10 +65,10 @@
 
                 <nav class="navmenu">
                     <ul>
-                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Stores</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Pricing</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
                         <li><a href="#">Blogs</a></li>
                     </ul>
                 </nav>
@@ -258,104 +81,707 @@
         <div class="franchise-hero">
             <div class="section-container">
                 <div class="fran-hero-conatiner">
-                    <h1>Join India’s Profitable <br><span>Laundry Franchise Brand</span></h1>
-                    <p>Lorem ipsu
-                        m dolor, sit amet consectetur adipisicing elit. Nemo, provident! Modi mollitia, ipsam dolor odio
-                        unde suscipit esse hic ullam.</p>
-                    <div class="fran-hero-box">
-                        <div class="fran-hero-box-card">
-                            <h2>4 Lac<span>+</span></h2>
-                            <p>Customers</p>
+                    <div class="fran-hero-content">
+                        <h1>Join India’s Profitable <br><span>Laundry Franchise Brand</span></h1>
+                        <p>Lorem ipsu
+                            m dolor, sit amet consectetur adipisicing elit. Nemo, provident! Modi mollitia, ipsam dolor
+                            odio
+                            unde suscipit esse hic ullam.</p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                        <div class="fran-hero-box">
+                            <div class="fran-hero-box-card">
+                                <h2>4 Lac<span>+</span></h2>
+                                <p>Customers</p>
+                            </div>
+                            <div class="fran-hero-box-card">
+                                <h2>45<span>+</span></h2>
+                                <p>Store</p>
+                            </div>
+                            <div class="fran-hero-box-card">
+                                <h2>15<span>+</span></h2>
+                                <p>Cities</p>
+                            </div>
                         </div>
-                        <div class="fran-hero-box-card">
-                            <h2>45<span>+</span></h2>
-                            <p>Store</p>
-                        </div>
-                        <div class="fran-hero-box-card">
-                            <h2>15<span>+</span></h2>
-                            <p>Cities</p>
+                        <!-- <button class="pickup-btn btn fran-hero-btn">Enquire for Franchise</button> -->
+                    </div>
+                    <div class="fran-hero-form">
+                        <div class="form-container">
+                            <form id="investmentForm">
+                                <h2>Get Started with Us</h2>
+                                <p class="form-subtitle">Fill in the details below to begin your journey</p>
+
+                                <div class="form-row">
+                                    <div class="input-box">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="fullName" placeholder="Full Name" autocomplete="off">
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="input-box">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="email" placeholder="Email Address">
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="fas fa-chart-line"></i>
+                                        <select id="investmentRange">
+                                            <option value="" disabled selected>Investment Range</option>
+                                            <option value="50k-1L">₹6 Lac - ₹10 Lac</option>
+                                            <option value="1L-5L">₹10 Lac - ₹15 Lac</option>
+                                            <option value="5L+">Above ₹15 Lac</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="input-box">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <select id="stateSelect">
+                                            <option value="" disabled selected>Select State</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="fas fa-city"></i>
+                                        <select id="citySelect">
+                                            <option value="" disabled selected>Select City</option>
+                                            <option value="Jaipur">Jaipur</option>
+                                            <option value="Mumbai">Mumbai</option>
+                                            <option value="Delhi">New Delhi</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row full-width">
+                                    <div class="input-box">
+                                        <i class="fas fa-comment-dots" style="top: 18px;"></i>
+                                        <textarea id="description" placeholder="Briefly describe your requirements..."
+                                            rows="3"></textarea>
+                                    </div>
+                                </div>
+
+                                <p id="errorMessage" class="error-text">Please fill all fields correctly.</p>
+                                <button type="submit" id="submitBtn" disabled>SUBMIT ENQUIRY</button>
+                            </form>
                         </div>
                     </div>
-                    <button class="pickup-btn btn fran-hero-btn">Enquire for Franchise</button>
                 </div>
             </div>
         </div>
 
+    </section>
 
+
+    <section class="investment-stats">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Why Invest in a <span style="color: #de8d1f;">Cleand</span> Laundry Franchise?
+            </h2>
+            <p class="section-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, explicabo!
+            </p>
+
+            <div class="stats-grid slide-up">
+                <div class="stat-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+                    <h3>₹6 - 10 Lakh</h3>
+                    <p>Franchise Fee</p>
+                    <span class="badge">Low Entry Barrier</span>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-arrows-to-circle"></i>
+                    </div>
+                    <h3>₹15 Lakh Onwards</h3>
+                    <p>Initial Investment</p>
+                    <span class="badge">Low Investment</span>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>12-18 Months</h3>
+                    <p>ROI</p>
+                    <span class="badge">Fast Returns</span>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <h3>7%</h3>
+                    <p>Royalty</p>
+                    <span class="badge">Profitable Business</span>
+                </div>
+            </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0;">
+                <button class="btn franchise-btn">Enquire for Franchise</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="video-presentation" style="background: #faf6ef;">
+        <div class="section-container">
+            <div class="text-center slide-up">
+                <span class="sub-heading">See Our Success in Action</span>
+                <h2 class="main-heading">Own a Cleand - The Laundry Spa Franchise</h2>
+            </div>
+
+            <div class="video-wrapper slide-up">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/p9d_bqZxbUE?rel=0&modestbranding=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-glow"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="support-section">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Our Support System</h2>
+            <p class="support-des">Benefit from our ongoing support and access to advanced technology that streamlines
+                operations and enhances customer experience.</p>
+            <div class="support-flex slide-up">
+                <div class="support-item">
+                    <div class="step-num">01</div>
+                    <h4>Comprehensive Training</h4>
+                    <p>Receive both initial and ongoing training programs</p>
+                </div>
+                <div class="support-item">
+                    <div class="step-num">02</div>
+                    <h4>Marketing Assistance</h4>
+                    <p>Benefit from our expert marketing and advertising support</p>
+                </div>
+                <div class="support-item">
+                    <div class="step-num">03</div>
+                    <h4>Operational Guidance</h4>
+                    <p>Get help with day-to-day operations and business development</p>
+                </div>
+                <div class="support-item">
+                    <div class="step-num">04</div>
+                    <h4>Advanced Technology</h4>
+                    <p>Access our proprietary technology and management systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="comparison-section" style="background: #faf6ef;">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Why Franchise Over Independent?</h2>
+            <p class="support-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et exercitationem
+                hic obcaecati, inventore, at eos eius nisi cumque in explicabo magni recusandae molestias placeat ut
+                repellat maiores doloribus ex!</p>
+            <div class="table-responsive slide-up">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Your Brand Franchise</th>
+                            <th>Local Laundry Shop</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Brand Awareness</td>
+                            <td class="check">✅ National Recognition</td>
+                            <td class="cross">❌ Zero Trust</td>
+                        </tr>
+                        <tr>
+                            <td>Technology</td>
+                            <td class="check">✅ Mobile App & CRM</td>
+                            <td class="cross">❌ Manual Registers</td>
+                        </tr>
+                        <tr>
+                            <td>Machinery</td>
+                            <td class="check">✅ Industrial Grade (EU)</td>
+                            <td class="cross">❌ Household Machines</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Support</td>
+                            <td class="check">✅ Centralized Digital Ads</td>
+                            <td class="cross">❌ Local Pamphlets only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0;">
+                <button class="btn franchise-btn">Enquire for Franchise</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="why-section">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Why Choose the Laundry Industry?</h2>
+            <p class="support-des">Discover why the laundry industry stands out as a promising business opportunity
+                amidst evolving consumer needs and urbanisation trends.</p>
+            <div class="why-container slide-up">
+                <div class="why-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Rising Demand</h3>
+                    <p>High need for convenient, premium laundry services</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-city"></i>
+                    <h3>Urban Growth</h3>
+                    <p>Increasing urbanisation boosts demand for professional solutions</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h3>Busy Lifestyles</h3>
+                    <p>Modern lifestyles drive the need for reliable laundry services</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-people-arrows"></i>
+                    <h3>Customer Loyalty</h3>
+                    <p>High potential for repeat business and customer retention</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Market Expansion</h3>
+                    <p>Expanding market with opportunities for growth</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    <h3>Sustainable Revenue</h3>
+                    <p>Steady revenue stream from essential services</p>
+                </div>
+            </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0;">
+                <button class="btn franchise-btn">Enquire for Franchise</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="franchise-models" style="background: #faf6ef;">
+        <div class="section-container">
+            <div class="header-content slide-up">
+                <p class="sub-text">Looking to be your own boss and build a successful business?</p>
+                <h2 class="section-title">Explore Our Diverse Franchise Opportunities</h2>
+                <p class="intro-text">We're expanding rapidly across India and seeking passionate individuals to join
+                    our franchise family.</p>
+            </div>
+
+            <div class="models-grid slide-up">
+
+                <div class="model-card">
+                    <div class="card-header">
+                        <h3>Satellite Store</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-row">
+                            <i class="fa-solid fa-ruler-combined icon"></i>
+                            <div><strong>Area Required</strong><span>200-250 Sq ft</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-ticket icon"></i>
+                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
+                        </div>
+                        <div class="info-row highlight">
+                            <i class="fa-solid fa-indian-rupee-sign icon"></i>
+                            <div><strong>Investment</strong><span>15 Lacs</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-chart-line icon"></i>
+                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                        </div>
+                        <p class="location-note">*Available only in Mumbai</p>
+                    </div>
+                </div>
+
+                <div class="model-card featured">
+                    <div class="card-header">
+                        <span class="popular-tag">Most Popular</span>
+                        <h3>Unit Store</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-row">
+                            <i class="fa-solid fa-ruler-combined icon"></i>
+                            <div><strong>Area Required</strong><span>300-400 Sq ft</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-ticket icon"></i>
+                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
+                        </div>
+                        <div class="info-row highlight">
+                            <i class="fa-solid fa-indian-rupee-sign icon"></i>
+                            <div><strong>Investment</strong><span>25 Lacs</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-chart-line icon"></i>
+                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="card-header">
+                        <h3>Factory Store</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-row">
+                            <i class="fa-solid fa-ruler-combined icon"></i>
+                            <div><strong>Area Required</strong><span>700-1000 Sq ft</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-ticket icon"></i>
+                            <div><strong>Franchise Fee</strong><span>10 Lacs</span></div>
+                        </div>
+                        <div class="info-row highlight">
+                            <i class="fa-solid fa-indian-rupee-sign icon"></i>
+                            <div><strong>Investment</strong><span>50 Lacs</span></div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-chart-line icon"></i>
+                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0;">
+                <button class="btn franchise-btn">Enquire for Franchise</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-section">
+        <div class="section-container">
+            <div class="blog-header slide-up">
+                <h2 class="section-title">Read Our Blogs for More Details</h2>
+                <div class="slider-nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <div class="swiper blog-slider slide-up">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                                    alt="Suits">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>How to Laundry your Suit Office - Tips and Trick</h3>
+                                <p>Professional tips on maintaining your formal wear and ensuring longevity through
+                                    proper cleaning techniques.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                                    alt="Office">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Welcome to our office in India, Visit Us</h3>
+                                <p>We provide full documentation and video tutorials to help you understand our
+                                    franchise features and tech suite.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                                    alt="Laundry">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
+                                <p>Create and publish dynamic workflows for your laundry business that meet the latest
+                                    standards without stress.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                                    alt="Suits">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>How to Laundry your Suit Office - Tips and Trick</h3>
+                                <p>Professional tips on maintaining your formal wear and ensuring longevity through
+                                    proper cleaning techniques.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                                    alt="Office">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>Welcome to our office in India, Visit Us</h3>
+                                <p>We provide full documentation and video tutorials to help you understand our
+                                    franchise features and tech suite.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                                    alt="Laundry">
+                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                            </div>
+                            <div class="blog-content">
+                                <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
+                                <p>Create and publish dynamic workflows for your laundry business that meet the latest
+                                    standards without stress.</p>
+                            </div>
+                            <div class="blog-footer">
+                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonials franchise-testimonials">
+        <div class="section-container slide-up">
+            <div class="testimonial-container">
+                <h2 class="section-title">What Our Partners Say</h2>
+                <p class="testimonial-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+                    asperiores magni necessitatibus iusto eum odio quos possimus nesciunt fuga velit.</p>
+
+                <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                <button class="nav-btn next" id="nextBtn">&#10095;</button>
+
+                <div class="slider-viewport slide-up">
+                    <div class="testimonial-track" id="track">
+                        <div class="testimonial-card">
+                            <p class="description">"Cleand has changed my weekly chores. My white shirts have never
+                                looked
+                                brighter! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nobis
+                                magni sit doloremque voluptates vel perferendis architecto nemo quos iure."</p>
+                            <div class="user-info">
+                                <h4 class="name">Arjun Sharma</h4>
+                                <span class="position">Partner, Delhi</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <p class="description">"The attention to detail on my silk sarees was impressive. No harsh
+                                chemical smells. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur
+                                nobis magni sit doloremque voluptates vel perferendis architecto nemo quos iure."</p>
+                            <div class="user-info">
+                                <h4 class="name">Priya Patel</h4>
+                                <span class="position">Partner, Pune</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <p class="description">"Efficient and reliable. I love the tracking system. It respects
+                                pickup
+                                timings. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nobis
+                                magni sit doloremque voluptates vel perferendis architecto nemo quos iure."</p>
+                            <div class="user-info">
+                                <h4 class="name">Rahul Verma</h4>
+                                <span class="position">Partner, Mumbai</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <p class="description">"Sneaker Spa is a game changer. My old running shoes look brand new
+                                again. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nobis magni
+                                sit doloremque voluptates vel perferendis architecto nemo quos iure."</p>
+                            <div class="user-info">
+                                <h4 class="name">Anjali Singh</h4>
+                                <span class="position">Partner, Jaipur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
 
 
+    <section class="faq-section">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Know More About <span style="color: #de8d1f;">Cleand</span></h2>
+            <p class="section-subtitle">Everything you need to know about our high-tech fabric care.</p>
 
-    <div class="form-container">
-        <form id="investmentForm">
-            <h2>Get Started with Us</h2>
-            <p class="subtitle">Fill in the details below to begin your journey.</p>
+            <div class="faq-grid slide-up">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="form-row">
-                <div class="input-box">
-                    <i class="fas fa-user"></i>
-                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="off">
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="input-box">
-                    <i class="fas fa-phone"></i>
-                    <input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10">
+
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">Is there a minimum order for pickup? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Yes, we have a small minimum order value of ₹500 for free home pickup and delivery.
+                                Orders below this amount will incur a nominal convenience fee of ₹50.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="form-row">
-                <div class="input-box">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="email" placeholder="Email Address">
-                </div>
-                <div class="input-box">
-                    <i class="fas fa-chart-line"></i>
-                    <select id="investmentRange">
-                        <option value="" disabled selected>Investment Range</option>
-                        <option value="50k-1L">₹50,000 - ₹1,00,000</option>
-                        <option value="1L-5L">₹1,00,000 - ₹5,00,000</option>
-                        <option value="5L+">Above ₹5,00,000</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="input-box">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <select id="stateSelect">
-                        <option value="" disabled selected>Select State</option>
-                        <option value="Rajasthan">Rajasthan</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Maharashtra">Maharashtra</option>
-                    </select>
-                </div>
-                <div class="input-box">
-                    <i class="fas fa-city"></i>
-                    <select id="citySelect">
-                        <option value="" disabled selected>Select City</option>
-                        <option value="Jaipur">Jaipur</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">New Delhi</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-row full-width">
-                <div class="input-box">
-                    <i class="fas fa-comment-dots" style="top: 18px;"></i>
-                    <textarea id="description" placeholder="Briefly describe your requirements..." rows="3"></textarea>
-                </div>
-            </div>
-
-            <p id="errorMessage" class="error-text">Please fill all fields correctly.</p>
-            <button type="submit" id="submitBtn" disabled>SUBMIT ENQUIRY</button>
-        </form>
-    </div>
-
-
-
-
-
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -472,75 +898,8 @@
 
 
 
-    <div id="laundryModal" class="modal-overlay">
-        <div class="modal-content animate-pop">
-            <span class="close-modal">&times;</span>
-
-            <div class="modal-header">
-                <h2>Schedule Your Laundry Pickup</h2>
-                <p class="promo-badge">Up to 20% Off on Your 1st Order</p>
-            </div>
-
-            <form id="pickupForm">
-                <div class="form-row">
-                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="off">
-                    <input type="text" id="cityName" placeholder="City Name" autocomplete="off">
-                </div>
-
-                <div id="mobileSection" class="hidden fade-in">
-                    <div class="input-wrapper">
-                        <span class="prefix">+91</span>
-                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10">
-                    </div>
-                </div>
-
-                <div id="otpSection" class="hidden fade-in">
-                    <p class="otp-label">Enter Verification Code</p>
-                    <div class="otp-container">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
-                    </div>
-
-                    <div class="timer-area">
-                        <span id="timerText">Resend in <b id="seconds">30</b>s</span>
-                        <button type="button" id="resendBtn" class="hidden">RESEND OTP</button>
-                    </div>
-                </div>
-
-                <div id="addressSection" class="hidden fade-in">
-                    <div class="address-row">
-                        <select id="stateInput">
-                            <option value="" disabled selected>Select State</option>
-                            <option value="Rajasthan">Rajasthan</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Gujarat">Gujarat</option>
-                        </select>
-
-                        <select id="cityInputFinal">
-                            <option value="" disabled selected>Select City</option>
-                            <option value="Jaipur">Jaipur</option>
-                            <option value="Mumbai">Mumbai</option>
-                            <option value="Ahmedabad">Ahmedabad</option>
-                        </select>
-                    </div>
-
-                    <div class="address-row">
-                        <textarea id="fullAddress" placeholder="Full Address (House No, Building, Street...)"
-                            rows="3"></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" id="submitBtn" disabled>CONFIRM PICKUP</button>
-            </form>
-        </div>
-    </div>
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- script for navbar -->
     <script>
@@ -583,6 +942,26 @@
         }
     </script>
 
+    <!-- franchise button scroll to form -->
+    <script>
+        document.querySelectorAll(".franchise-btn").forEach(button => {
+            button.addEventListener("click", function () {
+
+                const form = document.getElementById("investmentForm");
+                const offset = 120; // space from top
+
+                const elementPosition = form.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+            });
+        });
+    </script>
+
     <!-- script for slide up animation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -612,61 +991,35 @@
 
     <!-- for testimonial -->
     <script>
-        const track_test = document.getElementById('track');
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        const cards = document.querySelectorAll('.testimonial-card');
+        const track = document.getElementById("track");
+        const cards = document.querySelectorAll(".testimonial-card");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
 
         let index = 0;
+        const totalSlides = cards.length;
 
         function updateSlider() {
-            if (cards.length === 0) return;
-
-            const isMobile = window.innerWidth <= 768;
-            const visibleCards = isMobile ? 1 : 2;
-
-            // 1. Get the actual width of one card (including padding/border)
-            const cardWidth = cards[0].offsetWidth;
-
-            // 2. Get the actual gap size from the CSS
-            const gap = parseFloat(window.getComputedStyle(track_test).gap) || 0;
-
-            // 3. Constrain index so we don't slide into empty space
-            const maxIndex = cards.length - visibleCards;
-            if (index > maxIndex) index = maxIndex;
-            if (index < 0) index = 0;
-
-            // 4. Move the track by exactly (Card Width + Gap) pixels
-            const moveDistance = index * (cardWidth + gap);
-            track_test.style.transform = `translateX(-${moveDistance}px)`;
-
-            // Optional: Handle button styling (opacity)
-            prevBtn.style.opacity = index === 0 ? "0.5" : "1";
-            prevBtn.style.pointerEvents = index === 0 ? "none" : "auto";
-
-            nextBtn.style.opacity = index >= maxIndex ? "0.5" : "1";
-            nextBtn.style.pointerEvents = index >= maxIndex ? "none" : "auto";
+            track.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        nextBtn.addEventListener('click', () => {
-            const visibleCards = window.innerWidth > 768 ? 2 : 1;
-            if (index < cards.length - visibleCards) {
+        nextBtn.addEventListener("click", () => {
+            if (index < totalSlides - 1) {
                 index++;
-                updateSlider();
+            } else {
+                index = 0; // loop to first
             }
+            updateSlider();
         });
 
-        prevBtn.addEventListener('click', () => {
+        prevBtn.addEventListener("click", () => {
             if (index > 0) {
                 index--;
-                updateSlider();
+            } else {
+                index = totalSlides - 1; // loop to last
             }
+            updateSlider();
         });
-
-        // Update on resize and on initial load
-        window.addEventListener('resize', updateSlider);
-        window.addEventListener('load', updateSlider);
-        updateSlider();
     </script>
 
     <!-- faq -->
@@ -729,117 +1082,6 @@
         counters.forEach(counter => observer.observe(counter));
     </script>
 
-    <!-- schedule popup -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const fullName = document.getElementById('fullName');
-            const cityNameInitial = document.getElementById('cityName');
-            const mobileSection = document.getElementById('mobileSection');
-            const mobileInput = document.getElementById('mobileNumber');
-            const otpSection = document.getElementById('otpSection');
-            const otpBoxes = document.querySelectorAll('.otp-box');
-            const addressSection = document.getElementById('addressSection');
-            const stateInput = document.getElementById('stateInput');
-            const cityFinal = document.getElementById('cityInputFinal');
-            const fullAddress = document.getElementById('fullAddress');
-            const submitBtn = document.getElementById('submitBtn');
-
-            let currentStep = 1; // 1: Name, 2: Mobile, 3: OTP, 4: Address
-            let timerStarted = false;
-
-            function checkProgress() {
-                // STEP 1 to 2: Show Mobile
-                if (currentStep < 2 && fullName.value.trim().length > 2 && cityNameInitial.value.trim().length >= 3) {
-                    mobileSection.classList.remove('hidden');
-                    currentStep = 2;
-                }
-
-                // STEP 2 to 3: Show OTP
-                if (currentStep === 2 && mobileInput.value.length === 10) {
-                    otpSection.classList.remove('hidden');
-                    if (!timerStarted) startTimer();
-                    currentStep = 3;
-                }
-
-                // STEP 3 to 4: Switch to Address (ONLY RUNS ONCE)
-                if (currentStep === 3) {
-                    const otpValue = Array.from(otpBoxes).map(b => b.value).join('');
-                    if (otpValue.length === 4) {
-                        currentStep = 4; // Move to final step immediately
-                        setTimeout(() => {
-                            otpSection.classList.add('hidden');
-                            addressSection.classList.remove('hidden');
-                        }, 400);
-                    }
-                }
-
-                // STEP 4: Final Validation (The Submit Button logic)
-                if (currentStep === 4) {
-                    const isAddressFilled = stateInput.value !== "" &&
-                        cityFinal.value !== "" &&
-                        fullAddress.value.trim().length > 5;
-
-                    submitBtn.disabled = !isAddressFilled;
-                }
-            }
-
-            // Input & Change Listeners
-            [fullName, cityNameInitial, mobileInput, stateInput, cityFinal, fullAddress].forEach(el => {
-                el.addEventListener('input', (e) => {
-                    if (e.target.id === 'mobileNumber') e.target.value = e.target.value.replace(/[^0-9]/g, '');
-                    checkProgress();
-                });
-                el.addEventListener('change', checkProgress);
-            });
-
-            // OTP Box Tabbing & Numeric check
-            otpBoxes.forEach((box, index) => {
-                box.addEventListener('input', (e) => {
-                    e.target.value = e.target.value.replace(/[^0-9]/g, '');
-                    if (e.target.value.length === 1 && index < 3) otpBoxes[index + 1].focus();
-                    checkProgress();
-                });
-                box.addEventListener('keydown', (e) => {
-                    if (e.key === 'Backspace' && !e.target.value && index > 0) otpBoxes[index - 1].focus();
-                });
-            });
-
-            function startTimer() {
-                if (timerStarted) return;
-                timerStarted = true;
-                let timeLeft = 30;
-                const countdown = setInterval(() => {
-                    timeLeft--;
-                    const secDisplay = document.getElementById('seconds');
-                    if (secDisplay) secDisplay.innerText = timeLeft;
-                    if (timeLeft <= 0) {
-                        clearInterval(countdown);
-                        document.getElementById('timerText').classList.add('hidden');
-                        document.getElementById('resendBtn').classList.remove('hidden');
-                    }
-                }, 1000);
-            }
-
-            // Open/Close Modal
-            document.querySelectorAll('.pickup-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.getElementById('laundryModal').style.display = 'flex';
-                });
-            });
-
-            document.querySelector('.close-modal').onclick = () => {
-                document.getElementById('laundryModal').style.display = 'none';
-                // Optional: Reset currentStep = 1 if you want form to reset on close
-            };
-
-            document.getElementById('pickupForm').onsubmit = (e) => {
-                e.preventDefault();
-                window.location.href = "thank-you.html";
-            };
-        });
-    </script>
-
     <!-- enquiry form -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -895,6 +1137,24 @@
             });
         });
     </script>
+
+    <!-- swiper for blog -->
+    <script>
+        const swiper = new Swiper('.blog-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }
+        });
+    </script>
+
 
 
 </body>
