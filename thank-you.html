@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - Thank You</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<style>
+    /* thank you page */
+
+    .thank-you-container {
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        padding-top: 100px;
+        margin: auto;
+    }
+
+    .success-card {
+        background: #fff;
+        padding: 40px;
+        border-radius: 24px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        color: #333;
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    /* Animated Checkmark CSS */
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .checkmark {
+        width: 80px;
+        height: 60px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        box-shadow: inset 0px 0px 0px #de8d1f;
+        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    }
+
+    .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #de8d1f;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @keyframes stroke {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes scale {
+
+        0%,
+        100% {
+            transform: none;
+        }
+
+        50% {
+            transform: scale3d(1.1, 1.1, 1);
+        }
+    }
+
+    @keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 40px #de8d1f;
+        }
+    }
+
+    .order-details {
+        background: #fff9f0;
+        border: 1px dashed #de8d1f;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .status-tag {
+        background: #27ae60;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary {
+        background: #de8d1f;
+        color: #fff;
+        text-decoration: none;
+        padding: 14px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: #c27a1a;
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        color: #de8d1f;
+        text-decoration: none;
+        padding: 12px;
+        border: 2px solid #de8d1f;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+        background: rgba(222, 141, 31, 0.05);
+    }
+
+    .footer-note {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #666;
+    }
+
+
+
+
+    @media (max-width: 350px) {
+
+        .success-card {
+            padding: 20px;
+            border-radius: 20px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="section-container">
+        <div class="thank-you-container">
+            <div class="success-card">
+                <div class="icon-circle">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+
+                <h1>Pickup Scheduled!</h1>
+                <p>Your laundry hero is on the way. We’ve sent the details to your mobile number.</p>
+
+                <div class="order-details">
+                    <div class="detail-item">
+                        <span>Status</span>
+                        <span class="status-tag">Confirmed</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Estimate</span>
+                        <span>Within 24-48 Hours</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="index.html" class="btn-primary">Back to Home</a>
+                    <a href="#" class="btn-outline">Download Receipt</a>
+                </div>
+
+                <div class="footer-note">
+                    Questions? Call us at <b>+91 98765 43210</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Near Me</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Franchise</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="#"><img src="images/appstore.png" alt=""></a>
+                    <a href="#"><img src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>

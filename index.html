@@ -19,32 +19,6 @@
 
 <body>
 
-    <header class="header">
-        <div class="section-container">
-            <div class="header-container">
-                <a href="index.html" class="logo">
-                    <img src="images/Cleand-Laundry-Logo.png" alt="Logo">
-                </a>
-
-                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-
-                <nav class="navmenu">
-                    <ul>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Franchise</a></li>
-                        <li><a href="#">Blogs</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
     <!-- fixed buttons on screen -->
     <div class="fixed-on-screen">
         <!-- Call Button -->
@@ -68,6 +42,31 @@
         </div>
     </div>
 
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <section class="hero-carousel">
         <div class="carousel-track">
@@ -803,87 +802,6 @@
     </section>
 
 
-    <!-- <footer>
-        <div class="section-container slide-up">
-            <div class="footer-top">
-                <div class="footer-top-left">
-                    <a href="#" class="footer-logo">
-                        <img src="images/logo-footer.png" alt="footer Logo">
-                    </a>
-
-                    <div class="footer-col footer-contact">
-                        <ul>
-                            <li>
-                                <a href="tel:+918423123458">
-                                    <i class="fa-solid fa-phone"></i>+91-84231-23458
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@cleand.in?subject=Inquiry%20for%20Laundry%20Services">
-                                    <i class="fa-solid fa-envelope"></i>info@cleand.in
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="social-box">
-                        <a href="https://wa.me/918423123458" class="social-icon" target="_blank">
-                            <i class="fa-brands fa-square-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-icon" target="_blank">
-                            <i class="fa-brands fa-square-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon" target="_blank">
-                            <i class="fa-brands fa-square-facebook"></i>
-                        </a>
-                        <a href="#" class="social-icon" target="_blank">
-                            <i class="fa-brands fa-square-twitter"></i>
-                        </a>
-                    </div>
-
-                    <div class="footer-download-container">
-                        <a href="#"><img src="images/appstore.png" alt=""></a>
-                        <a href="#"><img src="images/googleplay.png" alt=""></a>
-                    </div>
-
-                </div>
-                <div class="footer-top-right">
-                    <div class="footer-col">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><a href="#">Laundry</a></li>
-                            <li><a href="#">Dry Cleaning</a></li>
-                            <li><a href="#">Shoe Laundry</a></li>
-                            <li><a href="#">Curtain Cleaning</a></li>
-                            <li><a href="#">Sofa Cleaning</a></li>
-                            <li><a href="#">Carpet & Rug Cleaning</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Membership</a></li>
-                            <li><a href="#">Franchise</a></li>
-                            <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
-            </div>
-        </div>
-    </footer> -->
-
-
     <footer class="footer">
         <div class="section-container slide-up">
             <div class="footer-top-bar">
@@ -976,7 +894,7 @@
 
             <div class="footer-main">
                 <div class="footer-logo">
-                    <img src="images/logo-footer.png" alt="">
+                    <img src="images/cleand-R-logo-white.png" alt="">
                 </div>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -995,6 +913,74 @@
             </div>
         </div>
     </footer>
+
+
+
+    <div id="laundryModal" class="modal-overlay">
+        <div class="modal-content animate-pop">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-header">
+                <h2>Schedule Your Laundry Pickup</h2>
+                <p class="promo-badge">Up to 20% Off on Your 1st Order</p>
+            </div>
+
+            <form id="pickupForm">
+                <div class="form-row">
+                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="off">
+                    <input type="text" id="cityName" placeholder="City Name" autocomplete="off">
+                </div>
+
+                <div id="mobileSection" class="hidden fade-in">
+                    <div class="input-wrapper">
+                        <span class="prefix">+91</span>
+                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10">
+                    </div>
+                </div>
+
+                <div id="otpSection" class="hidden fade-in">
+                    <p class="otp-label">Enter Verification Code</p>
+                    <div class="otp-container">
+                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                    </div>
+
+                    <div class="timer-area">
+                        <span id="timerText">Resend in <b id="seconds">30</b>s</span>
+                        <button type="button" id="resendBtn" class="hidden">RESEND OTP</button>
+                    </div>
+                </div>
+
+                <div id="addressSection" class="hidden fade-in">
+                    <div class="address-row">
+                        <select id="stateInput">
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                        </select>
+
+                        <select id="cityInputFinal">
+                            <option value="" disabled selected>Select City</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+
+                    <div class="address-row">
+                        <textarea id="fullAddress" placeholder="Full Address (House No, Building, Street...)"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" disabled>CONFIRM PICKUP</button>
+            </form>
+        </div>
+    </div>
 
 
 
@@ -1203,6 +1189,117 @@
         });
 
         counters.forEach(counter => observer.observe(counter));
+    </script>
+
+    <!-- schedule popup -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fullName = document.getElementById('fullName');
+            const cityNameInitial = document.getElementById('cityName');
+            const mobileSection = document.getElementById('mobileSection');
+            const mobileInput = document.getElementById('mobileNumber');
+            const otpSection = document.getElementById('otpSection');
+            const otpBoxes = document.querySelectorAll('.otp-box');
+            const addressSection = document.getElementById('addressSection');
+            const stateInput = document.getElementById('stateInput');
+            const cityFinal = document.getElementById('cityInputFinal');
+            const fullAddress = document.getElementById('fullAddress');
+            const submitBtn = document.getElementById('submitBtn');
+
+            let currentStep = 1; // 1: Name, 2: Mobile, 3: OTP, 4: Address
+            let timerStarted = false;
+
+            function checkProgress() {
+                // STEP 1 to 2: Show Mobile
+                if (currentStep < 2 && fullName.value.trim().length > 2 && cityNameInitial.value.trim().length >= 3) {
+                    mobileSection.classList.remove('hidden');
+                    currentStep = 2;
+                }
+
+                // STEP 2 to 3: Show OTP
+                if (currentStep === 2 && mobileInput.value.length === 10) {
+                    otpSection.classList.remove('hidden');
+                    if (!timerStarted) startTimer();
+                    currentStep = 3;
+                }
+
+                // STEP 3 to 4: Switch to Address (ONLY RUNS ONCE)
+                if (currentStep === 3) {
+                    const otpValue = Array.from(otpBoxes).map(b => b.value).join('');
+                    if (otpValue.length === 4) {
+                        currentStep = 4; // Move to final step immediately
+                        setTimeout(() => {
+                            otpSection.classList.add('hidden');
+                            addressSection.classList.remove('hidden');
+                        }, 400);
+                    }
+                }
+
+                // STEP 4: Final Validation (The Submit Button logic)
+                if (currentStep === 4) {
+                    const isAddressFilled = stateInput.value !== "" &&
+                        cityFinal.value !== "" &&
+                        fullAddress.value.trim().length > 5;
+
+                    submitBtn.disabled = !isAddressFilled;
+                }
+            }
+
+            // Input & Change Listeners
+            [fullName, cityNameInitial, mobileInput, stateInput, cityFinal, fullAddress].forEach(el => {
+                el.addEventListener('input', (e) => {
+                    if (e.target.id === 'mobileNumber') e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                    checkProgress();
+                });
+                el.addEventListener('change', checkProgress);
+            });
+
+            // OTP Box Tabbing & Numeric check
+            otpBoxes.forEach((box, index) => {
+                box.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                    if (e.target.value.length === 1 && index < 3) otpBoxes[index + 1].focus();
+                    checkProgress();
+                });
+                box.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) otpBoxes[index - 1].focus();
+                });
+            });
+
+            function startTimer() {
+                if (timerStarted) return;
+                timerStarted = true;
+                let timeLeft = 30;
+                const countdown = setInterval(() => {
+                    timeLeft--;
+                    const secDisplay = document.getElementById('seconds');
+                    if (secDisplay) secDisplay.innerText = timeLeft;
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        document.getElementById('timerText').classList.add('hidden');
+                        document.getElementById('resendBtn').classList.remove('hidden');
+                    }
+                }, 1000);
+            }
+
+            // Open/Close Modal
+            document.querySelectorAll('.pickup-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.getElementById('laundryModal').style.display = 'flex';
+                });
+            });
+
+            document.querySelector('.close-modal').onclick = () => {
+                document.getElementById('laundryModal').style.display = 'none';
+                // Optional: Reset currentStep = 1 if you want form to reset on close
+            };
+
+            document.getElementById('pickupForm').onsubmit = (e) => {
+                e.preventDefault();
+                window.location.href = "thank-you.html";
+            };
+        });
     </script>
 
 

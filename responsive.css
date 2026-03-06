@@ -433,6 +433,15 @@
 
 
 
+
+
+    .footer-main {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+
 }
 
 
