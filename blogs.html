@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleand - Thank You</title>
+    <title>Cleand - Our Blogs</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -18,182 +18,102 @@
 </head>
 
 <style>
-    /* thank you page */
-
-    .thank-you-container {
-        padding: 20px;
-        width: 100%;
-        max-width: 500px;
-        padding-top: 100px;
-        margin: auto;
+    .blog-section {
+        padding: 30px 0 40px;
     }
 
-    .success-card {
+    .blog-header {
+        margin-bottom: 40px;
+    }
+
+    .blog-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    .blog-card {
         background: #fff;
-        padding: 40px;
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        animation: slideUp 0.6s ease-out;
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    h1 {
-        color: #333;
-        margin-top: 20px;
-        font-size: 28px;
-    }
-
-    p {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
-
-    /* Animated Checkmark CSS */
-    .icon-circle {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
-    }
-
-    .checkmark {
-        width: 80px;
-        height: 60px;
-        border-radius: 50%;
-        display: block;
-        stroke-width: 2;
-        stroke: #fff;
-        stroke-miterlimit: 10;
-        box-shadow: inset 0px 0px 0px #de8d1f;
-        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    }
-
-    .checkmark__circle {
-        stroke-dasharray: 166;
-        stroke-dashoffset: 166;
-        stroke-width: 2;
-        stroke-miterlimit: 10;
-        stroke: #de8d1f;
-        fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
-
-    .checkmark__check {
-        transform-origin: 50% 50%;
-        stroke-dasharray: 48;
-        stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-
-    @keyframes scale {
-
-        0%,
-        100% {
-            transform: none;
-        }
-
-        50% {
-            transform: scale3d(1.1, 1.1, 1);
-        }
-    }
-
-    @keyframes fill {
-        100% {
-            box-shadow: inset 0px 0px 0px 40px #de8d1f;
-        }
-    }
-
-    .order-details {
-        background: #fff9f0;
-        border: 1px dashed #de8d1f;
-        border-radius: 12px;
-        padding: 15px;
-        margin-bottom: 30px;
-    }
-
-    .detail-item {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
-        font-size: 14px;
-        color: #333;
-    }
-
-    .status-tag {
-        background: #27ae60;
-        color: #fff;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-    }
-
-    .action-buttons {
+        border: 1px solid #e7e7e7;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
     }
 
-    .btn-primary {
+    .blog-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-image {
+        position: relative;
+        height: 220px;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .category-icon {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
         background: #de8d1f;
-        color: #fff;
-        text-decoration: none;
-        padding: 14px;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #fff;
+        font-size: 1.2rem;
     }
 
-    .btn-primary:hover {
-        background: #c27a1a;
-        transform: translateY(-2px);
+    .blog-content {
+        padding: 40px 25px 25px;
+        text-align: center;
+        flex-grow: 1;
     }
 
-    .btn-outline {
+    .blog-content h3 {
         color: #de8d1f;
-        text-decoration: none;
-        padding: 12px;
-        border: 2px solid #de8d1f;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        font-weight: 700;
     }
 
-    .btn-outline:hover {
-        background: rgba(222, 141, 31, 0.05);
+    .blog-content p {
+        color: #777;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
-    .footer-note {
-        margin-top: 25px;
-        font-size: 13px;
-        color: #666;
+    .blog-footer {
+        border-top: 1px solid #eee;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #de8d1f;
+        font-weight: 600;
     }
 
+    .blog-footer i {
+        color: #de8d1f;
+        margin-right: 5px;
+    }
 
-
-
-    @media (max-width: 350px) {
-
-        .success-card {
-            padding: 20px;
-            border-radius: 20px;
+    @media (max-width: 768px) {
+        .blog-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
     }
 </style>
@@ -250,42 +170,124 @@
     </header>
 
 
-    <div class="section-container">
-        <div class="thank-you-container">
-            <div class="success-card">
-                <div class="icon-circle">
-                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                    </svg>
-                </div>
-
-                <h1>Pickup Scheduled!</h1>
-                <p>Your laundry hero is on the way. We’ve sent the details to your mobile number.</p>
-
-                <div class="order-details">
-                    <div class="detail-item">
-                        <span>Status</span>
-                        <span class="status-tag">Confirmed</span>
-                    </div>
-                    <div class="detail-item">
-                        <span>Estimate</span>
-                        <span>Within 24-48 Hours</span>
-                    </div>
-                </div>
-
-                <div class="action-buttons">
-                    <a href="index.html" class="btn-primary">Back to Home</a>
-                    <a href="#" class="btn-outline">Download Receipt</a>
-                </div>
-
-                <div class="footer-note">
-                    Questions? Call us at <b>+91 98765 43210</b>
-                </div>
+    <section class="blog-section" style="padding-top: 120px;">
+        <div class="section-container">
+            <div class="blog-header slide-up">
+                <h2 class="section-title"><span style="color: #de8d1f;">Cleand</span> Blogs</h2>
             </div>
-        </div>
-    </div>
 
+            <div class="blog-container slide-up">
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Suits">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Laundry your Suit Office - Tips and Trick</h3>
+                        <p>Professional tips on maintaining your formal wear and ensuring longevity through
+                            proper cleaning techniques.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                            alt="Office">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Welcome to our office in India, Visit Us</h3>
+                        <p>We provide full documentation and video tutorials to help you understand our
+                            franchise features and tech suite.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Laundry">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
+                        <p>Create and publish dynamic workflows for your laundry business that meet the latest
+                            standards without stress.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Suits">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Laundry your Suit Office - Tips and Trick</h3>
+                        <p>Professional tips on maintaining your formal wear and ensuring longevity through
+                            proper cleaning techniques.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                            alt="Office">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Welcome to our office in India, Visit Us</h3>
+                        <p>We provide full documentation and video tutorials to help you understand our
+                            franchise features and tech suite.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+                <a href="blog-detail.html" class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Laundry">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
+                        <p>Create and publish dynamic workflows for your laundry business that meet the latest
+                            standards without stress.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0; margin-top: 40px;">
+                <button class="btn blog-more-btn">Load More</button>
+            </div>
+
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -402,7 +404,6 @@
     </footer>
 
 
-
     <!-- script for navbar -->
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
@@ -470,7 +471,6 @@
 
         });
     </script>
-
 
 
 </body>

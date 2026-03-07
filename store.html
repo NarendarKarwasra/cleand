@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - Our Stores</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+
+<style>
+    /* store page */
+
+    .search-section {
+        text-align: center;
+        padding-top: 110px;
+    }
+
+    .search-section h1 {
+        line-height: 1.1;
+        margin-bottom: 30px;
+    }
+
+    .search-box {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .search-box input {
+        width: 350px;
+        height: 50px;
+        padding: 12px;
+        border: 1px solid #bfbfbf;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .btn-locate {
+        background-color: #de8d1f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        height: 50px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-locate i {
+        margin-right: 6px;
+    }
+
+    /* Pagination */
+    .pagination-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .pagination-wrapper .pagination {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .pagination a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 4px 4px;
+        border-radius: 4px;
+        background: white;
+    }
+
+    .pagination a.active {
+        background-color: #de8d1f;
+        color: white;
+        border: 1px solid #de8d1f;
+    }
+
+    /* Store Grid */
+    .store-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .store-card {
+        background: #fffbf4;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 4px solid #edad54;
+    }
+
+    .store-card .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .store-card .card-header h3 {
+        font-size: 1rem;
+        margin: 0;
+        color: #de8d1f;
+    }
+
+    .rating {
+        background: #def6e0;
+        color: #2e7d32;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+    }
+
+    .rating i {
+        font-size: 12px;
+        margin-left: 2px;
+    }
+
+    .store-card .address {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 15px 0;
+        line-height: 1.4;
+    }
+
+    .card-locate-btn {
+        width: 120px;
+        height: 24px;
+        border: none;
+        color: #de8d1f;
+        background: #ffecd1;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .card-locate-btn:hover {
+        color: #fff;
+        background: #efb564;
+    }
+
+    .contact-info {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-info a {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .contact-info a i {
+        margin-right: 6px;
+    }
+
+    .btn-pickup {
+        width: 100%;
+        background-color: #de8d1f;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        letter-spacing: 1px;
+    }
+
+    .btn-pickup:hover {
+        background-color: #b06700;
+    }
+
+
+
+
+    @media (max-width: 400px) {
+        .search-box {
+            margin-bottom: 0px;
+            flex-direction: column;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 46px;
+        }
+
+        .btn-locate {
+            height: 46px;
+        }
+
+        .store-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+</style>
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="section-container">
+        <header class="search-section">
+            <h1>Find a <span style="color: #de8d1f;">Cleand</span> Store near to you</h1>
+            <div class="search-box">
+                <input type="text" placeholder="Enter area, street, or city...">
+                <button class="btn-locate"><i class="fas fa-map-marker-alt"></i> LOCATE NOW</button>
+            </div>
+        </header>
+
+        <div class="pagination-wrapper">
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+
+        <main class="store-grid">
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-DELHI-674523</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">B03 Sonal complex, opp sunrise park, nr Prerna, Vastrapur, Ahmedabad.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-JAIPUR-876543</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Ashiana - Digha Rd, Near S.K Lab, Engineer's Colony, Patna, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-PATNA-237845</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Gola Road, Near Bank Of Baroda, S.K. Puram, Danapur, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-DELHI-674523</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">B03 Sonal complex, opp sunrise park, nr Prerna, Vastrapur, Ahmedabad.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-JAIPUR-876543</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Ashiana - Digha Rd, Near S.K Lab, Engineer's Colony, Patna, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-PATNA-237845</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Gola Road, Near Bank Of Baroda, S.K. Puram, Danapur, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-DELHI-674523</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">B03 Sonal complex, opp sunrise park, nr Prerna, Vastrapur, Ahmedabad.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-JAIPUR-876543</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Ashiana - Digha Rd, Near S.K Lab, Engineer's Colony, Patna, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+            <div class="store-card">
+                <div class="card-header">
+                    <h3>CLD-PATNA-237845</h3>
+                    <span class="rating">5 <i class="fas fa-star"></i></span>
+                </div>
+                <p class="address">Gola Road, Near Bank Of Baroda, S.K. Puram, Danapur, Bihar.</p>
+                <button class="card-locate-btn">locate store</button>
+                <div class="contact-info">
+                    <a href=""><i class="fas fa-phone"></i> +91 120-456-3322</a>
+                    <a href=""><i class="fas fa-envelope"></i> contact@cleand.in</a>
+                </div>
+                <button class="btn-pickup">SCHEDULE YOUR PICKUP</button>
+            </div>
+
+        </main>
+
+        <div class="pagination-wrapper">
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="#"><img src="images/appstore.png" alt=""></a>
+                    <a href="#"><img src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <div id="laundryModal" class="modal-overlay">
+        <div class="modal-content animate-pop">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-header">
+                <h2>Schedule Your Laundry Pickup</h2>
+                <p class="promo-badge">Up to 20% Off on Your 1st Order</p>
+            </div>
+
+            <form id="pickupForm">
+                <div class="form-row">
+                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="off">
+                    <input type="text" id="cityName" placeholder="City Name" autocomplete="off">
+                </div>
+
+                <div id="mobileSection" class="hidden fade-in">
+                    <div class="input-wrapper">
+                        <span class="prefix">+91</span>
+                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10">
+                    </div>
+                </div>
+
+                <div id="otpSection" class="hidden fade-in">
+                    <p class="otp-label">Enter Verification Code</p>
+                    <div class="otp-container">
+                        <div class="otp-boxes">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                            <input type="text" class="otp-box" maxlength="1" inputmode="numeric">
+                        </div>
+                        <div class="timer-area">
+                            <span id="timerText">Resend in <b id="seconds">30</b>s</span>
+                            <button type="button" id="resendBtn" class="hidden">RESEND OTP</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="addressSection" class="hidden fade-in">
+                    <div class="address-row">
+                        <select id="stateInput">
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                        </select>
+
+                        <select id="cityInputFinal">
+                            <option value="" disabled selected>Select City</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+
+                    <div class="address-row">
+                        <textarea id="fullAddress" placeholder="Full Address (House No, Building, Street...)"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" disabled>CONFIRM PICKUP</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+    <!-- schedule popup -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fullName = document.getElementById('fullName');
+            const cityNameInitial = document.getElementById('cityName');
+            const mobileInput = document.getElementById('mobileNumber');
+            const otpSection = document.getElementById('otpSection');
+            const otpBoxes = document.querySelectorAll('.otp-box');
+            const addressSection = document.getElementById('addressSection');
+            const stateInput = document.getElementById('stateInput');
+            const cityFinal = document.getElementById('cityInputFinal');
+            const fullAddress = document.getElementById('fullAddress');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Ensure main sections are visible by default, except OTP
+            document.getElementById('mobileSection').classList.remove('hidden');
+            addressSection.classList.remove('hidden');
+            otpSection.classList.add('hidden');
+
+            let timerStarted = false;
+            let otpVerified = false;
+
+            function checkFormValidity() {
+                // Validation rules
+                const isNameValid = fullName.value.trim().length > 2;
+                const isCityValid = cityNameInitial.value.trim().length >= 3;
+                const isMobileValid = mobileInput.value.length === 10;
+                const isAddressValid = stateInput.value !== "" &&
+                    cityFinal.value !== "" &&
+                    fullAddress.value.trim().length > 5;
+
+                // Toggle OTP Section visibility based on mobile number length
+                if (isMobileValid && !otpVerified) {
+                    otpSection.classList.remove('hidden');
+                    if (!timerStarted) startTimer();
+                } else {
+                    // Keep hidden if number is incomplete OR if already verified
+                    otpSection.classList.add('hidden');
+                }
+
+                // Enable Submit only if everything is filled AND OTP was "completed"
+                submitBtn.disabled = !(isNameValid && isCityValid && isMobileValid && isAddressValid && otpVerified);
+            }
+
+            // Input Listeners
+            [fullName, cityNameInitial, mobileInput, stateInput, cityFinal, fullAddress].forEach(el => {
+                el.addEventListener('input', (e) => {
+                    if (e.target.id === 'mobileNumber') {
+                        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                        // Reset verification if they change the phone number
+                        if (e.target.value.length < 10) otpVerified = false;
+                    }
+                    checkFormValidity();
+                });
+            });
+
+            // OTP Logic
+            otpBoxes.forEach((box, index) => {
+                box.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                    if (e.target.value.length === 1 && index < 3) otpBoxes[index + 1].focus();
+
+                    const otpValue = Array.from(otpBoxes).map(b => b.value).join('');
+                    if (otpValue.length === 4) {
+                        otpVerified = true;
+                        setTimeout(() => {
+                            otpSection.classList.add('hidden'); // Hide after filling
+                            checkFormValidity();
+                        }, 500);
+                    }
+                });
+
+                box.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) otpBoxes[index - 1].focus();
+                });
+            });
+
+            function startTimer() {
+                if (timerStarted) return;
+                timerStarted = true;
+                let timeLeft = 30;
+                const countdown = setInterval(() => {
+                    timeLeft--;
+                    const secDisplay = document.getElementById('seconds');
+                    if (secDisplay) secDisplay.innerText = timeLeft;
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        document.getElementById('timerText').classList.add('hidden');
+                        document.getElementById('resendBtn').classList.remove('hidden');
+                    }
+                }, 1000);
+            }
+
+            // Modal Control
+            document.querySelectorAll('.btn-pickup').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.getElementById('laundryModal').style.display = 'flex';
+                });
+            });
+
+            document.querySelector('.close-modal').onclick = () => {
+                document.getElementById('laundryModal').style.display = 'none';
+            };
+
+            document.getElementById('pickupForm').onsubmit = (e) => {
+                e.preventDefault();
+                window.location.href = "thank-you.html";
+            };
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleand - Thank You</title>
+    <title>Cleand - Near Me</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -17,186 +17,83 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 
+
 <style>
-    /* thank you page */
-
-    .thank-you-container {
-        padding: 20px;
-        width: 100%;
-        max-width: 500px;
-        padding-top: 100px;
-        margin: auto;
+    .page-header {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 20px;
     }
 
-    .success-card {
-        background: #fff;
-        padding: 40px;
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        animation: slideUp 0.6s ease-out;
+    .page-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 15px;
     }
 
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    h1 {
-        color: #333;
-        margin-top: 20px;
-        font-size: 28px;
-    }
-
-    p {
+    .page-subtitle {
+        font-size: 1rem;
         color: #666;
         line-height: 1.6;
-        margin-bottom: 30px;
     }
 
-    /* Animated Checkmark CSS */
-    .icon-circle {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
-    .checkmark {
-        width: 80px;
-        height: 60px;
-        border-radius: 50%;
-        display: block;
-        stroke-width: 2;
-        stroke: #fff;
-        stroke-miterlimit: 10;
-        box-shadow: inset 0px 0px 0px #de8d1f;
-        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    }
-
-    .checkmark__circle {
-        stroke-dasharray: 166;
-        stroke-dashoffset: 166;
-        stroke-width: 2;
-        stroke-miterlimit: 10;
-        stroke: #de8d1f;
-        fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
-
-    .checkmark__check {
-        transform-origin: 50% 50%;
-        stroke-dasharray: 48;
-        stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-
-    @keyframes scale {
-
-        0%,
-        100% {
-            transform: none;
-        }
-
-        50% {
-            transform: scale3d(1.1, 1.1, 1);
-        }
-    }
-
-    @keyframes fill {
-        100% {
-            box-shadow: inset 0px 0px 0px 40px #de8d1f;
-        }
-    }
-
-    .order-details {
-        background: #fff9f0;
-        border: 1px dashed #de8d1f;
-        border-radius: 12px;
-        padding: 15px;
-        margin-bottom: 30px;
-    }
-
-    .detail-item {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
-        font-size: 14px;
+    .service-tile {
+        background-color: #ffffff;
         color: #333;
-    }
-
-    .status-tag {
-        background: #27ae60;
-        color: #fff;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-    }
-
-    .action-buttons {
+        text-decoration: none;
+        border: 1px solid #e0e6ed;
+        border-radius: 8px;
+        padding: 20px 25px;
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 70px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.25s ease-out;
     }
 
-    .btn-primary {
-        background: #de8d1f;
-        color: #fff;
-        text-decoration: none;
-        padding: 14px;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
+    .service-tile span {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    .btn-primary:hover {
-        background: #c27a1a;
-        transform: translateY(-2px);
-    }
-
-    .btn-outline {
+    .service-tile:hover {
+        background-color: #f7efe4;
+        border-color: #de8d1f;
         color: #de8d1f;
-        text-decoration: none;
-        padding: 12px;
-        border: 2px solid #de8d1f;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(46, 96, 151, 0.1);
     }
 
-    .btn-outline:hover {
-        background: rgba(222, 141, 31, 0.05);
-    }
+    @media (max-width: 768px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
-    .footer-note {
-        margin-top: 25px;
-        font-size: 13px;
-        color: #666;
-    }
-
-
-
-
-    @media (max-width: 350px) {
-
-        .success-card {
+        .main-container {
             padding: 20px;
-            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .services-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>
+
 
 <body>
 
@@ -250,42 +147,32 @@
     </header>
 
 
-    <div class="section-container">
-        <div class="thank-you-container">
-            <div class="success-card">
-                <div class="icon-circle">
-                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                    </svg>
-                </div>
+    <div class="section-container" style="padding: 120px 0 60px;">
 
-                <h1>Pickup Scheduled!</h1>
-                <p>Your laundry hero is on the way. We’ve sent the details to your mobile number.</p>
+        <header class="page-header">
+            <h1 class="page-title">Services Near Me</h1>
+            <p class="page-subtitle">We bring Cleand’s signature quality to your doorstep. Whether you need a quick dry
+                clean for your formals or a deep refresh for your home and upholstery, find your nearest service center
+                and let us handle the chores for you.</p>
+        </header>
 
-                <div class="order-details">
-                    <div class="detail-item">
-                        <span>Status</span>
-                        <span class="status-tag">Confirmed</span>
-                    </div>
-                    <div class="detail-item">
-                        <span>Estimate</span>
-                        <span>Within 24-48 Hours</span>
-                    </div>
-                </div>
+        <section class="services-grid">
+            <a href="#" class="service-tile"><span>Wash & Fold Near Me</span></a>
+            <a href="#" class="service-tile"><span>Wash & Iron Near Me</span></a>
+            <a href="#" class="service-tile"><span>Premium Laundry Near Me</span></a>
+            <a href="#" class="service-tile"><span>Dry Clean Near Me</span></a>
+            <a href="#" class="service-tile"><span>Steam Press Near Me</span></a>
+            <a href="#" class="service-tile"><span>Starching Near Me</span></a>
+            <a href="#" class="service-tile"><span>Prem.. Steam Press Near Me</span></a>
+            <a href="#" class="service-tile"><span>Premium Dryclean Near Me</span></a>
+            <a href="#" class="service-tile"><span>Polish Near Me</span></a>
+            <a href="#" class="service-tile"><span>Sofa And Carpet Cleaning Near Me</span></a>
+            <a href="#" class="service-tile"><span>Premium Dryclean Near Me</span></a>
+            <a href="#" class="service-tile"><span>Polish Near Me</span></a>
+            <a href="#" class="service-tile"><span>Sofa And Carpet Cleaning Near Me</span></a>
+        </section>
 
-                <div class="action-buttons">
-                    <a href="index.html" class="btn-primary">Back to Home</a>
-                    <a href="#" class="btn-outline">Download Receipt</a>
-                </div>
-
-                <div class="footer-note">
-                    Questions? Call us at <b>+91 98765 43210</b>
-                </div>
-            </div>
-        </div>
     </div>
-
 
 
     <footer class="footer">
@@ -402,7 +289,6 @@
     </footer>
 
 
-
     <!-- script for navbar -->
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
@@ -470,7 +356,6 @@
 
         });
     </script>
-
 
 
 </body>

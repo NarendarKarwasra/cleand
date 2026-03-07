@@ -18,12 +18,890 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 
-
-
-    <style>
-
-    </style>
 </head>
+
+
+<style>
+    /* franchise page */
+
+    .franchise-hero-section {
+        padding-top: 80px;
+    }
+
+    .franchise-hero {
+        background: url('images/franchise-hero-3.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 0;
+    }
+
+    .fran-hero-conatiner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+    }
+
+    .fran-hero-content {
+        width: 49%;
+    }
+
+    .fran-hero-conatiner h1 {
+        font-weight: 900;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    .fran-hero-conatiner h1 span {
+        font-size: 50px;
+    }
+
+    .fran-hero-conatiner p {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .fran-hero-content ul {
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .fran-hero-content ul li {
+        font-size: 17px;
+        list-style-type: square;
+    }
+
+    .fran-hero-box {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .fran-hero-box-card {
+        background: #fff;
+        color: #ba6d00;
+        border-radius: 14px;
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .fran-hero-box-card h2 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
+    .fran-hero-box-card h2 span {
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 4px;
+    }
+
+    .fran-hero-box-card p {
+        margin-bottom: 2px;
+    }
+
+
+    .fran-hero-form {
+        width: 49%;
+    }
+
+    .form-container {
+        background: #fff;
+        padding: 20px 26px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-container h2 {
+        color: #535353;
+        line-height: 1.3;
+    }
+
+    .form-subtitle {
+        color: #676767;
+        margin-bottom: 20px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+
+    .input-box {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-box i {
+        position: absolute;
+        left: 15px;
+        color: #de8d1f;
+        font-size: 16px;
+    }
+
+    #investmentForm input,
+    #investmentForm select,
+    #investmentForm textarea {
+        width: 100%;
+        height: 46px;
+        padding: 0px 0px 0px 40px;
+        border: 2px solid #e4e4e4;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        background: #f3f3f3;
+        color: #676767;
+    }
+
+    #investmentForm textarea {
+        height: 80px;
+    }
+
+    #investmentForm input:focus,
+    #investmentForm select:focus,
+    #investmentForm textarea:focus {
+        border-color: #de8d1f;
+        background: #fff;
+        outline: none;
+        box-shadow: 0 0 10px rgba(222, 141, 31, 0.1);
+    }
+
+    #investmentForm textarea {
+        padding-top: 12px;
+    }
+
+    #investmentForm #submitBtn {
+        width: 100%;
+        height: 50px;
+        background: #de8d1f;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    #investmentForm #submitBtn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    #investmentForm #submitBtn:hover:not(:disabled) {
+        background: #c27a1a;
+        transform: translateY(-2px);
+    }
+
+    #investmentForm .error-text {
+        color: #e74c3c;
+        font-size: 12px !important;
+        margin-bottom: 8px !important;
+        display: block;
+        font-weight: 500;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .form-row {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .fran-hero-conatiner {
+            flex-direction: column;
+        }
+
+        .fran-hero-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .fran-hero-content ul {
+            text-align: left;
+            max-width: 300px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .fran-hero-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .fran-hero-form {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .investment-stats {
+        padding: 30px 0 40px;
+    }
+
+    .investment-stats .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .investment-stats .stat-card {
+        background: #fff;
+        padding: 20px 10px;
+        border-radius: 6px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        border-bottom: 5px solid #e9e2d7;
+    }
+
+    .investment-stats .stat-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .investment-stats .icon-box {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+        color: #de8d1f;
+    }
+
+    .investment-stats .stat-card h3 {
+        font-size: 1.3rem;
+        margin: 10px 0 6px;
+    }
+
+    .investment-stats .stat-card p {
+        font-size: 1.1rem;
+    }
+
+    .investment-stats .badge {
+        display: inline-block;
+        padding: 5px 15px;
+        background: #f5f1ec;
+        color: #b06907;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+
+
+    @media (max-width: 992px) {
+        .investment-stats .stats-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .investment-stats .stats-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    /* Video Section Styles */
+    .video-presentation {
+        position: relative;
+        overflow: hidden;
+        padding: 30px 0 40px;
+    }
+
+    .video-presentation .text-center {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .video-presentation .sub-heading {
+        display: inline-block;
+        color: #b96d02;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1rem;
+    }
+
+    .video-presentation .main-heading {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .video-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .video-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110%;
+        height: 110%;
+        background: radial-gradient(circle, rgba(0, 86, 179, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+        z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+        .video-presentation {
+            padding: 50px 15px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    /* Support Section Styles */
+    .support-section {
+        padding: 30px 0 40px;
+    }
+
+    .support-des {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-top: 6px;
+        font-size: 17px;
+        line-height: 1.3;
+        color: #656565;
+    }
+
+    .support-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .support-item {
+        flex: 1;
+        min-width: 250px;
+        background: #f4e6d1;
+        padding: 26px;
+        border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .support-item:hover {
+        transform: translateY(-6px);
+    }
+
+    .step-num {
+        position: absolute;
+        bottom: -10px;
+        right: 10px;
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #de8d1f;
+        opacity: 0.2;
+    }
+
+    .support-item h4 {
+        color: #de8d1f;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .support-section .section-title {
+            font-size: 2rem;
+        }
+    }
+
+
+
+
+
+
+
+
+    .comparison-section {
+        padding: 30px 0 40px;
+    }
+
+    /* Comparison Table */
+    .comp-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .comp-table th,
+    .comp-table td {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    .comp-table th {
+        background: #de8d1f;
+        color: #fff;
+    }
+
+    .comp-table td.check {
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .comp-table td.cross {
+        color: #dc3545;
+    }
+
+    .comp-table tbody tr {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .comp-table tbody tr:hover {
+        background-color: #fff0dd;
+    }
+
+    @media (max-width: 500px) {
+
+        .comp-table th,
+        .comp-table td {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 350px) {
+
+        .comp-table th,
+        .comp-table td {
+            padding: 4px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    .why-section {
+        padding: 30px 0 40px;
+    }
+
+    .why-container {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .why-card {
+        padding: 20px;
+        border: 1px solid #dedede;
+        box-shadow: 0px 0px 30px 1px #e8e8e8;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .why-card:hover {
+        background: #fff6e9;
+        box-shadow: none;
+    }
+
+    .why-card i {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #000;
+        margin-top: 10px;
+        color: #de8d1f;
+    }
+
+    .why-card p {
+        max-width: 300px;
+        margin: auto;
+        line-height: 1.2;
+        margin-top: 10px;
+    }
+
+
+
+
+
+    @media (max-width: 768px) {
+        .why-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .why-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+
+
+
+    .franchise-models {
+        padding: 30px 0 60px;
+    }
+
+    .franchise-models .header-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 60px;
+    }
+
+    .franchise-models .header-content h2 {
+        color: #4f4f4f;
+        margin-top: 4px;
+        margin-bottom: 6px;
+    }
+
+
+    .franchise-models .sub-text {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .franchise-models .intro-text {
+        color: #858585;
+    }
+
+    .models-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .model-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        width: 350px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 2px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .model-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .model-card.featured {
+        border-color: #de8d1f;
+        transform: scale(1.05);
+        z-index: 2;
+        box-shadow: 0 10px 10px rgba(222, 141, 31, 0.15);
+    }
+
+    .model-card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+
+    .model-card.featured:hover .icon {
+        background: #de8d1f;
+        color: #fff;
+    }
+
+    .popular-tag {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #de8d1f;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .card-header h3 {
+        font-size: 1.6rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .info-row .icon {
+        font-size: 1.2rem;
+        color: #de8d1f;
+        background: rgba(255, 123, 0, 0.1);
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .model-card:hover .icon {
+        background: #de8d1f;
+        color: #ffffff;
+    }
+
+
+    .info-row strong {
+        display: block;
+        font-size: 0.85rem;
+        color: #888;
+        text-transform: uppercase;
+    }
+
+    .info-row span {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #333;
+        margin-top: 6px;
+    }
+
+    .info-row.highlight span {
+        color: #de8d1f;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+
+    .location-note {
+        font-size: 0.9rem;
+        color: #999;
+        font-style: italic;
+        margin-top: -10px;
+    }
+
+
+    @media (max-width: 768px) {
+        .featured {
+            transform: scale(1);
+        }
+
+        .model-card {
+            width: 100%;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .blog-section {
+        padding: 30px 0 40px;
+    }
+
+    .blog-header {
+        margin-bottom: 40px;
+    }
+
+    .blog-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    .blog-card {
+        background: #fff;
+        border: 1px solid #e7e7e7;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .blog-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-image {
+        position: relative;
+        height: 220px;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .category-icon {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        background: #de8d1f;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #fff;
+        font-size: 1.2rem;
+    }
+
+    .blog-content {
+        padding: 40px 25px 25px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .blog-content h3 {
+        color: #de8d1f;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .blog-content p {
+        color: #777;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .blog-footer {
+        border-top: 1px solid #eee;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #de8d1f;
+        font-weight: 600;
+    }
+
+    .blog-footer i {
+        color: #de8d1f;
+        margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .blog-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+
+
+
+
+
+    .franchise-testimonials .slider-viewport {
+        margin-left: 0px;
+    }
+
+    .franchise-testimonials .testimonial-card {
+        min-width: 100%;
+        border-radius: 12px;
+    }
+
+    .franchise-testimonials .testimonial-track {
+        display: flex;
+        gap: 0;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+
+
+
+
+
+
+
+    .franchise-btn {
+        border-radius: 30px !important;
+        margin-top: 20px;
+        padding: 10px 30px !important;
+    }
+
+    .blog-more-btn {
+        margin-top: 20px;
+        padding: 10px 30px !important;
+    }
+</style>
 
 <body>
 
@@ -65,11 +943,11 @@
 
                 <nav class="navmenu">
                     <ul>
-                        <li><a href="#">Stores</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="franchise.html">Get Franchise</a></li>
-                        <li><a href="#">Blogs</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
                     </ul>
                 </nav>
             </div>
@@ -388,12 +1266,12 @@
 
                 <div class="model-card">
                     <div class="card-header">
-                        <h3>Satellite Store</h3>
+                        <h3>Starter</h3>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>200-250 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>250-300 Sq ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
@@ -407,19 +1285,19 @@
                             <i class="fa-solid fa-chart-line icon"></i>
                             <div><strong>ROI</strong><span>12-18 Months</span></div>
                         </div>
-                        <p class="location-note">*Available only in Mumbai</p>
+                        <!-- <p class="location-note">*Available only in Mumbai</p> -->
                     </div>
                 </div>
 
                 <div class="model-card featured">
                     <div class="card-header">
                         <span class="popular-tag">Most Popular</span>
-                        <h3>Unit Store</h3>
+                        <h3>Standard</h3>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>300-400 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>Min 500 Sq ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
@@ -427,7 +1305,7 @@
                         </div>
                         <div class="info-row highlight">
                             <i class="fa-solid fa-indian-rupee-sign icon"></i>
-                            <div><strong>Investment</strong><span>25 Lacs</span></div>
+                            <div><strong>Investment</strong><span>18 Lacs</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-chart-line icon"></i>
@@ -438,20 +1316,20 @@
 
                 <div class="model-card">
                     <div class="card-header">
-                        <h3>Factory Store</h3>
+                        <h3>Premium</h3>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>700-1000 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>Min 700 Sq ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
-                            <div><strong>Franchise Fee</strong><span>10 Lacs</span></div>
+                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
                         </div>
                         <div class="info-row highlight">
                             <i class="fa-solid fa-indian-rupee-sign icon"></i>
-                            <div><strong>Investment</strong><span>50 Lacs</span></div>
+                            <div><strong>Investment</strong><span>27 Lacs</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-chart-line icon"></i>
@@ -473,131 +1351,70 @@
         <div class="section-container">
             <div class="blog-header slide-up">
                 <h2 class="section-title">Read Our Blogs for More Details</h2>
-                <div class="slider-nav">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                <p class="support-des">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti consequuntur,
+                    labore repellat deleniti aliquid porro a facilis totam odio maiores!</p>
             </div>
 
-            <div class="swiper blog-slider slide-up">
-                <div class="swiper-wrapper">
+            <div class="blog-container slide-up">
 
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
-                                    alt="Suits">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>How to Laundry your Suit Office - Tips and Trick</h3>
-                                <p>Professional tips on maintaining your formal wear and ensuring longevity through
-                                    proper cleaning techniques.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Suits">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
-                                    alt="Office">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>Welcome to our office in India, Visit Us</h3>
-                                <p>We provide full documentation and video tutorials to help you understand our
-                                    franchise features and tech suite.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
+                    <div class="blog-content">
+                        <h3>How to Laundry your Suit Office - Tips and Trick</h3>
+                        <p>Professional tips on maintaining your formal wear and ensuring longevity through
+                            proper cleaning techniques.</p>
                     </div>
-
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
-                                    alt="Laundry">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
-                                <p>Create and publish dynamic workflows for your laundry business that meet the latest
-                                    standards without stress.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
                     </div>
-
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
-                                    alt="Suits">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>How to Laundry your Suit Office - Tips and Trick</h3>
-                                <p>Professional tips on maintaining your formal wear and ensuring longevity through
-                                    proper cleaning techniques.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
-                                    alt="Office">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>Welcome to our office in India, Visit Us</h3>
-                                <p>We provide full documentation and video tutorials to help you understand our
-                                    franchise features and tech suite.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <article class="blog-card">
-                            <div class="blog-image">
-                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
-                                    alt="Laundry">
-                                <div class="category-icon"><i class="fa-regular fa-image"></i></div>
-                            </div>
-                            <div class="blog-content">
-                                <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
-                                <p>Create and publish dynamic workflows for your laundry business that meet the latest
-                                    standards without stress.</p>
-                            </div>
-                            <div class="blog-footer">
-                                <span><i class="fa-solid fa-user"></i> By John Doel</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
-                            </div>
-                        </article>
-                    </div>
-
                 </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=500"
+                            alt="Office">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Welcome to our office in India, Visit Us</h3>
+                        <p>We provide full documentation and video tutorials to help you understand our
+                            franchise features and tech suite.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500"
+                            alt="Laundry">
+                        <div class="category-icon"><i class="fa-regular fa-image"></i></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>4 Ways to Simplify Laundry! (Clean My Space)</h3>
+                        <p>Create and publish dynamic workflows for your laundry business that meet the latest
+                            standards without stress.</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span><i class="fa-solid fa-user"></i> By John Doel</span>
+                        <span><i class="fa-solid fa-calendar-days"></i> May 29, 2025</span>
+                    </div>
+                </div>
+
             </div>
+
+            <div class="btn-container slide-up" style="padding-bottom: 0;">
+                <button class="btn blog-more-btn" onclick="window.location.href='blogs.html';">Explore More
+                    Blogs</button>
+            </div>
+
         </div>
     </section>
 
@@ -795,16 +1612,17 @@
             </div>
 
             <ul class="footer-nav-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Near Me</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Franchise</a></li>
-                <li><a href="#">Stores</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
 
             <div class="footer-city">
@@ -1139,7 +1957,7 @@
     </script>
 
     <!-- swiper for blog -->
-    <script>
+    <!-- <script>
         const swiper = new Swiper('.blog-slider', {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -1153,7 +1971,7 @@
                 1024: { slidesPerView: 3 },
             }
         });
-    </script>
+    </script> -->
 
 
 

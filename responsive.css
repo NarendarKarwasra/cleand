@@ -560,4 +560,14 @@
 
 
 
+    .footer-top-bar {
+        font-size: 15px;
+    }
+
+    .footer-top-bar span {
+        margin: 0 4px;
+    }
+
+
+
 }

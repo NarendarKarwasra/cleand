@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleand - Thank You</title>
+    <title>Cleand - Contact Us</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -18,182 +18,92 @@
 </head>
 
 <style>
-    /* thank you page */
-
-    .thank-you-container {
-        padding: 20px;
-        width: 100%;
-        max-width: 500px;
-        padding-top: 100px;
-        margin: auto;
-    }
-
-    .success-card {
-        background: #fff;
-        padding: 40px;
-        border-radius: 24px;
+    .contact-section {
+        padding: 120px 0 80px;
         text-align: center;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        animation: slideUp 0.6s ease-out;
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     h1 {
-        color: #333;
-        margin-top: 20px;
-        font-size: 28px;
+        font-size: 2.5rem;
+        color: #de8d1f;
     }
 
     p {
         color: #666;
-        line-height: 1.6;
         margin-bottom: 30px;
     }
 
-    /* Animated Checkmark CSS */
-    .icon-circle {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
     }
 
-    .checkmark {
-        width: 80px;
-        height: 60px;
-        border-radius: 50%;
-        display: block;
-        stroke-width: 2;
-        stroke: #fff;
-        stroke-miterlimit: 10;
-        box-shadow: inset 0px 0px 0px #de8d1f;
-        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    }
-
-    .checkmark__circle {
-        stroke-dasharray: 166;
-        stroke-dashoffset: 166;
-        stroke-width: 2;
-        stroke-miterlimit: 10;
-        stroke: #de8d1f;
-        fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
-
-    .checkmark__check {
-        transform-origin: 50% 50%;
-        stroke-dasharray: 48;
-        stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-
-    @keyframes scale {
-
-        0%,
-        100% {
-            transform: none;
-        }
-
-        50% {
-            transform: scale3d(1.1, 1.1, 1);
-        }
-    }
-
-    @keyframes fill {
-        100% {
-            box-shadow: inset 0px 0px 0px 40px #de8d1f;
-        }
-    }
-
-    .order-details {
-        background: #fff9f0;
-        border: 1px dashed #de8d1f;
+    .contact-card {
+        background: #faf2e5;
+        padding: 30px;
         border-radius: 12px;
-        padding: 15px;
-        margin-bottom: 30px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
     }
 
-    .detail-item {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
-        font-size: 14px;
-        color: #333;
+    .contact-card:hover {
+        transform: translateY(-5px);
     }
 
-    .status-tag {
-        background: #27ae60;
-        color: #fff;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 12px;
+    .contact-card h3 {
+        margin-bottom: 15px;
+        color: #222;
+        border-bottom: 2px solid #eef2f6;
     }
 
-    .action-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+    .contact-card a i {
+        margin-right: 6px;
     }
 
-    .btn-primary {
-        background: #de8d1f;
-        color: #fff;
-        text-decoration: none;
-        padding: 14px;
-        border-radius: 10px;
+
+    .contact-card-address a {
+        font-weight: 500;
+    }
+
+    .contact-card-address p {
+        margin-top: 14px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .contact-card-address p i {
+        color: #de8d1f;
+        margin-right: 6px;
+        font-size: 20px;
+    }
+
+    .contact-link {
+        font-size: 1.2rem;
         font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .btn-primary:hover {
-        background: #c27a1a;
-        transform: translateY(-2px);
-    }
-
-    .btn-outline {
         color: #de8d1f;
         text-decoration: none;
-        padding: 12px;
-        border: 2px solid #de8d1f;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
+        margin: 10px 0;
+        padding: 8px 20px;
+        border-radius: 4px;
+        transition: all .2s ease-in-out;
     }
 
-    .btn-outline:hover {
-        background: rgba(222, 141, 31, 0.05);
+    .contact-link:hover {
+        color: #de8d1f;
+        background: #fae7cb;
     }
 
-    .footer-note {
-        margin-top: 25px;
-        font-size: 13px;
-        color: #666;
+    .btn-container {
+        margin-top: 20px;
+        padding-bottom: 0;
     }
 
 
 
-
-    @media (max-width: 350px) {
-
-        .success-card {
-            padding: 20px;
-            border-radius: 20px;
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>
@@ -250,42 +160,40 @@
     </header>
 
 
-    <div class="section-container">
-        <div class="thank-you-container">
-            <div class="success-card">
-                <div class="icon-circle">
-                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                    </svg>
-                </div>
+    <section class="contact-section">
+        <div class="section-container">
+            <h1>Contact Us</h1>
+            <p>Have questions about your laundry or interested in starting a franchise? Reach out to us directly.</p>
 
-                <h1>Pickup Scheduled!</h1>
-                <p>Your laundry hero is on the way. We’ve sent the details to your mobile number.</p>
-
-                <div class="order-details">
-                    <div class="detail-item">
-                        <span>Status</span>
-                        <span class="status-tag">Confirmed</span>
-                    </div>
-                    <div class="detail-item">
-                        <span>Estimate</span>
-                        <span>Within 24-48 Hours</span>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Customer Care</h3>
+                    <p>For orders, pickups, and support:</p>
+                    <a href="tel:+918423123458" class="contact-link"><i class="fa-solid fa-phone"></i>
+                        +91-8423123458</a>
+                    <div class="btn-container">
+                        <button class="whatsapp-btn btn">Chat on Whatsapp
+                            <img src="/images/whatsapp-icon.webp" alt="">
+                        </button>
                     </div>
                 </div>
 
-                <div class="action-buttons">
-                    <a href="index.html" class="btn-primary">Back to Home</a>
-                    <a href="#" class="btn-outline">Download Receipt</a>
+                <div class="contact-card">
+                    <h3>Franchise Enquiry</h3>
+                    <p>Partner with us and grow your business:</p>
+                    <a href="tel:+918982123458" class="contact-link"><i class="fa-solid fa-phone"></i>
+                        +91-8982123458</a>
                 </div>
 
-                <div class="footer-note">
-                    Questions? Call us at <b>+91 98765 43210</b>
+                <div class="contact-card contact-card-address">
+                    <h3>Office Details</h3>
+                    <a href="mailto:info@cleand.in" class="contact-link" style="margin-bottom: 40px !important;"><i
+                            class="fa-solid fa-envelope"></i> support@laundrywebsite.com</a>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Laundry Lane, Clean City, <br>State - 400001</p>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
 
     <footer class="footer">
@@ -402,7 +310,6 @@
     </footer>
 
 
-
     <!-- script for navbar -->
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
@@ -470,7 +377,6 @@
 
         });
     </script>
-
 
 
 </body>
