@@ -567,8 +567,18 @@ html {
     color: #774500;
 }
 
+.hero-fixed-mid .hero-fixed-content h3 a {
+    color: #774500;
+    text-decoration: none;
+}
+
 .hero-fixed-end {
     background: #8b5100;
+}
+
+.hero-fixed-end .hero-fixed-content h3 a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .hero-fixed-icon {
@@ -2102,3 +2112,16 @@ html {
         border: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

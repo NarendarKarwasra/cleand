@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - Contact Us</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<style>
+    .services-wrapper {
+        display: flex;
+        background: #fff;
+        box-shadow: 0 0px 60px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* Sidebar */
+    .services-nav {
+        width: 300px;
+        background: #ffe4bf;
+        padding: 20px 0;
+    }
+
+    .nav-brand-title {
+        color: #414141;
+        padding: 0 30px 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+
+    .services-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-link {
+        padding: 20px 30px;
+        color: #464646;
+        cursor: pointer;
+        transition: 0.3s;
+        border-left: 4px solid transparent;
+        font-weight: 600;
+    }
+
+    .menu-link:hover {
+        background: #ffd293;
+    }
+
+    .menu-link.active {
+        background: #de8d1f;
+        color: #ffffff;
+        border-left: 4px solid #aa6300;
+    }
+
+    /* Right Side Content */
+    .services-display {
+        flex: 1;
+        padding: 50px;
+        background: #fdfdfd;
+        overflow-y: auto;
+    }
+
+    .service-title {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+
+    .service-tagline {
+        font-size: 1.2rem;
+        color: #de8d1f;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+
+    .service-main-image {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 40px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .service-main-image:hover img {
+        transform: scale(1.03);
+    }
+
+
+
+
+    .service-long-desc {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+
+
+    .section-intro {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .section-intro h3 {
+        font-size: 1.4rem;
+        color: #212121;
+        margin-bottom: 10px;
+    }
+
+    .section-intro p {
+        color: #666;
+        font-size: 1.1rem;
+        max-width: 800px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .feature-item {
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid #e0e0e0;
+        transition: 0.3s;
+    }
+
+    .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-item h4 {
+        color: #de8d1f;
+        margin-bottom: 10px;
+    }
+
+
+    .pricing-box {
+        background: #fff3e1;
+        color: #474747;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+
+    .pricing-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+
+    .pricing-header h3 {
+        font-size: 1.4rem;
+        color: #b06600;
+        margin-bottom: 8px;
+    }
+
+    .pricing-header p {
+        color: #4e4e4e;
+        font-size: 1rem;
+    }
+
+    .price-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .price-row:last-child {
+        border: none;
+    }
+
+    .price-val {
+        font-weight: 800;
+        color: #de8d1f;
+    }
+
+    /* Animation */
+    .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .services-wrapper {
+            flex-direction: column;
+        }
+
+        .services-nav {
+            width: 100%;
+        }
+    }
+
+
+
+
+
+
+    /* Process Steps Styling */
+    .process-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .process-step {
+        position: relative;
+        padding: 20px;
+        background: #fff3e1;
+        border-radius: 12px;
+    }
+
+    .step-num {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .process-step h4,
+    .process-step p {
+        position: relative;
+        z-index: 2;
+    }
+
+    .process-step h4 {
+        color: #de8d1f;
+        margin-bottom: 10px;
+    }
+
+    .process-step p {
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    /* Responsive Fix */
+    @media (max-width: 600px) {
+        .info-footer-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+
+
+
+    .info-footer-grid {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .care-tips h4 {
+        color: #de8d1f;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+
+    .care-tips ul {
+        list-style: none;
+        padding: 0;
+        line-height: 2;
+    }
+
+    .care-tips ul li {
+        color: #de8d1f;
+        margin-right: 10px;
+    }
+
+    .guarantee-box {
+        background: #fdf5e9;
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px dashed #de8d1f;
+    }
+
+    .guarantee-box h4 {
+        margin-bottom: 10px;
+    }
+
+    .guarantee-box p {
+        font-size: 0.95rem;
+        color: #555;
+    }
+
+
+
+    .final-cta {
+        text-align: center;
+        padding: 60px 0;
+        border-top: 1px solid #eee;
+        margin-top: 60px;
+    }
+
+    .final-cta h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="section-container" style="padding: 120px 0 60px;">
+        <section class="services-wrapper">
+            <aside class="services-nav">
+                <div class="nav-brand-title">Our Services</div>
+                <ul id="service-menu">
+                </ul>
+            </aside>
+
+            <main class="services-display" id="display-area">
+            </main>
+        </section>
+
+    </section>
+
+
+    <section class="faq-section">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Our Faq for More Details</h2>
+            <p class="section-subtitle">These faq are helps to know more about our services</p>
+
+            <div class="faq-grid slide-up">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">Is there a minimum order for pickup? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Yes, we have a small minimum order value of ₹500 for free home pickup and delivery.
+                                Orders below this amount will incur a nominal convenience fee of ₹50.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087893991939" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cleand.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vcleen/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="https://apps.apple.com/in/app/cleand-the-laundry-spa/id6444508188" target="_blank"><img
+                            src="images/appstore.png" alt=""></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ctls.application" target="_blank"><img
+                            src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+
+    <!-- for services nav system -->
+
+    <script>
+        const servicesData = {
+            "daily-laundry": {
+                title: "Daily Laundry",
+                image: "/images/laundry-service.jpg",
+                tagline: "Freshness for your everyday life.",
+                desc: "Our Daily Laundry service is designed for the modern professional. We handle your casual wear, bedsheets, and towels with the utmost care, ensuring they return to you crisp, clean, and perfectly folded.",
+                features: [
+                    { name: "Wash & Fold", text: "Expertly folded and ready for the closet." },
+                    { name: "Eco-Friendly", text: "We use premium, non-toxic detergents." },
+                    { name: "Fast Track", text: "Standard 24-hour turnaround time." },
+                    { name: "Wash & Fold", text: "Expertly folded and ready for the closet." },
+                    { name: "Eco-Friendly", text: "We use premium, non-toxic detergents." },
+                    { name: "Fast Track", text: "Standard 24-hour turnaround time." },
+                ],
+                pricing: [
+                    { item: "Regular Load (up to 5kg)", price: "₹499" },
+                    { item: "Wash & Steam Iron", price: "₹120/kg" },
+                    { item: "Bed Linens", price: "₹80/piece" },
+                    { item: "Regular Load (up to 5kg)", price: "₹499" },
+                    { item: "Wash & Steam Iron", price: "₹120/kg" },
+                    { item: "Bed Linens", price: "₹80/piece" }
+                ]
+            },
+            "premium-dry": {
+                title: "Premium Dry Clean",
+                image: "/images/drycleaning-service.jpg",
+                tagline: "Luxury care for your finest fabrics.",
+                desc: "For your suits, silk sarees, and designer wear. We use advanced eco-friendly solvents that remove deep stains while preserving the texture and color of your most precious garments.",
+                features: [
+                    { name: "Stain Expert", text: "Advanced pre-spotting for tough stains." },
+                    { name: "Italian Press", text: "Hand-finished steam pressing." },
+                    { name: "Protection", text: "Anti-moth and dust-proof packaging." },
+                    { name: "Stain Expert", text: "Advanced pre-spotting for tough stains." },
+                    { name: "Italian Press", text: "Hand-finished steam pressing." },
+                    { name: "Protection", text: "Anti-moth and dust-proof packaging." },
+                ],
+                pricing: [
+                    { item: "2-Piece Suit", price: "₹550" },
+                    { item: "Silk Saree", price: "₹400" },
+                    { item: "Designer Dress", price: "₹750+" },
+                    { item: "2-Piece Suit", price: "₹550" },
+                    { item: "Silk Saree", price: "₹400" },
+                    { item: "Designer Dress", price: "₹750+" },
+                ]
+            },
+            "shoe-laundry": {
+                title: "Shoe Laundry",
+                image: "/images/shoe-cleaning.webp",
+                tagline: "Step out in style, every single time.",
+                desc: "Your shoes take a beating. Our specialist technicians deep clean, deodorize, and restore your footwear—from high-performance sneakers to luxury leather formals.",
+                features: [
+                    { name: "Deep Scrub", text: "Internal and external grime removal." },
+                    { name: "Sole Revive", text: "Mid-sole whitening and repair." },
+                    { name: "Suede Care", text: "Specialized brushing for soft textures." },
+                    { name: "Deep Scrub", text: "Internal and external grime removal." },
+                    { name: "Sole Revive", text: "Mid-sole whitening and repair." },
+                    { name: "Suede Care", text: "Specialized brushing for soft textures." },
+                ],
+                pricing: [
+                    { item: "Sport Sneakers", price: "₹299" },
+                    { item: "Leather Formals", price: "₹399" },
+                    { item: "Luxury/Heels", price: "₹599" },
+                    { item: "Sport Sneakers", price: "₹299" },
+                    { item: "Leather Formals", price: "₹399" },
+                    { item: "Luxury/Heels", price: "₹599" },
+                ]
+            },
+            "curtain-cleaning": {
+                title: "Curtain Cleaning",
+                image: "/images/curtain-cleaning.jpg",
+                tagline: "Freshness for your everyday life.",
+                desc: "Our Curtain Cleaning service is designed for the modern professional. We handle your casual wear, bedsheets, and towels with the utmost care, ensuring they return to you crisp, clean, and perfectly folded.",
+                features: [
+                    { name: "Wash & Fold", text: "Expertly folded and ready for the closet." },
+                    { name: "Eco-Friendly", text: "We use premium, non-toxic detergents." },
+                    { name: "Fast Track", text: "Standard 24-hour turnaround time." },
+                    { name: "Wash & Fold", text: "Expertly folded and ready for the closet." },
+                    { name: "Eco-Friendly", text: "We use premium, non-toxic detergents." },
+                    { name: "Fast Track", text: "Standard 24-hour turnaround time." },
+                ],
+                pricing: [
+                    { item: "Regular Load (up to 5kg)", price: "₹499" },
+                    { item: "Wash & Steam Iron", price: "₹120/kg" },
+                    { item: "Bed Linens", price: "₹80/piece" },
+                    { item: "Regular Load (up to 5kg)", price: "₹499" },
+                    { item: "Wash & Steam Iron", price: "₹120/kg" },
+                    { item: "Bed Linens", price: "₹80/piece" }
+                ]
+            },
+            "sofa-cleaning": {
+                title: "Sofa Cleaning",
+                image: "/images/sofa-cleaning.jpg",
+                tagline: "Luxury care for your finest fabrics.",
+                desc: "For your suits, silk sarees, and designer wear. We use advanced eco-friendly solvents that remove deep stains while preserving the texture and color of your most precious garments.",
+                features: [
+                    { name: "Stain Expert", text: "Advanced pre-spotting for tough stains." },
+                    { name: "Italian Press", text: "Hand-finished steam pressing." },
+                    { name: "Protection", text: "Anti-moth and dust-proof packaging." },
+                    { name: "Stain Expert", text: "Advanced pre-spotting for tough stains." },
+                    { name: "Italian Press", text: "Hand-finished steam pressing." },
+                    { name: "Protection", text: "Anti-moth and dust-proof packaging." },
+                ],
+                pricing: [
+                    { item: "2-Piece Suit", price: "₹550" },
+                    { item: "Silk Saree", price: "₹400" },
+                    { item: "Designer Dress", price: "₹750+" },
+                    { item: "2-Piece Suit", price: "₹550" },
+                    { item: "Silk Saree", price: "₹400" },
+                    { item: "Designer Dress", price: "₹750+" },
+                ]
+            },
+            "carpet-leaning": {
+                title: "Carpet/Rug Cleaning",
+                image: "/images/carpet-cleaning.jpg",
+                tagline: "Step out in style, every single time.",
+                desc: "Your shoes take a beating. Our specialist technicians deep clean, deodorize, and restore your footwear—from high-performance sneakers to luxury leather formals.",
+                features: [
+                    { name: "Deep Scrub", text: "Internal and external grime removal." },
+                    { name: "Sole Revive", text: "Mid-sole whitening and repair." },
+                    { name: "Suede Care", text: "Specialized brushing for soft textures." },
+                    { name: "Deep Scrub", text: "Internal and external grime removal." },
+                    { name: "Sole Revive", text: "Mid-sole whitening and repair." },
+                    { name: "Suede Care", text: "Specialized brushing for soft textures." },
+                ],
+                pricing: [
+                    { item: "Sport Sneakers", price: "₹299" },
+                    { item: "Leather Formals", price: "₹399" },
+                    { item: "Luxury/Heels", price: "₹599" },
+                    { item: "Sport Sneakers", price: "₹299" },
+                    { item: "Leather Formals", price: "₹399" },
+                    { item: "Luxury/Heels", price: "₹599" },
+                ]
+            }
+
+        };
+
+        function renderService(id) {
+            const data = servicesData[id];
+            const display = document.getElementById('display-area');
+
+            // Create the Content Template
+            let html = `
+        <div class="fade-in">
+            <span class="service-tagline">${data.tagline}</span>
+            <h2 class="service-title">${data.title}</h2>
+            <p class="service-long-desc">${data.desc}</p>
+
+            <div class="service-main-image">
+                <img src="${data.image}" alt="${data.title}" />
+            </div>
+
+            <div class="section-intro">
+                <h3>Why Choose Our ${data.title}?</h3>
+                <p>We combine advanced technology with fabric care expertise to ensure your items receive the best treatment possible.</p>
+            </div>
+            
+            <div class="features-grid">
+                ${data.features.map(f => `
+                    <div class="feature-item">
+                        <h4>${f.name}</h4>
+                        <p>${f.text}</p>
+                    </div>
+                `).join('')}
+            </div>
+
+            <div class="btn-container" style="margin-bottom: 20px">
+                <button class="pickup-btn btn">Schedule Your Pickup Now
+                    <img src="/images/pickup-icon-white.webp" alt="">
+                </button>
+                <button class="whatsapp-btn btn">Chat on Whatsapp
+                    <img src="/images/whatsapp-icon.webp" alt="">
+                </button>
+            </div>
+
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>Service Rate Card</h3>
+                    <p>Transparent pricing with no hidden costs. Select the plan that fits your requirements.</p>
+                </div>
+                ${data.pricing.map(p => `
+                    <div class="price-row">
+                        <span>${p.item}</span>
+                        <span class="price-val">${p.price}</span>
+                    </div>
+                `).join('')}
+                <div class="btn-container" style="margin-top: 40px">
+                    <button class="pickup-btn btn">Schedule Your Pickup Now
+                        <img src="/images/pickup-icon-white.webp" alt="">
+                    </button>
+                    <button class="whatsapp-btn btn">Chat on Whatsapp
+                        <img src="/images/whatsapp-icon.webp" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="section-intro" style="margin-top: 60px;">
+                <h3>The 4-Step Process</h3>
+                <p>See how we handle your ${data.title} from the moment it leaves your hands.</p>
+            </div>
+
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <h4>Pickup</h4>
+                    <p>Our rider collects your items from your doorstep at your preferred time.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <h4>Processing</h4>
+                    <p>Expert inspection and specialized cleaning using eco-friendly solvents.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <h4>Quality Check</h4>
+                    <p>Every item undergoes a final inspection to ensure zero stains and perfect fold.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <h4>Delivery</h4>
+                    <p>Your garments are delivered fresh and ready-to-use within the promised time.</p>
+                </div>
+            </div>
+
+            <div class="info-footer-grid">
+                <div class="care-tips">
+                    <h4>Expert Care Tips</h4>
+                    <ul>
+                        <li><i>✔</i> Always check care labels before sending.</li>
+                        <li><i>✔</i> Inform us about specific stains beforehand.</li>
+                        <li><i>✔</i> Store cleaned items in a cool, dry place.</li>
+                    </ul>
+                </div>
+                <div class="guarantee-box">
+                    <h4>Our Guarantee</h4>
+                    <p>If you are not 100% satisfied with the quality of our clean, we will re-wash your items for free. No questions asked.</p>
+                </div>
+            </div>
+
+            <div class="final-cta">
+                <h2>Ready to Experience the Best ${data.title}?</h2>
+                <div class="btn-container" style="margin-top: 40px">
+                    <button class="pickup-btn btn">Schedule Your Pickup Now
+                        <img src="/images/pickup-icon-white.webp" alt="">
+                    </button>
+                    <button class="whatsapp-btn btn">Chat on Whatsapp
+                        <img src="/images/whatsapp-icon.webp" alt="">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    `;
+
+            display.innerHTML = html;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize Menu
+        const menu = document.getElementById('service-menu');
+        Object.keys(servicesData).forEach((key, index) => {
+            const li = document.createElement('li');
+            li.className = `menu-link ${index === 0 ? 'active' : ''}`;
+            li.innerText = servicesData[key].title;
+            li.onclick = (e) => {
+                document.querySelectorAll('.menu-link').forEach(l => l.classList.remove('active'));
+                e.target.classList.add('active');
+                renderService(key);
+            };
+            menu.appendChild(li);
+        });
+
+        // Load first service by default
+        renderService('daily-laundry');
+    </script>
+
+</body>
+
+</html>

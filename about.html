@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - About Us</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+
+<style>
+    .hero-section {
+        /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/franchise-hero-2.webp') no-repeat center center; */
+        background: url('/images/franchise-hero-2.webp') no-repeat center center;
+        background-size: cover;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .hero-content {
+        margin-top: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .breadcrumb {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .breadcrumb a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .breadcrumb span {
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+
+
+
+    .btn-container-about {
+        justify-content: left;
+        margin-top: 30px;
+    }
+
+
+
+    .about-container {
+        margin: 60px 0;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .image-column {
+        width: 45%;
+        overflow: hidden;
+        border: 10px solid #de8d1f;
+        border-radius: 20px;
+    }
+
+    .image-column img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+    }
+
+    .content-column {
+        width: 55%;
+    }
+
+    .content-column .section-subtitle {
+        font-size: 1rem;
+        color: #de8d1f;
+        font-weight: 600;
+        position: relative;
+        padding-left: 25px;
+        display: inline-block;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .content-column .section-subtitle::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 2px;
+        background-color: #de8d1f;
+    }
+
+    .content-column .section-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #494949;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .features-list li {
+        font-size: 1.1rem;
+        color: #222;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    .features-list i {
+        color: #de8d1f;
+        font-size: 1.3rem;
+    }
+
+
+
+
+    @media (max-width: 1024px) {
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .about-container {
+            flex-direction: column;
+        }
+
+        .image-column {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-column {
+            width: 100%;
+        }
+    }
+
+    /* Small Mobiles */
+    @media (max-width: 400px) {
+        .about-container {
+            flex-direction: column;
+        }
+
+        .image-column {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-column {
+            width: 100%;
+        }
+    }
+
+
+
+
+
+
+
+
+    .team-section {
+        padding: 30px 0 60px;
+        text-align: center;
+    }
+
+    .team-header {
+        margin-bottom: 40px;
+    }
+
+    .team-header .subtitle {
+        color: #de8d1f;
+        font-weight: bold;
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .team-header .subtitle::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: #de8d1f;
+        margin: 5px auto 0;
+    }
+
+    .team-header .title {
+        font-size: 32px;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    .team-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .team-card {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 400px;
+    }
+
+    .team-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .member-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 20px 0;
+        color: #fff;
+        transition: background 0.3s ease;
+    }
+
+    .member-info h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .member-info p {
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .social-links a {
+        background-color: #de8d1f;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s ease;
+    }
+
+    .social-links a:hover {
+        transform: scale(1.1);
+        background-color: #fff;
+        color: #de8d1f;
+    }
+
+    @media (max-width: 768px) {
+        .team-container {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .team-card {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .team-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <section style="padding-top: 80px;">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>About Us</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a> <span>&raquo;</span> About Page
+                </nav>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-section">
+        <div class="section-container">
+
+            <div class="about-container">
+                <div class="image-column">
+                    <img src="images/about-1.jpg" alt="">
+                </div>
+
+                <div class="content-column">
+                    <p class="section-subtitle">More than 25 Years of Experience</p>
+
+                    <h2 class="section-title">
+                        We are passionate about Laundry
+                    </h2>
+
+                    <p class="description">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                        deleniti similique sunt in culpa qui officia. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Quas laudantium repellendus veniam nemo earum cupiditate velit voluptatum suscipit
+                        accusamus cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam expedita
+                        exercitationem fuga natus soluta excepturi amet voluptatibus aperiam perferendis quibusdam.
+                    </p>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 100% Customer Satisfaction</li>
+                        <li><i class="fas fa-check-circle"></i> Free Collection & Delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Affordable Prices</li>
+                    </ul>
+
+                    <div class="btn-container btn-container-about slide-up">
+                        <button class="pickup-btn btn">Schedule Your Pickup Now
+                            <img src="/images/pickup-icon-white.webp" alt="">
+                        </button>
+                        <button class="whatsapp-btn btn">Chat on Whatsapp
+                            <img src="/images/whatsapp-icon.webp" alt="">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="choose-section" style="background: #faf6ef;">
+        <div class="section-container slide-up">
+            <h2>Why Choose <span>Cleand</span></h2>
+            <p>Cleand offers expert care, convenient pickup and delivery, and eco-friendly cleaning solutions using
+                advanced techniques.</p>
+
+            <div class="Choose-container slide-up">
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Expertise and Experience</h3>
+                    <p>Our seasoned professionals guarantee top-notch quality and reliability in every service.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>Incorporating cutting-edge machinery and eco-friendly processes, we prioritize quality and
+                        sustainability.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-people-carry-box"></i>
+                    </div>
+                    <h3>Customer-Centric Approach</h3>
+                    <p>Personalized services, convenient pickup and delivery options, and responsive customer support.
+                    </p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-brands fa-padlet"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>Our mobile app makes scheduling, tracking, and payments easy and convenient.</p>
+                </div>
+            </div>
+
+            <div class="btn-container slide-up">
+                <button class="pickup-btn btn">Schedule Your Pickup Now
+                    <img src="/images/pickup-icon-white.webp" alt="">
+                </button>
+                <button class="whatsapp-btn btn">Chat on Whatsapp
+                    <img src="/images/whatsapp-icon.webp" alt="">
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="stats-wrapper">
+        <div class="section-container slide-up">
+            <h2 class="section-title">India's Most <span class="highlight">Profitable</span> Laundry Chain</h2>
+            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus mollitia ipsam
+                consectetur saepe cum recusandae molestiae porro cumque, voluptates ex!</p>
+
+            <div class="stats-grid slide-up">
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="60">0</span><span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Cities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="150">0</span><span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Stores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="5.1">0</span><span class="suffix">L</span>
+                    </div>
+                    <div class="stat-label">Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="counter-box">
+                        <span class="counter" data-target="45.8">0</span><span class="suffix">L</span>
+                    </div>
+                    <div class="stat-label">Garments</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="team-section" style="background: #faf6ef;">
+        <div class="section-container">
+            <div class="team-header">
+                <p class="subtitle">Meet Our Team</p>
+                <h2 class="title">Professionals Behind Our Success</h2>
+            </div>
+
+            <div class="team-container">
+                <div class="team-card">
+                    <img src="images/team-1.jpg" alt="Aida Bugg">
+                    <div class="member-info">
+                        <h3>Aida Bugg</h3>
+                        <p>SUBTITLE</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/team-2.jpg" alt="Jimic Nasium">
+                    <div class="member-info">
+                        <h3>Jimic Nasium</h3>
+                        <p>SUBTITLE</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/team-3.jpg" alt="Henry Itondo">
+                    <div class="member-info">
+                        <h3>Henry Itondo</h3>
+                        <p>SUBTITLE</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/team-1.jpg" alt="Aida Bugg">
+                    <div class="member-info">
+                        <h3>Aida Bugg</h3>
+                        <p>SUBTITLE</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087893991939" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cleand.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vcleen/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="https://apps.apple.com/in/app/cleand-the-laundry-spa/id6444508188" target="_blank"><img
+                            src="images/appstore.png" alt=""></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ctls.application" target="_blank"><img
+                            src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+
+    <!-- counter -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        const speed = 100; // Lower is slower
+
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const count = parseFloat(counter.innerText);
+
+                        // Determine increment based on whether it's a decimal
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            // Check if it's a decimal (like 12.1L) or whole number
+                            if (target % 1 !== 0) {
+                                counter.innerText = (count + inc).toFixed(1);
+                            } else {
+                                counter.innerText = Math.ceil(count + inc);
+                            }
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter); // Stop observing once animated
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(startCounters, {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+
+
+</body>
+
+</html>

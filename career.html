@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - Career</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+
+<style>
+    .hero-section {
+        background: url('/images/franchise-hero-2.webp') no-repeat center center;
+        background-size: cover;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .hero-content {
+        margin-top: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .breadcrumb {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .breadcrumb a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .breadcrumb span {
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+
+
+
+
+
+
+
+
+    .careers-section {
+        padding: 30px 0 0px;
+    }
+
+
+    .content-header p {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: #777;
+        margin-bottom: 50px;
+    }
+
+    .job-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .job-card {
+        background: #fff1de;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid transparent;
+    }
+
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #de8d1f;
+    }
+
+    .job-role {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+        color: #222;
+        font-weight: 600;
+    }
+
+    .job-info p {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        color: #666;
+    }
+
+    .job-info span {
+        font-weight: 600;
+        color: #444;
+        display: inline-block;
+        width: 100px;
+    }
+
+    .btn-apply-now {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #925500;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+        background: #edc083;
+        padding: 4px 20px;
+        border-radius: 2px;
+    }
+
+    .btn-apply-now:hover {
+        color: #fff;
+        background: #de8d1f;
+    }
+
+
+
+    /* Pagination */
+    .pagination-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .pagination-wrapper .pagination {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .pagination a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 4px 4px;
+        border-radius: 4px;
+        background: white;
+    }
+
+    .pagination a.active {
+        background-color: #de8d1f;
+        color: white;
+        border: 1px solid #de8d1f;
+    }
+
+
+
+
+    /* Responsiveness */
+    @media (max-width: 600px) {
+        .content-header h1 {
+            font-size: 2rem;
+        }
+
+        .job-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+
+    .apply-modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .apply-modal.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .apply-modal-content {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        overflow-y: auto;
+        transform: translateY(20px);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+
+    .apply-modal.show .apply-modal-content {
+        transform: translateY(0);
+    }
+
+    .close-apply-modal {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #999;
+    }
+
+    .apply-modal-content h2 {
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    #applicationForm input,
+    #applicationForm textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+        outline: none;
+    }
+
+    #applicationForm input:focus,
+    #applicationForm textarea:focus {
+        border-color: #de8d1f;
+    }
+
+    .resume-section {
+        margin: 20px 0;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        border: 2px dashed #de8d1f;
+        color: #de8d1f;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .file-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff8f0;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: 1px solid #de8d1f;
+    }
+
+    .cancel-x {
+        color: #ff4d4d;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .btn-submit {
+        background-color: #de8d1f;
+        color: white;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #b8751a;
+    }
+
+    .error-msg {
+        color: #ff4d4d;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        display: none;
+    }
+</style>
+
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section style="padding-top: 80px;">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Careers</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a> <span>&raquo;</span> Career
+                </nav>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="careers-section">
+        <div class="section-container">
+            <header class="content-header">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptatum tempore velit
+                    molestiae non assumenda error cum eaque modi, laborum vero corrupti officia sunt, asperiores dolorem
+                    odit amet earum a facilis deserunt! Ex molestias voluptate deleniti laborum corporis quibusdam
+                    culpa!</p>
+            </header>
+
+            <div class="job-grid">
+                <div class="job-card">
+                    <h3 class="job-role">Store Manager</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 2 to 3 yrs</p>
+                        <p><span>Unit:</span> Operations</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Quality Inspector</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 1 to 2 yrs</p>
+                        <p><span>Unit:</span> Processing</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Logistics Coordinator</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 1 to 3 yrs</p>
+                        <p><span>Unit:</span> Delivery</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Front Desk Executive</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, On-site</p>
+                        <p><span>Experience:</span> 0 to 2 yrs</p>
+                        <p><span>Unit:</span> Customer Service</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Laundry Technician</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, On-site</p>
+                        <p><span>Experience:</span> 2 to 4 yrs</p>
+                        <p><span>Unit:</span> Maintenance</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Area Sales Manager</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Field</p>
+                        <p><span>Experience:</span> 3 to 5 yrs</p>
+                        <p><span>Unit:</span> Sales</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Store Manager</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 2 to 3 yrs</p>
+                        <p><span>Unit:</span> Operations</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Quality Inspector</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 1 to 2 yrs</p>
+                        <p><span>Unit:</span> Processing</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-role">Logistics Coordinator</h3>
+                    <div class="job-info">
+                        <p><span>Location:</span> Lucknow, Remote</p>
+                        <p><span>Experience:</span> 1 to 3 yrs</p>
+                        <p><span>Unit:</span> Delivery</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+
+            </div>
+
+            <div class="pagination-wrapper">
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Lucknow</a></li>
+                    <li><a href="#">Gwalior</a></li>
+                    <li><a href="#">Indore</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li><a href="#">Jaipur</a></li>
+                    <li><a href="#">Udaipur</a></li>
+                    <li><a href="#">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087893991939" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cleand.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vcleen/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="https://apps.apple.com/in/app/cleand-the-laundry-spa/id6444508188" target="_blank"><img
+                            src="images/appstore.png" alt=""></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ctls.application" target="_blank"><img
+                            src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="applyModal" class="apply-modal">
+        <div class="apply-modal-content">
+            <span class="close-apply-modal">&times;</span>
+            <h2>Apply for Position</h2>
+            <form id="applicationForm">
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="description" placeholder="Short Description/Cover Letter" rows="4"
+                        required></textarea>
+                </div>
+
+                <div class="resume-section">
+                    <input type="file" id="resumeInput" accept=".doc,.docx,.pdf" hidden>
+
+                    <button type="button" id="attachBtn" class="btn-secondary">Attach Resume (DOC)</button>
+
+                    <div id="fileInfo" class="file-info" style="display: none;">
+                        <span id="fileNameDisplay"></span>
+                        <span id="cancelFile" class="cancel-x" title="Remove file">&times;</span>
+                    </div>
+                </div>
+
+                <p id="errorText" class="error-msg"></p>
+                <button type="submit" class="btn-submit">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+
+    <!-- apply popup -->
+    <script>
+        const modal = document.getElementById("applyModal");
+        const applyBtns = document.querySelectorAll(".btn-apply-now"); // These are now "Apply Now"
+        const closeBtn = document.querySelector(".close-apply-modal");
+        const resumeInput = document.getElementById("resumeInput");
+        const attachBtn = document.getElementById("attachBtn");
+        const fileInfo = document.getElementById("fileInfo");
+        const fileNameDisplay = document.getElementById("fileNameDisplay");
+        const cancelFile = document.getElementById("cancelFile");
+        const form = document.getElementById("applicationForm");
+        const errorText = document.getElementById("errorText");
+
+        // 1. Open Modal
+        applyBtns.forEach(btn => {
+            btn.innerText = "APPLY NOW"; // Update text globally
+            btn.onclick = (e) => {
+                e.preventDefault();
+                modal.classList.add("show");
+                modal.style.display = "flex";
+            };
+        });
+
+        // 2. Close Modal
+        closeBtn.onclick = () => {
+            modal.classList.remove("show");
+            setTimeout(() => { modal.style.display = "none"; }, 300);
+        };
+
+        // 3. File Attachment Logic
+        attachBtn.onclick = () => resumeInput.click();
+
+        resumeInput.onchange = () => {
+            if (resumeInput.files.length > 0) {
+                fileNameDisplay.innerText = resumeInput.files[0].name;
+                attachBtn.style.display = "none";
+                fileInfo.style.display = "flex";
+            }
+        };
+
+        cancelFile.onclick = () => {
+            resumeInput.value = ""; // Clear file
+            fileInfo.style.display = "none";
+            attachBtn.style.display = "block";
+        };
+
+        // 4. Form Validation & Submit
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const inputs = form.querySelectorAll("input[required], textarea[required]");
+            let allFilled = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) allFilled = false;
+            });
+
+            if (!resumeInput.files.length) allFilled = false;
+
+            if (!allFilled) {
+                errorText.innerText = "Please fill all fields and attach your resume.";
+                errorText.style.display = "block";
+            } else {
+                errorText.style.display = "none";
+                alert("Application Submitted Successfully!");
+            }
+        };
+    </script>
+
+
+</body>
+
+</html>
