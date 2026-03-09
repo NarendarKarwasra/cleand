@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleand - Our Prices</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<style>
+    .hero-section {
+        background: url('/images/franchise-hero-2.webp') no-repeat center center;
+        background-size: cover;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+
+
+
+
+    .hero-content {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 800px;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 0 24px 30px;
+        animation: fadeUp 0.9s ease both;
+        margin: 40px 0;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-eyebrow {
+        display: inline-block;
+        background: #b16700;
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 6px 18px;
+        border-radius: 999px;
+        margin-bottom: 28px;
+        animation: fadeUp 0.9s ease 0.1s both;
+        margin-top: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.6rem;
+        font-weight: 900;
+        line-height: 1.05;
+        margin-bottom: 20px;
+        animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    .hero-section h1 span {
+        color: #875817;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        color: rgb(255, 255, 255);
+        line-height: 1.4;
+        margin-bottom: 20px;
+        font-weight: 300;
+        animation: fadeUp 0.9s ease 0.3s both;
+    }
+
+    /* search box */
+    .search-wrap {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        border-radius: 999px;
+        padding: 8px 8px 8px 28px;
+        gap: 10px;
+        backdrop-filter: blur(12px);
+        animation: fadeUp 0.9s ease 0.4s both;
+        transition: border-color 0.3s;
+    }
+
+    .search-wrap:focus-within {
+        border-color: #f3ede5;
+        background: #ecd0ac;
+    }
+
+    .search-icon {
+        color: #c4811e;
+        flex-shrink: 0;
+        font-size: 1.2rem;
+    }
+
+    .search-wrap input {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: none;
+        color: #a36106;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    .search-wrap input::placeholder {
+        color: #a36106;
+    }
+
+    .search-btn {
+        background: #de8d1f;
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 14px 32px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+        white-space: nowrap;
+        letter-spacing: 0.04em;
+    }
+
+    .search-btn:hover {
+        background: #b8710f;
+        transform: scale(1.03);
+    }
+
+    .search-btn:active {
+        transform: scale(0.98);
+    }
+
+
+
+
+
+
+
+    /* ── PRICE LIST SECTION ── */
+    .pricing-section {
+        padding: 40px 24px 20px;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    .section-label {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px;
+    }
+
+    .section-label::before,
+    .section-label::after {
+        content: '';
+        flex: 1;
+        height: 2px;
+        background: rgba(222, 141, 31, 0.25);
+    }
+
+    .section-label span {
+        font-size: .9rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #de8d1f;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .section-sub {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 40px;
+        font-weight: 300;
+    }
+
+    /* ── CARDS ── */
+    .card {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 32px rgba(26, 18, 8, 0.09);
+        transition: box-shadow 0.3s, transform 0.3s;
+        animation: fadeUp 0.7s ease both;
+    }
+
+    .card:hover {
+        box-shadow: 0 12px 20px rgba(222, 141, 31, 0.2);
+        transform: translateY(-3px);
+    }
+
+    .card-header {
+        background: #de8d1f;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .card-header .icon {
+        width: 40px;
+        height: 40px;
+        background: #ffce89;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .card-header h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .card-header .badge {
+        margin-left: auto;
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 0.7rem;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 999px;
+    }
+
+    /* table inside card */
+    .card-body {
+        padding: 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead tr {
+        background: #ffe9ca;
+    }
+
+    thead th {
+        padding: 14px 36px;
+        text-align: left;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #b8710f;
+    }
+
+    thead th:last-child {
+        text-align: right;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid rgba(26, 18, 8, 0.05);
+        transition: background 0.15s;
+    }
+
+    tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    tbody tr:hover {
+        background: #ffe9ca;
+    }
+
+    tbody td {
+        padding: 10px 36px;
+        font-size: 0.97rem;
+    }
+
+    tbody td:first-child {
+        font-weight: 400;
+    }
+
+    tbody td:last-child {
+        text-align: right;
+        font-weight: 600;
+        font-size: 1.02rem;
+    }
+
+    .price-tag {
+        display: inline-block;
+        color: #b8710f;
+        border-radius: 8px;
+        padding: 4px 12px;
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
+
+    .col-center {
+        text-align: center !important;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+        text-align: center;
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+
+    @media (max-width: 640px) {
+        .search-wrap {
+            flex-wrap: wrap;
+            padding: 12px 18px;
+            border-radius: 16px;
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 14px;
+            text-align: center;
+        }
+
+        thead th,
+        tbody td {
+            padding: 12px 18px;
+        }
+
+        .card-header {
+            padding: 18px 20px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- fixed buttons on screen -->
+    <div class="fixed-on-screen">
+        <!-- Call Button -->
+        <div class="button-container call-container" onclick="callPhone()">
+            <i class="fas fa-phone icon"></i>
+            <span class="label call-label">Call Us</span>
+        </div>
+        <!-- Email Button -->
+        <div class="button-container email-container" onclick="sendEmail()">
+            <div class="icon-box">
+                <i class="fab fa-google-play icon"></i>
+                <i class="fab fa-apple icon"></i>
+            </div>
+            <span class="label email-label">Download App</span>
+        </div>
+
+        <!-- Whatsapp Button -->
+        <div class="button-container whatsapp-container" onclick="sendWhatsapp()">
+            <i class="fab fa-whatsapp icon"></i>
+            <span class="label whatsapp-label">Whatsapp Us</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="section-container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cleand-R-logo.png" alt="Logo">
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="navmenu">
+                    <ul>
+                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="franchise.html">Get Franchise</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <section style="padding-top: 80px;">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-eyebrow">✦ Transparent Pricing, Always</div>
+                <h1>Fresh Clothes, <span>Fair Prices.</span></h1>
+                <p>Professional laundry care delivered to your door. Browse our full price list below — no hidden
+                    charges,
+                    no surprises. Just spotless results.</p>
+
+                <div class="search-wrap">
+                    <span class="search-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <input type="text" id="cityInput" placeholder="Enter your city — e.g. Mumbai, Delhi, Pune…" />
+                    <button class="search-btn">Search Prices</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pricing-section slide-up">
+
+        <div class="section-label slide-up"><span>Price List</span></div>
+        <h2 class="section-title slide-up">Our Service Rates</h2>
+        <p class="section-sub slide-up">All prices are per item / per kg. GST included.</p>
+
+
+        <!-- Laundry by Kilo -->
+        <div class="card">
+            <div class="card-header">
+                <div class="icon">⚖️</div>
+                <h2>Laundry by Kilo</h2>
+                <span class="badge">Per KG</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th style="text-align:right">Price per KG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wash &amp; Fold</td>
+                            <td><span class="price-tag">₹79</span></td>
+                        </tr>
+                        <tr>
+                            <td>Wash &amp; Iron</td>
+                            <td><span class="price-tag">₹119</span></td>
+                        </tr>
+                        <tr>
+                            <td>Premium Laundry</td>
+                            <td><span class="price-tag">₹199</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Men's Items -->
+        <div class="card" style="animation-delay:0.3s">
+            <div class="card-header">
+                <div class="icon">👔</div>
+                <h2>Men's Items</h2>
+                <span class="badge">Per Item</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th style="text-align:right">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T-Shirt</td>
+                            <td><span class="price-tag">₹95</span></td>
+                        </tr>
+                        <tr>
+                            <td>Shirt</td>
+                            <td><span class="price-tag">₹120</span></td>
+                        </tr>
+                        <tr>
+                            <td>Trousers / Denim / Jeans</td>
+                            <td><span class="price-tag">₹195</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kurta (Light)</td>
+                            <td><span class="price-tag">₹100</span></td>
+                        </tr>
+                        <tr>
+                            <td>Pyjama</td>
+                            <td><span class="price-tag">₹85</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jacket / Blazer (Light)</td>
+                            <td><span class="price-tag">₹450</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sherwani</td>
+                            <td><span class="price-tag">₹400</span></td>
+                        </tr>
+                        <tr>
+                            <td>Leather Jacket</td>
+                            <td><span class="price-tag">₹340</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Women's Items -->
+        <div class="card" style="animation-delay:0.2s">
+            <div class="card-header">
+                <div class="icon">👗</div>
+                <h2>Women's Items</h2>
+                <span class="badge">Per Item</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th style="text-align:right">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dupatta (Light)</td>
+                            <td><span class="price-tag">₹160</span></td>
+                        </tr>
+                        <tr>
+                            <td>Top / Kurta (Small / Plain)</td>
+                            <td><span class="price-tag">₹160</span></td>
+                        </tr>
+                        <tr>
+                            <td>Salwar / Pyjama / Legging / Palazzo / Patiala</td>
+                            <td><span class="price-tag">₹85</span></td>
+                        </tr>
+                        <tr>
+                            <td>Denim / Jeans / Trousers</td>
+                            <td><span class="price-tag">₹95</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dress</td>
+                            <td><span class="price-tag">₹250</span></td>
+                        </tr>
+                        <tr>
+                            <td>Saree (Plain / Light)</td>
+                            <td><span class="price-tag">₹190</span></td>
+                        </tr>
+                        <tr>
+                            <td>Gown (Plain / Light)</td>
+                            <td><span class="price-tag">₹350</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Household Items -->
+        <div class="card" style="animation-delay:0.4s">
+            <div class="card-header">
+                <div class="icon">🏠</div>
+                <h2>Household Items</h2>
+                <span class="badge">Per Item / Sq.ft</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th style="text-align:right">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pillow Cover (Small)</td>
+                            <td><span class="price-tag">₹60</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cushion Cover (Small)</td>
+                            <td><span class="price-tag">₹120</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bedsheet (Single / Double)</td>
+                            <td><span class="price-tag">₹150 / ₹240</span></td>
+                        </tr>
+                        <tr>
+                            <td>Table Cover (Small)</td>
+                            <td><span class="price-tag">₹90</span></td>
+                        </tr>
+                        <tr>
+                            <td>Quilt (Single / Double)</td>
+                            <td><span class="price-tag">₹450 / ₹600</span></td>
+                        </tr>
+                        <tr>
+                            <td>Curtain (Single / Double)</td>
+                            <td><span class="price-tag">₹12 / ₹15 per sq.ft</span></td>
+                        </tr>
+                        <tr>
+                            <td>Carpet</td>
+                            <td><span class="price-tag">₹35 per sq.ft</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sofa</td>
+                            <td><span class="price-tag">₹350 per seat</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Monthly Package -->
+        <div class="card" style="animation-delay:0.1s">
+            <div class="card-header">
+                <div class="icon">📦</div>
+                <h2>Monthly Package</h2>
+                <span class="badge">Best Value</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th class="col-center">No. of Pickups</th>
+                            <th style="text-align:right">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wash &amp; Fold – 15 kg</td>
+                            <td class="col-center">3 pickups</td>
+                            <td><span class="price-tag">₹999</span></td>
+                        </tr>
+                        <tr>
+                            <td>Wash &amp; Fold – 30 kg</td>
+                            <td class="col-center">4 pickups</td>
+                            <td><span class="price-tag">₹1899</span></td>
+                        </tr>
+                        <tr>
+                            <td>Wash &amp; Iron – 15 kg</td>
+                            <td class="col-center">3 pickups</td>
+                            <td><span class="price-tag">₹1499</span></td>
+                        </tr>
+                        <tr>
+                            <td>Wash &amp; Iron – 30 kg</td>
+                            <td class="col-center">4 pickups</td>
+                            <td><span class="price-tag">₹2499</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="footer-note">* Prices are standard rates and may vary slightly by city. Use the search above to check
+            your city's rates.</p>
+
+        <div class="btn-container slide-up" style="margin: 30px 0 0;">
+            <button class="pickup-btn btn">Schedule Your Pickup Now
+                <img src="/images/pickup-icon-white.webp" alt="">
+            </button>
+            <button class="whatsapp-btn btn">Chat on Whatsapp
+                <img src="/images/whatsapp-icon.webp" alt="">
+            </button>
+        </div>
+
+    </section>
+
+
+    <section class="choose-section" style="background: #faf6ef;">
+        <div class="section-container slide-up">
+            <h2>Why Choose <span>Cleand</span></h2>
+            <p>Cleand offers expert care, convenient pickup and delivery, and eco-friendly cleaning solutions using
+                advanced techniques.</p>
+
+            <div class="Choose-container slide-up">
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Expertise and Experience</h3>
+                    <p>Our seasoned professionals guarantee top-notch quality and reliability in every service.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>Incorporating cutting-edge machinery and eco-friendly processes, we prioritize quality and
+                        sustainability.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-people-carry-box"></i>
+                    </div>
+                    <h3>Customer-Centric Approach</h3>
+                    <p>Personalized services, convenient pickup and delivery options, and responsive customer support.
+                    </p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-brands fa-padlet"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>Our mobile app makes scheduling, tracking, and payments easy and convenient.</p>
+                </div>
+            </div>
+
+            <div class="btn-container slide-up">
+                <button class="pickup-btn btn">Schedule Your Pickup Now
+                    <img src="/images/pickup-icon-white.webp" alt="">
+                </button>
+                <button class="whatsapp-btn btn">Chat on Whatsapp
+                    <img src="/images/whatsapp-icon.webp" alt="">
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="faq-section">
+        <div class="section-container slide-up">
+            <h2 class="section-title">Looking for info? Read our faq here</h2>
+            <p class="section-subtitle">Everything you need to know about our high-tech fabric care.</p>
+
+            <div class="faq-grid slide-up">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">How long does a standard wash take? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Our standard "Daily Laundry" service typically features a 24-hour turnaround time. For
+                                urgent needs, we offer an Express Service that returns your clothes in under 12 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you use harsh chemicals? <span class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>No, we pride ourselves on being eco-friendly. We use biodegradable detergents and
+                                specialized hydrocarbon solvents for dry cleaning that are gentle on both your skin and
+                                the environment.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">Is there a minimum order for pickup? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Yes, we have a small minimum order value of ₹500 for free home pickup and delivery.
+                                Orders below this amount will incur a nominal convenience fee of ₹50.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="section-container slide-up">
+            <div class="footer-top-bar">
+                <span>FASTER</span>
+                <span>|</span>
+                <span>FRESHER</span>
+                <span>|</span>
+                <span>HEALTHIER</span>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="near-me.html">Near Me</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="franchise.html">Franchise</a></li>
+                <li><a href="store.html">My Stores</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-city">
+                <h4>Where we are -</h4>
+
+                <ul class="footer-nav-links footer-nav-links-city">
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                    <li><a href="city.html">Gurgaon</a></li>
+                    <li><a href="city.html">Noida</a></li>
+                    <li><a href="city.html">Chennai</a></li>
+                    <li><a href="city.html">Lucknow</a></li>
+                    <li><a href="city.html">Gwalior</a></li>
+                    <li><a href="city.html">Indore</a></li>
+                    <li><a href="city.html">Pune</a></li>
+                    <li><a href="city.html">Jaipur</a></li>
+                    <li><a href="city.html">Udaipur</a></li>
+                    <li><a href="city.html">Ranchi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="images/cleand-R-logo-white.png" alt="">
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087893991939" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cleand.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vcleen/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-download">
+                    <a href="https://apps.apple.com/in/app/cleand-the-laundry-spa/id6444508188" target="_blank"><img
+                            src="images/appstore.png" alt=""></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ctls.application" target="_blank"><img
+                            src="images/googleplay.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- script for navbar -->
+    <script>
+        const mobileBtn = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- fixed button on screen -->
+    <script>
+        function callPhone() {
+            const phoneNumber = "919876543210";
+            window.open(`tel:${phoneNumber}`, "_self");
+        }
+
+        function sendEmail() {
+            const emailAddress = "support@example.com";
+            const subject = "Laundry Service Inquiry";
+            const body = "Hello, I would like to inquire about your laundry services.";
+            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        }
+
+        function sendWhatsapp() {
+            const phoneNumber = "919999999999";
+            const message = "Hello! I would like to inquire about your laundry services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- script for slide up animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Create the "Eye" (Observer)
+            const slideUpObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element enters the screen
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+
+                        // Once it has slid up, stop watching it (until refresh)
+                        slideUpObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0, // Starts when 0% of the element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers before it hits the very bottom
+            });
+
+            // Find everything with the "slide-up" class and start watching it
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(el => slideUpObserver.observe(el));
+
+        });
+    </script>
+
+
+</body>
+
+</html>
