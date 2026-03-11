@@ -1096,39 +1096,45 @@
     <!-- counter -->
     <script>
         const counters = document.querySelectorAll('.counter');
-        const speed = 100; // Lower is slower
+        const speed = 50;
 
         const startCounters = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const counter = entry.target;
-                    const updateCount = () => {
-                        const target = parseFloat(counter.getAttribute('data-target'));
-                        const count = parseFloat(counter.innerText);
+                    const target = parseFloat(counter.getAttribute('data-target'));
 
-                        // Determine increment based on whether it's a decimal
+                    // Set initial value to 0 if it's currently empty or non-numeric
+                    let count = 0;
+
+                    const updateCount = () => {
+                        // Calculate increment: target divided by speed
                         const inc = target / speed;
 
                         if (count < target) {
-                            // Check if it's a decimal (like 12.1L) or whole number
+                            count += inc;
+
+                            // If target has a decimal, show 1 decimal place
                             if (target % 1 !== 0) {
-                                counter.innerText = (count + inc).toFixed(1);
+                                counter.innerText = count.toFixed(1);
                             } else {
-                                counter.innerText = Math.ceil(count + inc);
+                                counter.innerText = Math.floor(count);
                             }
+
                             setTimeout(updateCount, 20);
                         } else {
                             counter.innerText = target;
                         }
                     };
+
                     updateCount();
-                    observer.unobserve(counter); // Stop observing once animated
+                    observer.unobserve(counter);
                 }
             });
         };
 
         const observer = new IntersectionObserver(startCounters, {
-            threshold: 0.5 // Trigger when 50% of the element is visible
+            threshold: 0.2
         });
 
         counters.forEach(counter => observer.observe(counter));
