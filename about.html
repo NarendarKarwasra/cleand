@@ -20,8 +20,7 @@
 
 <style>
     .hero-section {
-        /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/franchise-hero-2.webp') no-repeat center center; */
-        background: url('/images/franchise-hero-2.webp') no-repeat center center;
+        background: url('/images/common-hero.webp') no-repeat center center;
         background-size: cover;
         height: 200px;
         display: flex;
@@ -227,11 +226,22 @@
         color: #333;
     }
 
+
+    .slider-wrapper {
+        position: relative;
+        padding: 0 50px;
+    }
+
+    .team-slider-viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
     .team-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
-        flex-wrap: wrap;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
     }
 
     .team-card {
@@ -239,6 +249,7 @@
         width: 100%;
         overflow: hidden;
         height: 400px;
+        flex: 0 0 calc(25% - 15px);
     }
 
     .team-card img {
@@ -296,20 +307,34 @@
         color: #de8d1f;
     }
 
-    @media (max-width: 768px) {
-        .team-container {
-            grid-template-columns: 1fr 1fr;
-        }
 
+    .nav-btn {
+        position: absolute;
+        top: 45%;
+    }
+
+
+
+
+
+    @media (max-width: 1100px) {
         .team-card {
-            height: 300px;
+            flex: 0 0 calc(33.33% - 14px);
         }
     }
 
-    @media (max-width: 400px) {
-        .team-container {
-            grid-template-columns: 1fr;
+    @media (max-width: 850px) {
+        .team-card {
+            flex: 0 0 calc(50% - 10px);
         }
+
+    }
+
+    @media (max-width: 600px) {
+        .team-card {
+            flex: 0 0 100%;
+        }
+
     }
 </style>
 
@@ -383,7 +408,7 @@
 
             <div class="about-container">
                 <div class="image-column">
-                    <img src="images/about-1.jpg" alt="">
+                    <img src="images/about-cleand-2.webp" alt="">
                 </div>
 
                 <div class="content-column">
@@ -519,61 +544,87 @@
                 <h2 class="title">Professionals Behind Our Success</h2>
             </div>
 
-            <div class="team-container slide-up">
-                <div class="team-card">
-                    <img src="images/team-1.jpg" alt="Aida Bugg">
-                    <div class="member-info">
-                        <h3>Aida Bugg</h3>
-                        <p>SUBTITLE</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="slider-wrapper">
+                <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                <button class="nav-btn next" id="nextBtn">&#10095;</button>
+
+                <div class="team-slider-viewport">
+
+                    <div class="team-container slide-up" id="teamSlider">
+
+                        <div class="team-card">
+                            <img src="images/team/team-tanushree.jpeg" alt="Tanushree Shrivastava">
+                            <div class="member-info">
+                                <h3>Tanushree Shrivastava</h3>
+                                <p>Cofounder & Director</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="team-card">
+                            <img src="images/team/team-prashant.jpeg" alt="Prashant Shrivastava">
+                            <div class="member-info">
+                                <h3>Prashant Shrivastava</h3>
+                                <p>Vp Sales & Operations</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <img src="images/team/team-vijay.jpeg" alt="">
+                            <div class="member-info">
+                                <h3>Vijay Vikram Singh</h3>
+                                <p>Brand Ambassador Cleand</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <img src="images/team/team-sana.jpeg" alt="">
+                            <div class="member-info">
+                                <h3>Sana Khan</h3>
+                                <p>Head of PR & Operations</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <img src="images/team/team-abhay.jpeg" alt="">
+                            <div class="member-info">
+                                <h3>Abhay Panchal</h3>
+                                <p>Head Of Marketing</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <div class="team-card">
-                    <img src="images/team-2.jpg" alt="Jimic Nasium">
-                    <div class="member-info">
-                        <h3>Jimic Nasium</h3>
-                        <p>SUBTITLE</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="team-card">
-                    <img src="images/team-3.jpg" alt="Henry Itondo">
-                    <div class="member-info">
-                        <h3>Henry Itondo</h3>
-                        <p>SUBTITLE</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="team-card">
-                    <img src="images/team-1.jpg" alt="Aida Bugg">
-                    <div class="member-info">
-                        <h3>Aida Bugg</h3>
-                        <p>SUBTITLE</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
-        </div>
     </section>
 
 
@@ -804,6 +855,39 @@
         });
 
         counters.forEach(counter => observer.observe(counter));
+    </script>
+
+
+    <!-- for team slid -->
+    <script>
+        const slider = document.getElementById('teamSlider');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        let counter = 0;
+
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.team-card').offsetWidth + 20; // width + gap
+            const maxScroll = slider.scrollWidth - slider.parentElement.offsetWidth;
+
+            if (Math.abs(counter) < maxScroll) {
+                counter -= cardWidth;
+                slider.style.transform = `translateX(${counter}px)`;
+            } else {
+                // Optional: Loop back to start
+                counter = 0;
+                slider.style.transform = `translateX(0px)`;
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.team-card').offsetWidth + 20;
+
+            if (counter < 0) {
+                counter += cardWidth;
+                slider.style.transform = `translateX(${counter}px)`;
+            }
+        });
     </script>
 
 

@@ -897,12 +897,12 @@ html {
 
 
 .near-container {
-    background: url('images/near-me.webp');
+    background: url('images/near-me-2.webp');
     background-size: cover;
     background-position: center;
     background-position: 54%;
-    background-position-y: 140%;
-    background-size: 380px;
+    background-position-y: 98%;
+    background-size: 500px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
