@@ -420,7 +420,7 @@ html {
 }
 
 .hero-content h1 {
-    font-size: 44px;
+    font-size: 3rem;
     line-height: 54px;
     letter-spacing: 1px;
     font-weight: 900;
@@ -1020,7 +1020,7 @@ html {
 }
 
 .choose-icon {
-    background: #dadada;
+    background: #e7e7e7;
     width: fit-content;
     width: 60px;
     height: 60px;

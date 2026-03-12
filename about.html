@@ -73,7 +73,7 @@
     .image-column {
         width: 45%;
         overflow: hidden;
-        border: 10px solid #de8d1f;
+        border: 10px solid #ffae3d;
         border-radius: 20px;
     }
 
@@ -82,6 +82,11 @@
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
+        transition: all 0.3s ease-in;
+    }
+
+    .image-column img:hover {
+        transform: scale(1.1);
     }
 
     .content-column {
@@ -124,6 +129,10 @@
         line-height: 1.4;
         color: #666;
         margin-bottom: 30px;
+    }
+
+    .description p {
+        margin-bottom: 10px;
     }
 
     .features-list li {
@@ -194,6 +203,549 @@
 
 
 
+
+
+
+
+    /* Layout */
+    .ceo-section {
+        padding: 30px 0 40px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .text-content {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .ceo-section .subtitle {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.95rem;
+        color: #de8d1f;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .ceo-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+        color: #505050;
+    }
+
+    .text-content p {
+        margin-bottom: 6px;
+        font-size: 1.05rem;
+        color: #555;
+    }
+
+    .ceo-section .signature {
+        margin-top: 20px;
+        border-left: 3px solid #de8d1f;
+        padding-left: 20px;
+    }
+
+    .ceo-section .name {
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: #de8d1f;
+        margin: 0 !important;
+    }
+
+    .ceo-section .title {
+        font-size: 1rem !important;
+        color: #777 !important;
+    }
+
+    .image-content {
+        flex: 1;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+
+    .image-content img {
+        width: 100%;
+        height: auto;
+        box-shadow: 20px 20px 0px -5px #f0f4f8;
+        transition: all 0.3s ease-in;
+        transform: scale(1.05);
+    }
+
+    .image-content img:hover {
+        transform: scale(1.1);
+    }
+
+
+    @media (max-width: 992px) {
+        .content-wrapper {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+
+        .ceo-section .signature {
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+
+
+
+
+
+
+
+
+    .our-story {
+        padding: 30px 0px 40px;
+        text-align: center;
+    }
+
+    .story-title {
+        font-size: 2.4rem;
+        color: #404040;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .story-label {
+        display: block;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #de8d1f;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .story-content {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .story-content p {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        color: #444;
+        margin-bottom: 10px;
+    }
+
+    .lead-text {
+        font-size: 1.4rem !important;
+        color: #222 !important;
+        font-weight: 500;
+    }
+
+    .highlight-box {
+        margin: 20px 0;
+        padding: 20px;
+        background: #fff3e1;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eef2f6;
+    }
+
+    .highlight-box p {
+        line-height: 1.4;
+    }
+
+
+    .divider {
+        width: 60px;
+        height: 4px;
+        background: #de8d1f;
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+        .story-title {
+            font-size: 2.2rem;
+        }
+
+        .lead-text {
+            font-size: 1.2rem !important;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .cleand-journey {
+        padding: 30px 20px;
+    }
+
+
+    .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 30px auto 0;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: #f2d4a9;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+    }
+
+    .timeline-item {
+        padding: 20px 40px 0;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: -13px;
+        background-color: #fff;
+        border: 4px solid #de8d1f;
+        top: 25px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .timeline-item.right::after {
+        left: -11px;
+    }
+
+    .left {
+        left: 0;
+        text-align: right;
+    }
+
+    .right {
+        left: 50%;
+        text-align: left;
+    }
+
+    .date-bubble {
+        display: inline-block;
+        padding: 4px 25px;
+        background: linear-gradient(135deg, #edbe7d, #ba7310);
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 5px rgba(226, 166, 45, 0.538);
+    }
+
+    .content-card {
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0f0f0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .content-card h3 {
+        margin-top: 0;
+        color: #de8d1f;
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+    }
+
+    .content-card p {
+        color: #777777;
+        font-size: 17px;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    .highlighted {
+        border: 2px solid #de8d1f;
+    }
+
+    .content-card:hover {
+        background: #ffe5c0;
+    }
+
+
+    @media screen and (max-width: 768px) {
+
+        .timeline::after {
+            left: 31px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+            text-align: left;
+        }
+
+        .timeline-item.right {
+            padding-left: 40px;
+        }
+
+        .timeline-item::after {
+            left: 20px;
+            right: auto;
+        }
+
+        .right {
+            left: 31px;
+        }
+    }
+
+
+
+
+
+
+    .Choose-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .choose-card {
+        max-width: 32%;
+    }
+
+
+    @media (max-width: 1100px) {
+        .choose-card {
+            max-width: 48%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .choose-card {
+            max-width: 100%;
+        }
+    }
+
+
+
+
+
+
+
+
+    .vision-2030 {
+        padding: 30px 0 40px;
+        overflow: hidden;
+    }
+
+    .vision-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .vision-image {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+    }
+
+    .vision-image img {
+        width: 100%;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in;
+        transform: scale(1.05);
+    }
+
+
+    .vision-image img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Content Side */
+    .vision-text {
+        flex: 1.2;
+        min-width: 350px;
+    }
+
+    .pre-title {
+        color: #de8d1f;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: block;
+    }
+
+    .vision-text h2 {
+        font-size: 2.4rem;
+        margin-bottom: 4px;
+        color: #484848;
+    }
+
+    .vision-text p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+
+
+    .vision-quote {
+        margin-top: 30px;
+        padding: 10px;
+        background: #ffffff;
+        border-left: 5px solid #de8d1f;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .vision-quote p {
+        font-size: 1.2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .vision-wrapper {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .experience-badge {
+            right: 20px;
+        }
+    }
+
+
+
+
+
+
+
+    .trust-section {
+        padding: 30px 0 40px;
+    }
+
+    .trust-grid {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        flex-wrap: wrap;
+    }
+
+    .trust-main {
+        flex: 1.5;
+        min-width: 300px;
+    }
+
+    .top-label {
+        color: #de8d1f;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.90rem;
+        margin-bottom: 10px;
+    }
+
+    .trust-main h2 {
+        font-size: 2.2rem;
+        color: #4a4a4a;
+        margin-bottom: 10px;
+    }
+
+    .trust-main p {
+        font-size: 1.15rem;
+        color: #656565;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .trust-highlight {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .highlight-inner {
+        background: #ffffff;
+        padding: 50px 40px;
+        border-radius: 30px;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        border-bottom: 5px solid #de8d1f;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .trust-highlight:hover .highlight-inner {
+        background: #fff1df;
+        box-shadow: none;
+    }
+
+    .highlight-inner i {
+        font-size: 3rem;
+        color: #de8d1f;
+        margin-bottom: 20px;
+    }
+
+    .promise-text {
+        font-size: 1.3rem;
+        color: #777;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
+    .result-text {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #494949;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .result-text span {
+        color: #de8d1f;
+    }
+
+    /* Responsive View */
+    @media (max-width: 768px) {
+        .trust-grid {
+            flex-direction: column;
+            text-align: center;
+            gap: 50px;
+        }
+
+        .trust-main h2 {
+            font-size: 2rem;
+        }
+    }
+
+
+
+
+
+
+
     .team-section {
         padding: 30px 0 60px;
         text-align: center;
@@ -250,6 +802,7 @@
         overflow: hidden;
         height: 400px;
         flex: 0 0 calc(25% - 15px);
+        overflow: hidden;
     }
 
     .team-card img {
@@ -257,6 +810,11 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: all 0.3s ease-in;
+    }
+
+    .team-card img:hover {
+        transform: scale(1.05);
     }
 
     .member-info {
@@ -264,21 +822,24 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
         padding: 20px 0;
+        height: 160px;
         color: #fff;
         transition: background 0.3s ease;
     }
 
     .member-info h3 {
-        font-size: 20px;
+        font-size: 22px;
         margin-bottom: 5px;
+        line-height: 1.2;
     }
 
     .member-info p {
-        font-size: 12px;
+        font-size: 16px;
         letter-spacing: 1px;
         margin-bottom: 15px;
+        line-height: 1.2;
     }
 
     .social-links {
@@ -379,11 +940,13 @@
 
                 <nav class="navmenu">
                     <ul>
-                        <li><a href="store.html">My Stores</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="store.html">Our Stores</a></li>
                         <li><a href="franchise.html">Get Franchise</a></li>
                         <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -403,7 +966,7 @@
     </section>
 
 
-    <section class="about-section">
+    <!-- <section class="about-section">
         <div class="section-container">
 
             <div class="about-container">
@@ -433,7 +996,64 @@
                     </ul>
 
                     <div class="btn-container btn-container-about slide-up">
-                        <button class="pickup-btn btn">Schedule Your Pickup Now
+                        <button class="pickup-btn btn">Schedule Your Pickup
+                            <img src="/images/pickup-icon-white.webp" alt="">
+                        </button>
+                        <button class="whatsapp-btn btn">Chat on Whatsapp
+                            <img src="/images/whatsapp-icon.webp" alt="">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+
+    <section class="about-section">
+        <div class="section-container">
+
+            <div class="about-container">
+                <div class="image-column">
+                    <img src="images/about-cleand-3.webp" alt="">
+                </div>
+
+                <div class="content-column">
+                    <p class="section-subtitle">Clothing is personal</p>
+
+                    <h2 class="section-title">
+                        Garment Care, Reimagined
+                    </h2>
+
+                    <div class="description">
+                        <p>
+                            It carries the moments of our lives. The meetings that matter, the celebrations we remember,
+                            the everyday confidence we carry with us.
+                        </p>
+                        <p>
+                            Yet for decades, garment care has remained one of the most fragmented and inconsistent
+                            services in urban life.
+                        </p>
+                        <p>
+                            <strong style="color: #de8d1f;">Cleand was built to change that.</strong>
+                        </p>
+                        <p>
+                            Cleand The Laundry Spa is redefining garment care by bringing together technology,
+                            operational precision, and professional service standards. Our goal is simple but ambitious:
+                            to make garment care effortless, reliable, and consistently exceptional.
+                        </p>
+                        <p>
+                            We believe that a service people use every week deserves the same innovation, design, and
+                            reliability that modern consumers expect from the world’s best brands.
+                        </p>
+                        <p>
+                            <strong style="color: #de8d1f;">Cleand exists to deliver that experience.</strong>
+                        </p>
+                    </div>
+
+                    <div class="btn-container btn-container-about slide-up">
+                        <button class="pickup-btn btn">Schedule Your Pickup
                             <img src="/images/pickup-icon-white.webp" alt="">
                         </button>
                         <button class="whatsapp-btn btn">Chat on Whatsapp
@@ -448,48 +1068,194 @@
     </section>
 
 
+    <section class="ceo-section" style="background: #faf6ef;">
+        <div class="section-container">
 
-    <section class="choose-section" style="background: #faf6ef;">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <span class="subtitle">A Message from the Founder & CEO</span>
+                    <h2>Bringing Professionalism to Garment Care</h2>
+                    <p>When I started <strong>Cleand</strong>, the goal was never just to open a laundry store.
+                        The vision was to bring professionalism to an industry that had remained largely
+                        unorganized for decades.</p>
+
+                    <p>During my corporate career, I had the opportunity to work with some of India’s most
+                        respected companies and leaders. I learned how systems, technology, and customer
+                        obsession can transform industries. I believed the same transformation could happen in
+                        garment care.</p>
+
+                    <p>Leaving a stable corporate career to start Cleand was not the easy path. The early days
+                        required persistence, learning, and constant improvement. But every satisfied customer
+                        reinforced the belief that people were ready for a better service experience.</p>
+
+                    <p>Today, Cleand represents a commitment to quality, reliability, and convenience for
+                        customers who trust us with something as personal as their clothing.</p>
+
+                    <p>
+                        Our journey is still in its early chapters. The opportunity to build a national brand in garment
+                        care is immense, and we are committed to building Cleand into one of India’s most trusted
+                        service companies.
+                    </p>
+
+                    <div class="signature">
+                        <p class="name">Amit S</p>
+                        <p class="title">Founder and CEO<br>Cleand The Laundry Spa</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/about-ceo.webp" alt="Amit S - Founder of Cleand">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="our-story">
+        <div class="section-container">
+            <h2 class="story-title">Our Story</h2>
+            <span class="story-label">Cleand began with a simple observation</span>
+
+            <div class="story-content">
+                <p>Laundry services were everywhere, yet consistent quality and professional service were rare. The
+                    industry lacked structure, technology, and brand trust.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Cleand was created to bring these elements together</strong></p>
+                    <p style="font-style: italic;">By combining modern operational systems, trained professionals, and
+                        digital convenience, Cleand introduced a new category of service called the <strong
+                            style="color: #de8d1f;">Laundry Spa</strong>. A place where garments receive professional
+                        care instead of routine washing.</p>
+                </div>
+
+                <p>This idea has gradually evolved into a growing network of services designed to simplify garment care
+                    for modern households.
+                </p>
+            </div>
+
+            <div class="story-footer">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cleand-journey" style="background: #faf6ef;">
+        <div class="section-container">
+            <h2 class="section-title">The Cleand Journey</h2>
+
+            <div class="timeline">
+                <div class="timeline-item right">
+                    <div class="date-bubble">2017</div>
+                    <div class="content-card">
+                        <h3>The Vision</h3>
+                        <p>The idea for Cleand was conceived with the vision of professionalizing garment care services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="date-bubble">2018</div>
+                    <div class="content-card">
+                        <h3>The First Spa</h3>
+                        <p>The first Cleand store was launched, introducing the concept of a Laundry Spa.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="date-bubble">2019</div>
+                    <div class="content-card">
+                        <h3>Expanding Horizons</h3>
+                        <p>Service offerings expanded to include dry cleaning, curtain, sofa, shoe, and carpet cleaning.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="date-bubble">2020</div>
+                    <div class="content-card">
+                        <h3>Digital Transformation</h3>
+                        <p>Technology integration enabled pickup/delivery services and digital order management.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="date-bubble">2022</div>
+                    <div class="content-card">
+                        <h3>Company Owned Growth</h3>
+                        <p>Cleand began expanding through its Company-owned Stores.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="date-bubble">2024</div>
+                    <div class="content-card">
+                        <h3>Franchise Era</h3>
+                        <p>Cleand began expanding through franchise partnerships across cities.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="date-bubble">Today</div>
+                    <div class="content-card highlighted">
+                        <h3>Looking Ahead</h3>
+                        <p>Cleand continues to grow while strengthening its technology and operational systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="choose-section">
         <div class="section-container slide-up">
-            <h2>Why Choose <span>Cleand</span></h2>
+            <h2>Why <span>Cleand</span> is Different?</h2>
             <p>Cleand offers expert care, convenient pickup and delivery, and eco-friendly cleaning solutions using
                 advanced techniques.</p>
 
             <div class="Choose-container slide-up">
                 <div class="choose-card">
                     <div class="choose-icon">
-                        <i class="fa-solid fa-award"></i>
+                        <i class="fa-solid fa-clipboard-check"></i>
                     </div>
-                    <h3>Expertise and Experience</h3>
-                    <p>Our seasoned professionals guarantee top-notch quality and reliability in every service.</p>
+                    <h3>Professional Systems</h3>
+                    <p>Every garment goes through structured processes including inspection, specialized cleaning, and
+                        quality checks.</p>
                 </div>
                 <div class="choose-card">
                     <div class="choose-icon">
-                        <i class="fa-solid fa-users-gear"></i>
+                        <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
-                    <h3>Advanced Technology</h3>
-                    <p>Incorporating cutting-edge machinery and eco-friendly processes, we prioritize quality and
-                        sustainability.</p>
+                    <h3>Technology Integration</h3>
+                    <p>Customers can schedule pickups, track orders, and manage services seamlessly.</p>
                 </div>
                 <div class="choose-card">
                     <div class="choose-icon">
-                        <i class="fa-solid fa-people-carry-box"></i>
+                        <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    <h3>Customer-Centric Approach</h3>
-                    <p>Personalized services, convenient pickup and delivery options, and responsive customer support.
+                    <h3>Convenience First</h3>
+                    <p>Pickup and delivery services eliminate the need for customers to manage laundry themselves.
                     </p>
                 </div>
                 <div class="choose-card">
                     <div class="choose-icon">
-                        <i class="fa-brands fa-padlet"></i>
+                        <i class="fa-solid fa-shirt"></i>
                     </div>
-                    <h3>Innovative Solutions</h3>
-                    <p>Our mobile app makes scheduling, tracking, and payments easy and convenient.</p>
+                    <h3>Multi Service Fabric Care</h3>
+                    <p>Cleand offers comprehensive garment and home fabric care solutions.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Scalable Business Model</h3>
+                    <p>Our franchise model enables entrepreneurs to build modern laundry businesses backed by a proven
+                        system.</p>
                 </div>
             </div>
 
             <div class="btn-container slide-up">
-                <button class="pickup-btn btn">Schedule Your Pickup Now
+                <button class="pickup-btn btn">Schedule Your Pickup
                     <img src="/images/pickup-icon-white.webp" alt="">
                 </button>
                 <button class="whatsapp-btn btn">Chat on Whatsapp
@@ -501,40 +1267,67 @@
     </section>
 
 
-    <div class="stats-wrapper">
-        <div class="section-container slide-up">
-            <h2 class="section-title">India's Most <span class="highlight">Profitable</span> Laundry Chain</h2>
-            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus mollitia ipsam
-                consectetur saepe cum recusandae molestiae porro cumque, voluptates ex!</p>
+    <section class="vision-2030" style="background: #faf6ef;">
+        <div class="section-container">
+            <div class="vision-wrapper">
+                <div class="vision-image">
+                    <img src="images/about-vision.webp" alt="Cleand Vision 2030">
+                </div>
 
-            <div class="stats-grid slide-up">
-                <div class="stat-card">
-                    <div class="counter-box">
-                        <span class="counter" data-target="60">0</span><span class="suffix">+</span>
+                <div class="vision-text">
+                    <span class="pre-title">Our Roadmap</span>
+                    <h2>Cleand Vision 2030</h2>
+                    <p>The garment care industry in India is evolving rapidly as urban lifestyles demand convenience and
+                        hygiene.
+                        Cleand’s long term vision is to build a nationwide network of professional garment care centers
+                        supported by technology, logistics, and standardized processes.</p>
+
+                    <p><strong>By 2030, Cleand aims to:</strong></p>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Expand across major Indian cities</li>
+                        <li><i class="fas fa-check-circle"></i> Build one of the largest professional laundry networks
+                            in the country</li>
+                        <li><i class="fas fa-check-circle"></i> Create opportunities for entrepreneurs through franchise
+                            partnerships</li>
+                        <li><i class="fas fa-check-circle"></i> Serve millions of garments every month through reliable
+                            and consistent service</li>
+                    </ul>
+
+                    <div class="vision-quote">
+                        <p>The ambition is not simply growth. The ambition is to build a brand that customers trust for
+                            decades.</p>
                     </div>
-                    <div class="stat-label">Cities</div>
-                </div>
-                <div class="stat-card">
-                    <div class="counter-box">
-                        <span class="counter" data-target="150">0</span><span class="suffix">+</span>
-                    </div>
-                    <div class="stat-label">Stores</div>
-                </div>
-                <div class="stat-card">
-                    <div class="counter-box">
-                        <span class="counter" data-target="5.1">0</span><span class="suffix">L</span>
-                    </div>
-                    <div class="stat-label">Orders</div>
-                </div>
-                <div class="stat-card">
-                    <div class="counter-box">
-                        <span class="counter" data-target="45.8">0</span><span class="suffix">L</span>
-                    </div>
-                    <div class="stat-label">Garments</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+
+    <section class="trust-section">
+        <div class="section-container">
+            <div class="trust-grid">
+                <div class="trust-main">
+                    <span class="top-label">Our Core Values</span>
+                    <h2>Building Trust Through Service</h2>
+                    <p>Cleand has steadily earned the confidence of customers who rely on consistent quality and
+                        dependable garment care.
+                        Our growing community of customers and franchise partners reflects the trust placed in the
+                        Cleand brand.</p>
+                    <p>Every garment cleaned and every order delivered strengthens that relationship.</p>
+                </div>
+
+                <div class="trust-highlight">
+                    <div class="highlight-inner">
+                        <i class="fas fa-shield-alt"></i>
+                        <p class="promise-text">Trust is not built through promises.</p>
+                        <p class="result-text">It is Built Through <span>Services</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <section class="team-section" style="background: #faf6ef;">
@@ -549,9 +1342,7 @@
                 <button class="nav-btn next" id="nextBtn">&#10095;</button>
 
                 <div class="team-slider-viewport">
-
                     <div class="team-container slide-up" id="teamSlider">
-
                         <div class="team-card">
                             <img src="images/team/team-tanushree.jpeg" alt="Tanushree Shrivastava">
                             <div class="member-info">
@@ -564,7 +1355,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="team-card">
                             <img src="images/team/team-prashant.jpeg" alt="Prashant Shrivastava">
                             <div class="member-info">
@@ -577,25 +1367,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="team-card">
-                            <img src="images/team/team-vijay.jpeg" alt="">
-                            <div class="member-info">
-                                <h3>Vijay Vikram Singh</h3>
-                                <p>Brand Ambassador Cleand</p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="team-card">
                             <img src="images/team/team-sana.jpeg" alt="">
                             <div class="member-info">
                                 <h3>Sana Khan</h3>
-                                <p>Head of PR & Operations</p>
+                                <p>Strategic Operations & Executive Support</p>
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -603,7 +1379,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="team-card">
                             <img src="images/team/team-abhay.jpeg" alt="">
                             <div class="member-info">
@@ -616,17 +1391,23 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="team-card">
+                            <img src="images/team/team-vijay.jpeg" alt="">
+                            <div class="member-info">
+                                <h3>Vijay Vikram Singh</h3>
+                                <p>Brand Ambassador Cleand</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
-
-
 
             </div>
     </section>
-
 
 
     <footer class="footer">
@@ -741,7 +1522,7 @@
             </div>
 
             <div class="footer-copyright">
-                <p>&copy; 2026 Cleand – A Unit of Softsweep India Pvt Ltd</p>
+                <p>&copy; 2026 Cleand – The Laundry Spa | A Venture of Softsweep India Private Limited</p>
             </div>
         </div>
     </footer>
@@ -819,39 +1600,45 @@
     <!-- counter -->
     <script>
         const counters = document.querySelectorAll('.counter');
-        const speed = 100; // Lower is slower
+        const speed = 50;
 
         const startCounters = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const counter = entry.target;
-                    const updateCount = () => {
-                        const target = parseFloat(counter.getAttribute('data-target'));
-                        const count = parseFloat(counter.innerText);
+                    const target = parseFloat(counter.getAttribute('data-target'));
 
-                        // Determine increment based on whether it's a decimal
+                    // Set initial value to 0 if it's currently empty or non-numeric
+                    let count = 0;
+
+                    const updateCount = () => {
+                        // Calculate increment: target divided by speed
                         const inc = target / speed;
 
                         if (count < target) {
-                            // Check if it's a decimal (like 12.1L) or whole number
+                            count += inc;
+
+                            // If target has a decimal, show 1 decimal place
                             if (target % 1 !== 0) {
-                                counter.innerText = (count + inc).toFixed(1);
+                                counter.innerText = count.toFixed(1);
                             } else {
-                                counter.innerText = Math.ceil(count + inc);
+                                counter.innerText = Math.floor(count);
                             }
+
                             setTimeout(updateCount, 20);
                         } else {
                             counter.innerText = target;
                         }
                     };
+
                     updateCount();
-                    observer.unobserve(counter); // Stop observing once animated
+                    observer.unobserve(counter);
                 }
             });
         };
 
         const observer = new IntersectionObserver(startCounters, {
-            threshold: 0.5 // Trigger when 50% of the element is visible
+            threshold: 0.2
         });
 
         counters.forEach(counter => observer.observe(counter));
