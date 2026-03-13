@@ -1,8 +1,31 @@
+@media (max-width: 1400px) {
+    .download-content {
+        bottom: 16%;
+        left: 48%;
+    }
+    
+    .download-content a {
+        width: 140px;
+    }
+    
+}
+
+
+
 @media (max-width: 1250px) {
     .hero-content {
         width: 60%;
         margin-top: 40px;
     }
+
+
+
+
+    .download-content {
+        left: 46%;
+    }
+
+
 }
 
 
@@ -50,6 +73,15 @@
     }
 
 
+    
+    .download-content a {
+        width: 120px;
+    }
+
+    .download-content img {
+        width: 100%;
+    }
+
 
 }
 
@@ -71,12 +103,14 @@
     }
 
 
-    .download-content {
-        bottom: 18%;
-        left: 45%;
-    }
 
-    .download-content img {
+
+    .download-content {
+        bottom: 16%;
+        left: 46%;
+    }
+    
+    .download-content a {
         width: 100px;
     }
 
@@ -85,9 +119,11 @@
     .near-container {
         background: #ffffff;
     }
+
     .near-left {
         width: 48%;
     }
+
     .near-right {
         width: 48%;
     }
@@ -388,18 +424,18 @@
 
 
     .download-section {
-        padding: 40px 0px 80px;
+        padding: 20px 0px 10px;
     }
 
     .download-content {
-        bottom: 10%;
-        left: 50%;
-        flex-direction: column;
-        gap: 0;
+        bottom: 9%;
+        left: 46%;
+        /* flex-direction: column; */
+        /* gap: 0; */
     }
 
-    .download-content img {
-        width: 120px;
+    .download-content a {
+        width: 80px;
     }
 
 
@@ -413,10 +449,12 @@
         flex-direction: column;
         gap: 30px;
     }
-     .near-left {
+
+    .near-left {
         width: 100%;
         text-align: center;
     }
+
     .near-right {
         width: 100%;
     }
@@ -517,9 +555,15 @@
 
 
 
+
+
     .download-content {
-        bottom: 6%;
+        bottom: 10%;
         left: 46%;
+    }
+
+    .download-content a {
+        width: 60px;
     }
 
 
@@ -549,14 +593,18 @@
 
 
 
-    .download-content {
-        bottom: 6%;
-        left: 46%;
+
+
+
+    .download-section {
+        padding: 20px 0px 20px;
     }
 
-    .download-content img {
-        width: 100px;
+    .download-content {
+        bottom: 10%;
+        left: 40%;
     }
+
 
 
 
@@ -569,5 +617,29 @@
     }
 
 
+
+}
+
+
+
+
+
+
+
+@media (max-width: 300px) {
+
+    .download-section {
+        padding: 20px 0px 10px;
+    }
+
+    .download-content {
+        bottom: 10%;
+        left: 38%;
+    }
+
+    .download-content a {
+        width: 50px;
+        height: 20px;
+    }
 
 }

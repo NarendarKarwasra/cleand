@@ -83,16 +83,18 @@
     }
 
     .hero-section h1 span {
-        color: #875817;
+        color: #8c5200;
     }
 
     .hero-section p {
         font-size: 1.2rem;
         color: rgb(255, 255, 255);
-        line-height: 1.4;
+        line-height: 1.3;
+        margin: auto;
         margin-bottom: 20px;
         font-weight: 300;
         animation: fadeUp 0.9s ease 0.3s both;
+        max-width: 600px;
     }
 
     /* search box */
@@ -419,15 +421,13 @@
         <div class="hero-section">
             <div class="hero-content">
                 <div class="hero-eyebrow">✦ Transparent Pricing, Always</div>
-                <h1>Fresh Clothes, <span>Fair Prices.</span></h1>
-                <p>Professional laundry care delivered to your door. Browse our full price list below — no hidden
-                    charges,
-                    no surprises. Just spotless results.</p>
+                <h1>Simple Pricing. <span>Exceptional Care.</span></h1>
+                <p>Get professional garment care with clear, upfront pricing. <br>Browse service rates for your city and enjoy doorstep laundry with complete peace of mind.</p>
 
                 <div class="search-wrap">
                     <span class="search-icon"><i class="fa-solid fa-location-dot"></i></span>
                     <input type="text" id="cityInput" placeholder="Enter your city — e.g. Mumbai, Delhi, Pune…" />
-                    <button class="search-btn">Search Prices</button>
+                    <button class="search-btn">View Prices</button>
                 </div>
             </div>
         </div>
@@ -943,14 +943,26 @@
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
         const navMenu = document.querySelector('.navmenu');
+        const navLinks = document.querySelectorAll('.navmenu a');
 
+        // --- Active Link Logic ---
+        const currentUrl = window.location.href;
+
+        navLinks.forEach(link => {
+            // Check if the link's href matches the current URL
+            if (link.href === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+
+        // --- Mobile Toggle Logic ---
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navMenu.classList.toggle('open');
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll('.navmenu a').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileBtn.classList.remove('active');
                 navMenu.classList.remove('open');

@@ -33,7 +33,7 @@ html {
 
 .header-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 40px;
 }
 
@@ -351,6 +351,15 @@ html {
 }
 
 .navmenu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Active Link State */
+.navmenu ul li a.active {
+    color: var(--primary-color);
+}
+
+.navmenu ul li a.active::after {
     width: 100%;
 }
 
@@ -698,10 +707,21 @@ html {
 
 
 
+.power-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    row-gap: 0px;
+    margin-top: 4px;
+}
 
-
-
-
+.power-line li {
+    font-size: 18px;
+    font-weight: 600;
+    color: #9c5b00;
+}
 
 .expert-services {
     padding: 30px 0 0px;
@@ -724,7 +744,7 @@ html {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 30px;
 }
 
 .expert-item {
@@ -897,12 +917,12 @@ html {
 
 
 .near-container {
-    background: url('images/near-me-2.webp');
+    background: url('images/near-me-4.webp');
     background-size: cover;
     background-position: center;
     background-position: 54%;
-    background-position-y: 98%;
-    background-size: 500px;
+    background-position-y: 140%;
+    background-size: 460px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
@@ -1022,8 +1042,8 @@ html {
 .choose-icon {
     background: #e7e7e7;
     width: fit-content;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1032,7 +1052,7 @@ html {
 
 .choose-icon i {
     color: #de8d1f;
-    font-size: 34px;
+    font-size: 26px;
 }
 
 .choose-card h3 {
@@ -1042,9 +1062,11 @@ html {
 }
 
 .choose-card p {
-    margin-top: 10px;
+    margin-top: 6px;
     text-align: left;
     width: 100%;
+    line-height: 1.4;
+    opacity: 0.8;
 }
 
 
@@ -1099,7 +1121,7 @@ html {
 
 .stat-card {
     background: #fff6e6;
-    padding: 30px 20px;
+    padding: 20px 4px;
     border-radius: 20px;
     text-align: center;
     transition: transform 0.3s ease;
@@ -1134,6 +1156,12 @@ html {
     color: #888;
 }
 
+.stat-card p {
+    line-height: 1.3;
+    font-size: 17px;
+    opacity: 0.7;
+    margin-top: 12px;
+}
 
 
 
@@ -1145,6 +1173,7 @@ html {
 
 
 
+/* 
 .pricing-plans {
     padding: 30px 0 0px;
 }
@@ -1304,7 +1333,7 @@ html {
 
 .pricing-plans .btn-container {
     margin-top: 80px;
-}
+} */
 
 
 
@@ -1326,12 +1355,15 @@ html {
 
 .profitable-content h1 {
     font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .profitable-content p {
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
     font-size: 17px;
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 4px;
 }
 
 
@@ -1574,15 +1606,15 @@ html {
 
 .download-content {
     position: absolute;
-    bottom: 18%;
-    left: 47%;
+    bottom: 16%;
+    left: 605px;
     display: flex;
     justify-content: center;
     gap: 6px;
 }
 
 .download-content img {
-    width: 160px;
+    width: 140px;
 }
 
 

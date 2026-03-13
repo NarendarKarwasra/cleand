@@ -614,14 +614,26 @@
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
         const navMenu = document.querySelector('.navmenu');
+        const navLinks = document.querySelectorAll('.navmenu a');
 
+        // --- Active Link Logic ---
+        const currentUrl = window.location.href;
+
+        navLinks.forEach(link => {
+            // Check if the link's href matches the current URL
+            if (link.href === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+
+        // --- Mobile Toggle Logic ---
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navMenu.classList.toggle('open');
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll('.navmenu a').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileBtn.classList.remove('active');
                 navMenu.classList.remove('open');

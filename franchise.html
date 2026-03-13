@@ -45,17 +45,17 @@
     }
 
     .fran-hero-content {
-        width: 49%;
+        width: 59%;
     }
 
     .fran-hero-conatiner h1 {
         font-weight: 900;
         line-height: 1.3;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .fran-hero-conatiner h1 span {
-        font-size: 50px;
+        font-size: 46px;
     }
 
     .fran-hero-conatiner p {
@@ -81,15 +81,15 @@
     }
 
     .fran-hero-box-card {
-        background: #fff;
-        color: #ba6d00;
+        background: #ffffff33;
+        color: #ffffff;
         border-radius: 14px;
-        width: 120px;
+        /* width: 100px; */
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 10px;
+        /* justify-content: center; */
+        padding: 10px 20px;
     }
 
     .fran-hero-box-card h2 {
@@ -105,11 +105,18 @@
 
     .fran-hero-box-card p {
         margin-bottom: 2px;
+        font-weight: 600;
+    }
+
+    .fran-hero-box-card div {
+        text-align: center;
+        line-height: 1.2;
+        margin-top: 4px;
     }
 
 
     .fran-hero-form {
-        width: 49%;
+        width: 39%;
     }
 
     .form-container {
@@ -124,10 +131,10 @@
         line-height: 1.3;
     }
 
-    .form-subtitle {
+    .form-container .form-subtitle {
         color: #676767;
         margin-bottom: 20px;
-        font-size: 14px;
+        font-size: 15px;
         margin-top: 5px;
     }
 
@@ -193,6 +200,7 @@
         cursor: pointer;
         font-size: 16px;
         transition: 0.3s;
+        margin-top: 10px;
     }
 
     #investmentForm #submitBtn:disabled {
@@ -212,6 +220,13 @@
         margin-bottom: 8px !important;
         display: block;
         font-weight: 500;
+    }
+
+    .form-trust-line {
+        color: #8a8a8a;
+        margin-top: 6px;
+        text-align: center;
+        font-size: 14px;
     }
 
     /* Mobile Responsive */
@@ -265,6 +280,16 @@
         padding: 30px 0 40px;
     }
 
+    .section-subtitle {
+        text-align: center;
+        color: #777;
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 10px;
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
     .investment-stats .stats-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -297,7 +322,13 @@
     }
 
     .investment-stats .stat-card p {
-        font-size: 1.1rem;
+        font-size: 18px;
+    }
+
+    .investment-stats .stat-card-desc {
+        line-height: 1.3;
+        margin: 10px 0;
+        opacity: 0.8;
     }
 
     .investment-stats .badge {
@@ -319,9 +350,91 @@
 
     @media (max-width: 500px) {
         .investment-stats .stats-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
     }
+
+
+
+
+
+    
+.partners-section {
+    padding: 30px 0 50px;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+.partners-image {
+    width: 40%;
+    border: 6px solid #f1b868;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.partners-image img {
+    width: 100%;
+    transform: scale(1.05);
+}
+.partners-content {
+    width: 60%;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.partners-card {
+    position: relative;
+    /* border: 1px solid #d6d0c7; */
+    background: #faf9f9;
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px #4a4a4a26;
+    transition: all 0.3s ease-in-out;
+}
+.partners-card:hover {
+    transform: scale(1.03);
+}
+.partners-card h3 {
+    font-size: 20px;
+}
+.partners-card p {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+.partners-card i {
+    color: #de8d1f;
+    font-size: 50px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    opacity: 0.2;
+    transform: translateY(-50%);
+}
+
+
+@media (max-width: 992px) {
+    .partners-container {
+        flex-direction: column;
+    }
+    .partners-image {
+        display: none;
+    }
+    .partners-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .partners-content {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 
@@ -467,6 +580,9 @@
         .support-section .section-title {
             font-size: 2rem;
         }
+        .support-des {
+            width: 100%;
+        }
     }
 
 
@@ -480,6 +596,14 @@
         padding: 30px 0 40px;
     }
 
+    .table-heading {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #de8d1f;
+    }
+
     /* Comparison Table */
     .comp-table {
         width: 100%;
@@ -488,7 +612,7 @@
         border-radius: 6px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        margin-top: 40px;
+        margin-top: 14px;
     }
 
     .comp-table th,
@@ -518,6 +642,14 @@
 
     .comp-table tbody tr:hover {
         background-color: #fff0dd;
+    }
+
+    .table-closing-line {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #de8d1f;
     }
 
     @media (max-width: 500px) {
@@ -577,12 +709,19 @@
     }
 
     .why-card p {
-        max-width: 300px;
+        /* max-width: 300px; */
         margin: auto;
-        line-height: 1.2;
+        line-height: 1.3;
         margin-top: 10px;
     }
 
+    .why-end-line {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #de8d1f;
+    }
 
 
 
@@ -611,7 +750,7 @@
     .franchise-models .header-content {
         text-align: center;
         max-width: 900px;
-        margin: 0 auto 60px;
+        margin: 0 auto 0px;
     }
 
     .franchise-models .header-content h2 {
@@ -630,11 +769,21 @@
         color: #858585;
     }
 
+    .model-imp-line {
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.3;
+        margin-top: 20px;
+        color: #de8d1f;
+    }
+
+
     .models-grid {
         display: flex;
         justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
+        margin-top: 50px;
     }
 
     .model-card {
@@ -687,6 +836,14 @@
     .card-header h3 {
         font-size: 1.6rem;
         color: #333;
+        margin-bottom: 6px;
+        text-align: center;
+    }
+    
+    .card-header p {
+        font-size: 17px;
+        line-height: 1.2;
+        opacity: 0.8;
         margin-bottom: 20px;
         text-align: center;
     }
@@ -742,6 +899,15 @@
         color: #999;
         font-style: italic;
         margin-top: -10px;
+    }
+
+    .card-footer-line {
+        line-height: 1.3;
+        font-size: 17px;
+        opacity: 0.8;
+        border-left: 4px solid #de8d1f;
+        padding-left: 10px;
+        margin-top: 10px;
     }
 
 
@@ -889,6 +1055,13 @@
 
 
 
+    .section-subtitle {
+        margin-bottom: 40px;
+    }
+
+
+
+
 
 
     .franchise-btn {
@@ -962,37 +1135,37 @@
             <div class="section-container">
                 <div class="fran-hero-conatiner">
                     <div class="fran-hero-content">
-                        <h1>Join India’s Profitable <br><span>Laundry Franchise Brand</span></h1>
-                        <p>Lorem ipsu
-                            m dolor, sit amet consectetur adipisicing elit. Nemo, provident! Modi mollitia, ipsam dolor
-                            odio
-                            unde suscipit esse hic ullam.</p>
+                        <!-- <h1>Join India’s Profitable <br><span>Laundry Franchise Brand</span></h1> -->
+                        <h1>Join India’s Fast-Growing <br><span>Laundry Franchise Network</span></h1>
+                        <p style="margin-bottom: 0;">Build a profitable business with Cleand – The Laundry Spa.</p>
+                        <p>A professionally managed laundry and dry cleaning brand trusted by thousands of customers across multiple cities.</p>
                         <ul>
-                            <li>Lorem ipsum dolor sit amet consectetur.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Proven business model with strong demand in urban markets</li>
+                            <li>Complete setup support including machines, training and operations</li>
+                            <li>Technology driven pickup and delivery system</li>
+                            <li>Marketing and lead generation support from the central team</li>
                         </ul>
                         <div class="fran-hero-box">
                             <div class="fran-hero-box-card">
-                                <h2>4 Lac<span>+</span></h2>
-                                <p>Customers</p>
+                                <h2>4 Lakh<span>+</span></h2>
+                                <p>Happy Customers</p>
                             </div>
                             <div class="fran-hero-box-card">
                                 <h2>45<span>+</span></h2>
-                                <p>Store</p>
+                                <p>Operational Stores</p>
                             </div>
                             <div class="fran-hero-box-card">
                                 <h2>15<span>+</span></h2>
-                                <p>Cities</p>
+                                <p>Cities Served</p>
                             </div>
                         </div>
-                        <!-- <button class="pickup-btn btn fran-hero-btn">Enquire for Franchise</button> -->
+                        <!-- <button class="pickup-btn btn fran-hero-btn">Start Your Franchise Journey</button> -->
                     </div>
                     <div class="fran-hero-form">
                         <div class="form-container">
                             <form id="investmentForm">
-                                <h2>Get Started with Us</h2>
-                                <p class="form-subtitle">Fill in the details below to begin your journey</p>
+                                <h2>Start Your Franchise Journey</h2>
+                                <p class="form-subtitle">Fill in your details and our franchise team will contact you shortly.</p>
 
                                 <div class="form-row">
                                     <div class="input-box">
@@ -1025,7 +1198,7 @@
                                     <div class="input-box">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <select id="stateSelect">
-                                            <option value="" disabled selected>Select State</option>
+                                            <option value="" disabled selected>State</option>
                                             <option value="Rajasthan">Rajasthan</option>
                                             <option value="Delhi">Delhi</option>
                                             <option value="Maharashtra">Maharashtra</option>
@@ -1034,7 +1207,7 @@
                                     <div class="input-box">
                                         <i class="fas fa-city"></i>
                                         <select id="citySelect">
-                                            <option value="" disabled selected>Select City</option>
+                                            <option value="" disabled selected>City</option>
                                             <option value="Jaipur">Jaipur</option>
                                             <option value="Mumbai">Mumbai</option>
                                             <option value="Delhi">New Delhi</option>
@@ -1045,13 +1218,15 @@
                                 <div class="form-row full-width">
                                     <div class="input-box">
                                         <i class="fas fa-comment-dots" style="top: 18px;"></i>
-                                        <textarea id="description" placeholder="Briefly describe your requirements..."
+                                        <textarea id="description" placeholder="Briefly describe your location or requirement..."
                                             rows="3"></textarea>
                                     </div>
                                 </div>
 
-                                <p id="errorMessage" class="error-text">Please fill all fields correctly.</p>
-                                <button type="submit" id="submitBtn" disabled>SUBMIT ENQUIRY</button>
+                                <!-- <p id="errorMessage" class="error-text">Please fill all fields correctly.</p> -->
+                                <button type="submit" id="submitBtn" disabled>Request Franchise Details</button>
+
+                                <div class="form-trust-line">Our franchise team will contact you within 24 hours.</div>
                             </form>
                         </div>
                     </div>
@@ -1066,7 +1241,7 @@
         <div class="section-container slide-up">
             <h2 class="section-title">Why Invest in a <span style="color: #de8d1f;">Cleand</span> Laundry Franchise?
             </h2>
-            <p class="section-subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, explicabo!
+            <p class="section-subtitle">Cleand – The Laundry Spa offers a professionally managed laundry and dry cleaning business model designed for modern urban demand. With growing customer reliance on professional garment care, Cleand provides a scalable and profitable opportunity backed by operational expertise and brand support.
             </p>
 
             <div class="stats-grid slide-up">
@@ -1076,7 +1251,8 @@
                     </div>
                     <h3>₹6 - 10 Lakh</h3>
                     <p>Franchise Fee</p>
-                    <span class="badge">Low Entry Barrier</span>
+                    <div class="stat-card-desc">Gain access to the Cleand brand, business model, operational training, and ongoing franchise support.</div>
+                    <span class="badge">Strong Brand Access</span>
                 </div>
                 <div class="stat-card">
                     <div class="icon-box">
@@ -1084,14 +1260,16 @@
                     </div>
                     <h3>₹15 Lakh Onwards</h3>
                     <p>Initial Investment</p>
-                    <span class="badge">Low Investment</span>
+                    <div class="stat-card-desc">Complete store setup including machines, interiors, technology integration, and operational launch support.</div>
+                    <span class="badge">Turnkey Setup</span>
                 </div>
                 <div class="stat-card">
                     <div class="icon-box">
                         <i class="fa-solid fa-hand-holding-heart"></i>
                     </div>
                     <h3>12-18 Months</h3>
-                    <p>ROI</p>
+                    <p>Expected ROI</p>
+                    <div class="stat-card-desc">With consistent demand for laundry services in urban areas, most franchise partners recover their investment within this period.</div>
                     <span class="badge">Fast Returns</span>
                 </div>
                 <div class="stat-card">
@@ -1100,15 +1278,76 @@
                     </div>
                     <h3>7%</h3>
                     <p>Royalty</p>
-                    <span class="badge">Profitable Business</span>
+                    <div class="stat-card-desc">A transparent royalty structure that allows franchise partners to scale profitably while benefiting from continuous brand and marketing support.</div>
+                    <span class="badge">Sustainable Growth</span>
                 </div>
             </div>
 
+            <p class="table-closing-line slide-up">Includes complete training, store launch support, marketing assistance, and technology platform.</p>
+
             <div class="btn-container slide-up" style="padding-bottom: 0;">
-                <button class="btn franchise-btn">Enquire for Franchise</button>
+                <button class="btn franchise-btn">Start Your Franchise Journey</button>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+    <section class="partners-section" style="background: #eeeeee;">
+        <div class="section-container slide-up">
+            <h2 class="section-title">What Support <span style="color: #de8d1f;">Cleand</span> Provides Franchise Partners?
+            </h2>
+            <p class="section-subtitle" style="margin-top: 14px;">We empower our partners with a robust support ecosystem designed for operational efficiency and high profitability.
+            </p>
+
+            <div class="partners-container">
+                <div class="partners-image">
+                    <img src="images/about-cleand-3.webp" alt="">
+                </div>
+                <div class="partners-content">
+                    <div class="partners-card">
+                        <h3>Store Setup Assistance</h3>
+                        <p>Expert site selection, interior architectural design, and state-of-the-art machinery installation.</p>
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="partners-card">
+                        <h3>Staff Training</h3>
+                        <p>On-site and central training for fabric handling, cleaning techniques, and customer service.</p>
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <div class="partners-card">
+                        <h3>Marketing & Lead Generation</h3>
+                        <p>Pan-India digital marketing campaigns and local brand activation support to drive customers.</p>
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="partners-card">
+                        <h3>Pickup & Delivery Technology</h3>
+                        <p>Complete tech-stack including driver apps, customer booking software, and logistics management.</p>
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <div class="partners-card">
+                        <h3>Central Operations Support</h3>
+                        <p>Dedicated support desk for daily operational queries, chemical dosage, and quality control.</p>
+                        <i class="fas fa-gears"></i>
+                    </div>
+                    <div class="partners-card">
+                        <h3>Vendor Network</h3>
+                        <p>Access to our verified network of chemical suppliers and spare parts at discounted prices.</p>
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+
+
 
 
     <section class="video-presentation" style="background: #faf6ef;">
@@ -1134,29 +1373,28 @@
 
     <section class="support-section">
         <div class="section-container slide-up">
-            <h2 class="section-title">Our Support System</h2>
-            <p class="support-des">Benefit from our ongoing support and access to advanced technology that streamlines
-                operations and enhances customer experience.</p>
+            <h2 class="section-title">Our Franchise Support System</h2>
+            <p class="support-des"><strong>Cleand</strong> – The Laundry Spa provides franchise partners with a complete operational ecosystem designed to simplify business management and accelerate growth. From store launch to daily operations, our team supports you at every step with proven processes, training, marketing, and technology.</p>
             <div class="support-flex slide-up">
                 <div class="support-item">
                     <div class="step-num">01</div>
                     <h4>Comprehensive Training</h4>
-                    <p>Receive both initial and ongoing training programs</p>
+                    <p>Receive structured training covering store operations, garment care techniques, machine handling, customer service, and business management to ensure smooth and professional operations.</p>
                 </div>
                 <div class="support-item">
                     <div class="step-num">02</div>
                     <h4>Marketing Assistance</h4>
-                    <p>Benefit from our expert marketing and advertising support</p>
+                    <p>Benefit from centralized marketing campaigns including digital advertising, social media promotions, and local store marketing support designed to drive customer acquisition.</p>
                 </div>
                 <div class="support-item">
                     <div class="step-num">03</div>
                     <h4>Operational Guidance</h4>
-                    <p>Get help with day-to-day operations and business development</p>
+                    <p>Our experienced operations team provides continuous support in workflow optimization, quality control, vendor coordination, and business performance improvement.</p>
                 </div>
                 <div class="support-item">
                     <div class="step-num">04</div>
                     <h4>Advanced Technology</h4>
-                    <p>Access our proprietary technology and management systems</p>
+                    <p>Access Cleand’s integrated technology platform including order management, customer database, pickup and delivery tracking, and performance analytics.</p>
                 </div>
             </div>
         </div>
@@ -1165,188 +1403,226 @@
 
     <section class="comparison-section" style="background: #faf6ef;">
         <div class="section-container slide-up">
-            <h2 class="section-title">Why Franchise Over Independent?</h2>
-            <p class="support-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et exercitationem
-                hic obcaecati, inventore, at eos eius nisi cumque in explicabo magni recusandae molestias placeat ut
-                repellat maiores doloribus ex!</p>
+            <h2 class="section-title">Why Choose a Cleand Franchise Over an Independent Laundry?</h2>
+            <p class="support-des">Starting an independent laundry business can be challenging due to lack of brand recognition, operational systems, and marketing support. A Cleand franchise provides a structured and professionally managed business model designed to reduce risk and increase success.</p>
             <div class="table-responsive slide-up">
+                <div class="table-heading">Why struggle alone when you can grow with a proven brand?</div>
                 <table class="comp-table">
                     <thead>
                         <tr>
                             <th>Features</th>
-                            <th>Your Brand Franchise</th>
+                            <th>Cleand Franchise</th>
                             <th>Local Laundry Shop</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Brand Awareness</td>
-                            <td class="check">✅ National Recognition</td>
-                            <td class="cross">❌ Zero Trust</td>
+                            <td class="check">✅ Established Brand Recognition</td>
+                            <td class="cross">❌ Limited Customer Trust</td>
                         </tr>
                         <tr>
                             <td>Technology</td>
-                            <td class="check">✅ Mobile App & CRM</td>
-                            <td class="cross">❌ Manual Registers</td>
+                            <td class="check">✅ Integrated Mobile App & CRM System</td>
+                            <td class="cross">❌ Manual Registers & Limited Tracking</td>
                         </tr>
                         <tr>
                             <td>Machinery</td>
-                            <td class="check">✅ Industrial Grade (EU)</td>
-                            <td class="cross">❌ Household Machines</td>
+                            <td class="check">✅ Industrial Grade Professional Equipment</td>
+                            <td class="cross">❌ Basic Household Machines</td>
                         </tr>
                         <tr>
                             <td>Marketing Support</td>
-                            <td class="check">✅ Centralized Digital Ads</td>
-                            <td class="cross">❌ Local Pamphlets only</td>
+                            <td class="check">✅ Centralized Digital Marketing & Campaigns</td>
+                            <td class="cross">❌ Limited Local Promotions</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="btn-container slide-up" style="padding-bottom: 0;">
-                <button class="btn franchise-btn">Enquire for Franchise</button>
+            <p class="table-closing-line slide-up">Build your business with a proven system instead of starting from scratch.</p>
+            <div class="btn-container slide-up" style="padding-bottom: 0; margin-top: 0;">
+                <button class="btn franchise-btn">Start Your Franchise Journey</button>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
 
 
     <section class="why-section">
         <div class="section-container slide-up">
-            <h2 class="section-title">Why Choose the Laundry Industry?</h2>
-            <p class="support-des">Discover why the laundry industry stands out as a promising business opportunity
-                amidst evolving consumer needs and urbanisation trends.</p>
+            <h2 class="section-title">Why Invest in the Laundry Industry?</h2>
+            <ul class="power-line">
+                <li>High Demand</li>
+                <li>Recurring Customers</li>
+                <li>Scalable Business Model</li>
+            </ul>
+            <p class="support-des">The professional laundry and dry cleaning industry in India is growing rapidly due to urbanisation, busy lifestyles, and increasing demand for convenient garment care services. With rising disposable income and limited time for household chores, more customers are shifting to organised laundry services, creating a strong and sustainable business opportunity.</p>
             <div class="why-container slide-up">
                 <div class="why-card">
                     <i class="fa-solid fa-chart-line"></i>
                     <h3>Rising Demand</h3>
-                    <p>High need for convenient, premium laundry services</p>
+                    <p>The demand for professional laundry and dry cleaning services continues to grow as customers prefer convenient and reliable garment care solutions.</p>
                 </div>
                 <div class="why-card">
                     <i class="fa-solid fa-city"></i>
                     <h3>Urban Growth</h3>
-                    <p>Increasing urbanisation boosts demand for professional solutions</p>
+                    <p>Rapid urbanisation and the expansion of residential complexes create consistent demand for nearby professional laundry services.</p>
                 </div>
                 <div class="why-card">
                     <i class="fa-solid fa-chart-pie"></i>
                     <h3>Busy Lifestyles</h3>
-                    <p>Modern lifestyles drive the need for reliable laundry services</p>
+                    <p>Working professionals and nuclear families increasingly rely on external laundry services to save time and maintain garment quality.</p>
                 </div>
                 <div class="why-card">
                     <i class="fa-solid fa-people-arrows"></i>
                     <h3>Customer Loyalty</h3>
-                    <p>High potential for repeat business and customer retention</p>
+                    <p>Laundry services naturally generate repeat customers, creating long term relationships and predictable business.</p>
                 </div>
                 <div class="why-card">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <h3>Market Expansion</h3>
-                    <p>Expanding market with opportunities for growth</p>
+                    <p>India’s organised laundry sector is still in its early stages, offering significant opportunities for expansion and brand growth.</p>
                 </div>
                 <div class="why-card">
                     <i class="fa-solid fa-money-bill-trend-up"></i>
                     <h3>Sustainable Revenue</h3>
-                    <p>Steady revenue stream from essential services</p>
+                    <p>Laundry is an essential service with consistent demand throughout the year, ensuring steady revenue and long term business stability.</p>
                 </div>
             </div>
 
             <div class="btn-container slide-up" style="padding-bottom: 0;">
-                <button class="btn franchise-btn">Enquire for Franchise</button>
+                <button class="btn franchise-btn">Start Your Cleand Franchise Journey</button>
             </div>
+
+            <div class="why-end-line slide-up">“Your City Could Be the Next Cleand Location.”</div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
 
 
     <section class="franchise-models" style="background: #faf6ef;">
         <div class="section-container">
             <div class="header-content slide-up">
                 <p class="sub-text">Looking to be your own boss and build a successful business?</p>
-                <h2 class="section-title">Explore Our Diverse Franchise Opportunities</h2>
-                <p class="intro-text">We're expanding rapidly across India and seeking passionate individuals to join
-                    our franchise family.</p>
+                <h2 class="section-title">Start Your Entrepreneurial Journey with Cleand</h2>
+                <p class="intro-text"><strong>Cleand</strong> – The Laundry Spa offers multiple franchise formats designed to suit different investment levels and location sizes. Whether you want to start small or launch a large premium store, our flexible models allow you to enter the professional laundry industry with confidence.</p>
             </div>
+
+            <div class="model-imp-line slide-up">Flexible franchise models designed for different budgets and location sizes.</div>
 
             <div class="models-grid slide-up">
 
                 <div class="model-card">
                     <div class="card-header">
-                        <h3>Starter</h3>
+                        <h3>Starter Model</h3>
+                        <p>Ideal for compact neighbourhood locations</p>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>250-300 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>250 – 300 Sq Ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
-                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
+                            <div><strong>Franchise Fee</strong><span>₹6 Lakhs</span></div>
                         </div>
                         <div class="info-row highlight">
                             <i class="fa-solid fa-indian-rupee-sign icon"></i>
-                            <div><strong>Investment</strong><span>15 Lacs</span></div>
+                            <div><strong>Estimated Investment</strong><span>₹15 Lakhs</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-chart-line icon"></i>
-                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                            <div><strong>Expected ROI</strong><span>12-18 Months</span></div>
                         </div>
                         <!-- <p class="location-note">*Available only in Mumbai</p> -->
                     </div>
+                    <div class="card-footer-line">Best suited for residential areas and high-density neighbourhoods with consistent daily laundry demand.</div>
                 </div>
 
                 <div class="model-card featured">
                     <div class="card-header">
                         <span class="popular-tag">Most Popular</span>
-                        <h3>Standard</h3>
+                        <h3>Standard Model</h3>
+                        <p>Balanced investment with higher capacity</p>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>Min 500 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>Minimum 500 Sq Ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
-                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
+                            <div><strong>Franchise Fee</strong><span>₹6 Lakhs</span></div>
                         </div>
                         <div class="info-row highlight">
                             <i class="fa-solid fa-indian-rupee-sign icon"></i>
-                            <div><strong>Investment</strong><span>18 Lacs</span></div>
+                            <div><strong>Estimated Investment</strong><span>₹18 Lakhs</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-chart-line icon"></i>
-                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                            <div><strong>Expected ROI</strong><span>12 – 18 Months</span></div>
                         </div>
                     </div>
+                    <div class="card-footer-line">A well-balanced model suitable for busy residential hubs and mixed commercial areas.</div>
                 </div>
 
                 <div class="model-card">
                     <div class="card-header">
-                        <h3>Premium</h3>
+                        <h3>Premium Model</h3>
+                        <p>Large format store with higher service capacity</p>
                     </div>
                     <div class="card-body">
                         <div class="info-row">
                             <i class="fa-solid fa-ruler-combined icon"></i>
-                            <div><strong>Area Required</strong><span>Min 700 Sq ft</span></div>
+                            <div><strong>Area Required</strong><span>Minimum 700 Sq Ft</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-ticket icon"></i>
-                            <div><strong>Franchise Fee</strong><span>6 Lacs</span></div>
+                            <div><strong>Franchise Fee</strong><span>₹6 Lakhs</span></div>
                         </div>
                         <div class="info-row highlight">
                             <i class="fa-solid fa-indian-rupee-sign icon"></i>
-                            <div><strong>Investment</strong><span>27 Lacs</span></div>
+                            <div><strong>Estimated Investment</strong><span>₹27 Lakhs</span></div>
                         </div>
                         <div class="info-row">
                             <i class="fa-solid fa-chart-line icon"></i>
-                            <div><strong>ROI</strong><span>12-18 Months</span></div>
+                            <div><strong>Expected ROI</strong><span>12-18 Months</span></div>
                         </div>
                     </div>
+                    <div class="card-footer-line">Designed for prime locations with higher order volumes and expanded service offerings.</div>
                 </div>
 
             </div>
 
             <div class="btn-container slide-up" style="padding-bottom: 0;">
-                <button class="btn franchise-btn">Enquire for Franchise</button>
+                <button class="btn franchise-btn">Apply for Franchise</button>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
 
 
     <section class="blog-section">
@@ -1729,14 +2005,26 @@
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
         const navMenu = document.querySelector('.navmenu');
+        const navLinks = document.querySelectorAll('.navmenu a');
 
+        // --- Active Link Logic ---
+        const currentUrl = window.location.href;
+
+        navLinks.forEach(link => {
+            // Check if the link's href matches the current URL
+            if (link.href === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+
+        // --- Mobile Toggle Logic ---
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navMenu.classList.toggle('open');
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll('.navmenu a').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileBtn.classList.remove('active');
                 navMenu.classList.remove('open');
