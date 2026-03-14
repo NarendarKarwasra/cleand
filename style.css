@@ -929,6 +929,31 @@ html {
     padding: 40px 0;
 }
 
+
+
+/* .near-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    overflow: hidden;
+}
+.near-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/technology-1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+} */
+
+
+
 .near-left {
     width: 34%;
     display: flex;
@@ -2062,7 +2087,7 @@ html {
 }
 
 .privacy-content .section-des {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .privacy-content section {
@@ -2087,6 +2112,8 @@ html {
 .privacy-content .check-list {
     list-style: none;
     padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .privacy-content .check-list li::before {
@@ -2111,7 +2138,7 @@ html {
 }
 
 .privacy-content .contact-box p {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .privacy-content .contact-box i {
