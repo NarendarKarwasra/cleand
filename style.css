@@ -225,17 +225,17 @@ html {
     /* background-color: #3fa0e7; */
 }
 
-.email-container {
+.app-container {
     background-color: #ff5d5d;
 }
 
-.email-container .icon-box {
+.app-container .icon-box {
     margin-right: 10px;
     display: flex;
     align-items: center;
 }
 
-.email-container i {
+.app-container i {
     font-size: 16px;
     margin-right: 4px;
 }
@@ -257,7 +257,7 @@ html {
     width: 190px;
 }
 
-.email-container:hover {
+.app-container:hover {
     width: 200px;
 }
 
@@ -929,30 +929,6 @@ html {
     justify-content: space-between;
     padding: 40px 0;
 }
-
-
-
-/* .near-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
-    overflow: hidden;
-}
-.near-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('images/technology-1.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    z-index: -1;
-} */
-
 
 
 .near-left {

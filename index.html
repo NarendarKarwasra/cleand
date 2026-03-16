@@ -27,12 +27,12 @@
             <span class="label call-label">Call Us</span>
         </div>
         <!-- Email Button -->
-        <div class="button-container email-container" onclick="sendEmail()">
+        <div class="button-container app-container" onclick="downloadApp()">
             <div class="icon-box">
                 <i class="fab fa-google-play icon"></i>
                 <i class="fab fa-apple icon"></i>
             </div>
-            <span class="label email-label">Download App</span>
+            <span class="label app-label">Download App</span>
         </div>
 
         <!-- Whatsapp Button -->
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <header class="header">
+    <header class="header"> 
         <div class="section-container">
             <div class="header-container">
                 <a href="index.html" class="logo">
@@ -1004,12 +1004,7 @@
             window.open(`tel:${phoneNumber}`, "_self");
         }
 
-        function sendEmail() {
-            const emailAddress = "support@example.com";
-            const subject = "Laundry Service Inquiry";
-            const body = "Hello, I would like to inquire about your laundry services.";
-            window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-        }
+        function downloadApp() {}
 
         function sendWhatsapp() {
             const phoneNumber = "919999999999";
