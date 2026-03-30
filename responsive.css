@@ -1,14 +1,14 @@
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
     .download-content {
         bottom: 16%;
         left: 48%;
     }
-    
+
     .download-content a {
         width: 140px;
     }
-    
-}
+
+} */
 
 
 
@@ -21,9 +21,9 @@
 
 
 
-    .download-content {
+    /* .download-content {
         left: 46%;
-    }
+    } */
 
 
 }
@@ -73,14 +73,14 @@
     }
 
 
-    
-    .download-content a {
+
+    /* .download-content a {
         width: 120px;
     }
 
     .download-content img {
         width: 100%;
-    }
+    } */
 
 
 }
@@ -105,15 +105,39 @@
 
 
 
-    .download-content {
+    /* .download-content {
         bottom: 16%;
         left: 46%;
     }
-    
+
     .download-content a {
         width: 100px;
+    } */
+
+
+
+    .download-section-2 {
+        gap: 0px;
+        width: 100%;
+    }
+    
+    .download-right h1 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+    .download-right h2 {
+        line-height: 1.2;
     }
 
+    .download-right p {
+        font-size: 18px;
+        margin-top: 6px;
+        margin-bottom: 20px;
+    }
+
+    .download-right-apps a {
+        width: 120px;
+    }
 
 
     .near-container {
@@ -423,20 +447,18 @@
 
 
 
-    .download-section {
+    /* .download-section {
         padding: 20px 0px 10px;
     }
 
     .download-content {
         bottom: 9%;
         left: 46%;
-        /* flex-direction: column; */
-        /* gap: 0; */
     }
 
     .download-content a {
         width: 80px;
-    }
+    } */
 
 
 
@@ -511,6 +533,24 @@
 
 
 
+    .download-section-2 {
+        flex-direction: column-reverse;
+    }
+    .download-left {
+        width: 100%;
+        max-width: 300px;
+    }
+    .download-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .download-right-apps {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+
 
 
 
@@ -557,14 +597,14 @@
 
 
 
-    .download-content {
+    /* .download-content {
         bottom: 10%;
         left: 46%;
     }
 
     .download-content a {
         width: 60px;
-    }
+    } */
 
 
 }
@@ -599,11 +639,11 @@
     .download-section {
         padding: 20px 0px 20px;
     }
-
+/* 
     .download-content {
         bottom: 10%;
         left: 40%;
-    }
+    } */
 
 
 
@@ -632,7 +672,7 @@
         padding: 20px 0px 10px;
     }
 
-    .download-content {
+    /* .download-content {
         bottom: 10%;
         left: 38%;
     }
@@ -640,6 +680,6 @@
     .download-content a {
         width: 50px;
         height: 20px;
-    }
+    } */
 
 }

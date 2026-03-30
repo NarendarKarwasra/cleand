@@ -1423,7 +1423,7 @@ html {
 
 
 
-.download-section {
+/* .download-section {
     position: relative;
     padding: 40px 0px;
 }
@@ -1444,11 +1444,61 @@ html {
 
 .download-content img {
     width: 140px;
+} */
+
+
+
+
+
+
+
+
+
+
+.download-section-2 {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 80%;
+    margin: auto;
 }
 
+.download-left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.download-left img {
+    width: 100%;
+}
 
+.download-right {
+    width: 60%;
+}
 
+.download-right h1 {
+    color: #DE8D1F;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.download-right p {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
 
+.download-right-apps {
+    display: flex;
+    gap: 10px;
+}
+.download-right-apps a {
+    width: 170px;
+}
+.download-right-apps img {
+    width: 100%;
+}
 
 
 
